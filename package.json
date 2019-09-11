@@ -1,0 +1,28 @@
+{
+  "name": "gabrielmaiaf.github.io",
+  "version": "2.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gabrielmaiaf/gabrielmaiaf.github.io.git"
+  },
+  "author": "Gabriel Maia",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gabrielmaiaf/gabrielmaiaf.github.io/issues"
+  },
+  "homepage": "https://github.com/gabrielmaiaf/gabrielmaiaf.github.io#readme",
+  "dependencies": {
+    "@zeit/next-sass": "^1.0.1",
+    "next": "^9.0.5",
+    "node-sass": "^4.12.0",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0"
+  }
+}

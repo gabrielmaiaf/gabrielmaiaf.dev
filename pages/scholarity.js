@@ -1,9 +1,9 @@
-import Layout from '../components/Layout';
+import LayoutWrapper from '../src/components/LayoutWrapper';
 
 export default function Scholarity() {
   return (
-    <Layout>
+    <LayoutWrapper>
       <p>This is the Scholarity page</p>
-    </Layout>
+    </LayoutWrapper>
   );
 }

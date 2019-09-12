@@ -1,10 +1,10 @@
-import Layout from '../components/Layout';
+import LayoutWrapper from '../src/components/LayoutWrapper';
 
 const Index = () => {
   return (
-    <Layout>
+    <LayoutWrapper>
       <p>Hello world!</p>
-    </Layout>
+    </LayoutWrapper>
   );
 };
 

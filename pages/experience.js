@@ -1,9 +1,9 @@
-import Layout from '../components/Layout';
+import LayoutWrapper from '../src/components/LayoutWrapper';
 
 export default function Experience() {
   return (
-    <Layout>
+    <LayoutWrapper>
       <p>This is the Experience page</p>
-    </Layout>
+    </LayoutWrapper>
   );
 }

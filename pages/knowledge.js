@@ -1,9 +1,9 @@
-import Layout from '../components/Layout';
+import LayoutWrapper from '../src/components/LayoutWrapper';
 
 export default function Knowledge() {
   return (
-    <Layout>
+    <LayoutWrapper>
       <p>This is the Knowledge page</p>
-    </Layout>
+    </LayoutWrapper>
   );
 }

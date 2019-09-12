@@ -1,14 +1,14 @@
 // Components
-import Header from './Header';
+import Header from '../Header';
 
 // Assets
 import Style from './style.scss';
 
-const Layout = props => (
+const LayoutWrapper = props => (
   <div className={Style.layoutWrapper}>
     <Header />
     {props.children}
   </div>
 );
 
-export default Layout;
+export default LayoutWrapper;

@@ -21,10 +21,23 @@
   },
   "homepage": "https://github.com/gabrielmaiaf/gabrielmaiaf.github.io#readme",
   "dependencies": {
+    "@babel/core": "^7.6.0",
+    "@babel/preset-typescript": "^7.6.0",
+    "@types/node-sass": "^4.11.0",
+    "@types/react": "^16.9.2",
     "@zeit/next-sass": "^1.0.1",
+    "@zeit/next-typescript": "^1.1.1",
+    "babel-loader": "^8.0.6",
     "next": "^9.0.5",
+    "next-compose-plugins": "^2.2.0",
     "node-sass": "^4.12.0",
     "react": "^16.9.0",
-    "react-dom": "^16.9.0"
+    "react-dom": "^16.9.0",
+    "webpack": "^4.39.3"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^2.2.0",
+    "@typescript-eslint/parser": "^2.2.0",
+    "typescript": "^3.6.3"
   }
 }

@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 
+// @ts-ignore
 import StyleHeader from './style.scss';
 
 const Header = () => (

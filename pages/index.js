@@ -1,3 +1,4 @@
+import React from 'react';
 import LayoutWrapper from '../src/components/LayoutWrapper';
 
 const Index = () => {

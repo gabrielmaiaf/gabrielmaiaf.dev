@@ -5,7 +5,9 @@ import Link from 'next/link';
 import StyleHeader from './style.scss';
 
 const Header = () => (
-  <div>
+  <div
+    className={StyleHeader.headerContainer}
+  >
     <Link href="/">
       <a className={StyleHeader.link}>Home</a>
     </Link>

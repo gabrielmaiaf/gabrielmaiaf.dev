@@ -1,5 +1,6 @@
 @import "../../helpers/sass/theme.scss";
 
 .layoutWrapper {
-  background: $standardBackground;
+  min-height: 100vh;
+  font-family: 'Open Sans', sans-serif;
 }

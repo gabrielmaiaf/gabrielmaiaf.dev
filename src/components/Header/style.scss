@@ -4,6 +4,9 @@
   background: $primary;
   // width: 100vw;
   padding: 20px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .link {

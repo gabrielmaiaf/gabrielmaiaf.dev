@@ -21,9 +21,6 @@ const Header = (props: any) => (
       <Link href="/scholarity">
         <a className={StyleHeader.link}>{props.t('scholarity')}</a>
       </Link>
-      <Link href="/knowledge">
-        <a className={StyleHeader.link}>{props.t('knowledge')}</a>
-      </Link>
       <Link href="/experience">
         <a className={StyleHeader.link}>{props.t('experience')}</a>
       </Link>

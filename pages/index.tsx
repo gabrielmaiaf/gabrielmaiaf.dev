@@ -1,4 +1,4 @@
-import React, { Fragment, ReactNode } from 'react';
+import React, { Fragment } from 'react';
 
 // Components
 import HeadComponent from '../src/components/HeadComponent';
@@ -6,14 +6,14 @@ import LayoutWrapper from '../src/components/LayoutWrapper';
 import { withTranslation } from '../src/helpers/i18n';
 
 type Props = {
-  t: (arg0: string) => ReactNode;
+  t: (arg0: string) => any;
 }
 
 function Index(props: Props) {
   return (
     <Fragment>
       <HeadComponent
-        title="Gabriel Maia"
+        title={props.t('common:title.main')}
       />
       <LayoutWrapper>
         <div>
@@ -28,7 +28,7 @@ function Index(props: Props) {
 };
 
 Index.getInitialProps = async() => ({
-  namespacesRequired: ['common', 'header'],
+  namespacesRequired: ['main', 'common'],
 })
 
-export default withTranslation('common')(Index);
+export default withTranslation(['main', 'common'])(Index);

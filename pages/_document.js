@@ -1,10 +1,12 @@
 import React from 'react';
 import Document, { Html, Head, Main, NextScript } from 'next/document';
 
+import { i18n } from '../src/helpers/i18n';
+
 class MyDocument extends Document {
   render() {
     return (
-      <Html lang={this.props.__NEXT_DATA__.props.initialLanguage}>
+      <Html lang={i18n.language}>
         <Head>
           <link rel="shortcut icon" href="../static/favicon.ico" />
           <meta name="viewport" content="width=device-width, initial-scale=1" />

@@ -13,7 +13,7 @@ function About(props: Props) {
   return (
     <Fragment>
       <HeadComponent
-        title="Gabriel Maia - Sobre mim"
+        title={`${props.t('common:title.main')} - ${props.t('common:about')}`}
       />
       <LayoutWrapper>
         <h2>
@@ -34,7 +34,7 @@ function About(props: Props) {
 }
 
 About.getInitialProps = async() => ({
-  namespacesRequired: ['about', 'header'],
+  namespacesRequired: ['about', 'common'],
 })
 
-export default withTranslation('about')(About);
+export default withTranslation(['about', 'common'])(About);

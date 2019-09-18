@@ -1,6 +1,15 @@
 {
-  "hello-world": "Hello, World!",
-  "presentation": "I'm Gabriel, front-end and mobile hybrid developer, using React to web and React Native to Android and iOS.",
-  "error-with-status": "A error has found",
-  "error-without-status": "A error has found"
+  "about": "About",
+  "change-locale": "Change to PT-BR",
+  "experience": "Experience",
+  "home": "Home",
+  "scholarity": "Scholarity",
+  "knowledge": "Knowledge",
+  "error": {
+    "with-status": "A error has found",
+    "without-status": "A error has found"
+  },
+  "title": {
+    "main": "Gabriel Maia"
+  }
 }

@@ -1,4 +1,15 @@
 {
-  "hello-world": "Hello, World!",
-  "presentation": "Eu sou Gabriel, desenvolvedor front-end e mobile híbrido, usando React para a web e React Native para Android e iOS."
+  "about": "Sobre",
+  "change-locale": "Mudar para EN",
+  "experience": "Experiência",
+  "home": "Início",
+  "scholarity": "Escolaridade",
+  "knowledge": "Conhecimento",
+  "error": {
+    "with-status": "Aconteceu um erro",
+    "without-status": "Aconteceu um erro"
+  },
+  "title": {
+    "main": "Gabriel Maia"
+  }
 }

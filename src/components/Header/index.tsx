@@ -38,4 +38,4 @@ const Header = (props: any) => (
   </div>
 );
 
-export default withTranslation('header')(Header);
+export default withTranslation('common')(Header);

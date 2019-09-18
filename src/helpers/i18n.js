@@ -5,5 +5,7 @@ module.exports = new NextI18Next({
   otherLanguages: ['pt'],
   localeSubpaths: {
     pt: 'pt'
-  }
+  },
+  fallbackLng: 'en',
+  preload: ['en']
 });

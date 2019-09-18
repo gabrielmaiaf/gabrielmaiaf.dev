@@ -4,7 +4,7 @@ import Document, { Html, Head, Main, NextScript } from 'next/document';
 class MyDocument extends Document {
   render() {
     return (
-      <Html>
+      <Html lang={this.props.__NEXT_DATA__.props.initialLanguage}>
         <Head>
           <link rel="shortcut icon" href="../static/favicon.ico" />
           <meta name="viewport" content="width=device-width, initial-scale=1" />

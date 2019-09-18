@@ -2,6 +2,9 @@ const withSass = require('@zeit/next-sass');
 const withPlugins = require('next-compose-plugins');
 
 const nextConfig = {
+  publicRuntimeConfig: {
+    localeSubpaths: process.env.LOCALE_SUBPATHS === 'true',    
+  },
   webpack(config, options) {
     // Fixes npm packages that depend on `fs` module
     config.node = {

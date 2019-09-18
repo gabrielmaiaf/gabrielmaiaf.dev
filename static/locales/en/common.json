@@ -1,4 +1,6 @@
 {
   "hello-world": "Hello, World!",
-  "presentation": "I'm Gabriel Maia Francisco, front-end and mobile hybrid developer, using React to web and React Native to Android and iOS."
+  "presentation": "I'm Gabriel, front-end and mobile hybrid developer, using React to web and React Native to Android and iOS.",
+  "error-with-status": "A error has found",
+  "error-without-status": "A error has found"
 }

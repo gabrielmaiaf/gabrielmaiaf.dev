@@ -15,12 +15,12 @@ function Experience(props: Props) {
     for (var i=0; i <= 3; i++) {
       jobs.push(
         <div
-          key={`sololearn-${i}`}
+          key={`prevJob-${i}`}
         >
-          <p>{props.t(`previously-job-title${i}`)}</p>
-          <p>{props.t(`previously-job-company${i}`)}</p>
-          <p>{props.t(`previously-job-time${i}`)}</p>
-          <p>{props.t(`previously-job-description${i}`)}</p>
+          <p>{props.t(`previously-job.job-role${i}`)}</p>
+          <p>{props.t(`previously-job.company${i}`)}</p>
+          <p>{props.t(`previously-job.time${i}`)}</p>
+          <p>{props.t(`previously-job.description${i}`)}</p>
         </div>
       )
     }
@@ -36,14 +36,14 @@ function Experience(props: Props) {
       <LayoutWrapper>
         <p>{props.t('experience-title')}</p>
         <div>
-          <div>{props.t('actual-job')}</div>
-          <p>{props.t('actual-job-title')}</p>
-          <p>{props.t('actual-job-company')}</p>
-          <p>{props.t('actual-job-time')}</p>
-          <p>{props.t('actual-job-description')}</p>
+          <div>{props.t('actual-job.title')}</div>
+          <p>{props.t('actual-job.job-role')}</p>
+          <p>{props.t('actual-job.company')}</p>
+          <p>{props.t('actual-job.time')}</p>
+          <p>{props.t('actual-job.description')}</p>
         </div>
         <div>
-          <div>{props.t('previous-job')}</div>
+          <div>{props.t('previously-job.title')}</div>
           {previouslyJobs()}
         </div>
       </LayoutWrapper>

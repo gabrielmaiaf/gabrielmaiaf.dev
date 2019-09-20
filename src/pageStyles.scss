@@ -1,0 +1,49 @@
+@import './helpers/sass/theme.scss';
+@import './helpers/sass/variables.scss';
+
+.courseContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+// Index
+.helloWorld {
+  background-color: $standard;
+  color: $greenHarlequin;
+  font-family: 'Inconsolata', monospace;
+  position: relative;
+  width: 6.5em;
+  margin: 0 auto;
+  border-right: 2px solid $greenHarlequin;
+  font-size: 180%;
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.oldComputer {
+  background-color: black;
+  width: 12em;
+  padding: 15px 12px;
+  display: flex;
+  align-items: flex-start;
+  border: 15px solid $greySilverSand;
+  border-radius: 15px;
+}
+
+.animTyping {
+  animation: typewriter 4s steps(13) 1s 1 normal both,
+    blinkTextCursor 800ms steps(13) infinite normal;
+}
+
+@keyframes typewriter {
+  from{width: 0;}
+  to{width: 6.5em;}
+}
+
+@keyframes blinkTextCursor {
+  from{border-right-color: $greenHarlequin;}
+  to{border-right-color: transparent;}
+}

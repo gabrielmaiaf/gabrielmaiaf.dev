@@ -13,6 +13,7 @@ class MyDocument extends Document {
           <meta charSet="utf-8" />
           <style dangerouslySetInnerHTML={{__html: `
             @import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+            @import url('https://fonts.googleapis.com/css?family=Inconsolata&display=swap');
             body {
               margin: 0;
             }

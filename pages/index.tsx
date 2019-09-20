@@ -5,6 +5,10 @@ import HeadComponent from '../src/components/HeadComponent';
 import LayoutWrapper from '../src/components/LayoutWrapper';
 import { withTranslation } from '../src/helpers/i18n';
 
+// Assets
+// @ts-ignore
+import PageStyles from '../src/pageStyles.scss';
+
 type Props = {
   t: (arg0: string) => any;
 }
@@ -17,7 +21,15 @@ function Index(props: Props) {
       />
       <LayoutWrapper>
         <div>
-          <p>{props.t('hello-world')}</p>
+          <div
+            className={PageStyles.oldComputer}
+          >
+            <p
+              className={`${PageStyles.helloWorld} ${PageStyles.animTyping}`}
+            >
+              {props.t('hello-world')}
+            </p>
+          </div>
           <h1>
             {props.t('presentation')}
           </h1>

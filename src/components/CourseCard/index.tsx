@@ -1,5 +1,8 @@
 import React from 'react';
 
+// @ts-ignore
+import StyleCard from './style.scss';
+
 type Props = {
   concluded: string;
   title: string;
@@ -7,7 +10,9 @@ type Props = {
 
 function CourseCard(props: Props) {
   return (
-    <div>
+    <div
+      className={StyleCard.cardContainer}
+    >
       <p>{props.title}</p>
       <p>{props.concluded}</p>
     </div>

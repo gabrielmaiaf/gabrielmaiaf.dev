@@ -6,6 +6,10 @@ import HeadComponent from '../src/components/HeadComponent';
 import LayoutWrapper from '../src/components/LayoutWrapper';
 import { withTranslation } from '../src/helpers/i18n';
 
+// Assets
+// @ts-ignore
+import PageStyles from '../src/pageStyles.scss';
+
 type Props = {
   t: (arg0: string) => any;
 }
@@ -17,8 +21,8 @@ function Scholarity(props: Props) {
       courses.push(
         <CourseCard
           key={`sololearn-${i}`}
-          title={props.t(`complementary-sololearn-name${i}`)}
-          concluded={props.t(`complementary-sololearn-finishedAt${i}`)}
+          title={props.t(`complementary-sololearn.name${i}`)}
+          concluded={props.t(`complementary-sololearn.finishedAt${i}`)}
         />
       )
     }
@@ -32,8 +36,8 @@ function Scholarity(props: Props) {
       courses.push(
         <CourseCard
           key={`codecademy-${i}`}
-          title={props.t(`complementary-codecademy-name${i}`)}
-          concluded={props.t(`complementary-codecademy-finishedAt${i}`)}
+          title={props.t(`complementary-codecademy.name${i}`)}
+          concluded={props.t(`complementary-codecademy.finishedAt${i}`)}
         />
       )
     }
@@ -49,14 +53,18 @@ function Scholarity(props: Props) {
       <LayoutWrapper>
         <h2>{props.t('scholarity-title')}</h2>
         <div>
-          <p>{props.t('complementary-sololearn')}</p>
-          <div>
+          <p>{props.t('complementary-sololearn.title')}</p>
+          <div
+            className={PageStyles.courseContainer}
+          >
             {complementarySololearnCourses()}
           </div>
         </div>
         <div>
-          <p>{props.t('complementary-codecademy')}</p>
-          <div>
+          <p>{props.t('complementary-codecademy.title')}</p>
+          <div
+            className={PageStyles.courseContainer}
+          >
             {complementaryCodecademyCourses()}
           </div>
         </div>

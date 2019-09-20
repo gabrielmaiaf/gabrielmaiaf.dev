@@ -1,5 +1,19 @@
 {
   "about-title": "About me",
-  "about-description-part1": "Description about me - part 1",
-  "about-description-part2": "Description about me - part 2"
+  "knowledge-title": "Knowledge",
+  "languages-title": "Languages",
+  "description": {
+    "part1": "Front-end developer with 2 years of experience using React and Redux; adventuring in React Native using Expo and Redux.",
+    "part2": "Graduated in Mechanical Projects, self taught programming using Codecademy, Egghead, Rocketseat and Udemy. Proficient at help team members and learning with them."
+  },
+  "language": {
+    "name0": "Portuguese",
+    "level0": "100",
+    "name1": "English",
+    "level1": "98",
+    "name2": "Spanish",
+    "level2": "30",
+    "name3": "Italian",
+    "level3": "25"
+  }
 }

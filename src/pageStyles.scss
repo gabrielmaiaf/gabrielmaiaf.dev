@@ -15,7 +15,7 @@
   font-family: 'Inconsolata', monospace;
   position: relative;
   width: 6.5em;
-  margin: 0 auto;
+  margin: 0 75px 0 auto;
   border-right: 2px solid $greenHarlequin;
   font-size: 180%;
   text-align: left;
@@ -23,14 +23,19 @@
   overflow: hidden;
 }
 
+.helloImage {
+  background-image: url('../static/images/computer-1209641_1280.jpg');
+  height: 82vh;
+  display: flex;
+  justify-content: flex-end;
+}
+
 .oldComputer {
-  background-color: black;
-  width: 12em;
+  width: 55em;
   padding: 15px 12px;
   display: flex;
-  align-items: flex-start;
-  border: 15px solid $greySilverSand;
-  border-radius: 15px;
+  align-items: center;
+  background-image: linear-gradient(to right, rgba(255,0,0,0), $black 50%);
 }
 
 .animTyping {

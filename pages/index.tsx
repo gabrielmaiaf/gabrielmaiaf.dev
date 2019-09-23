@@ -22,13 +22,17 @@ function Index(props: Props) {
       <LayoutWrapper>
         <div>
           <div
-            className={PageStyles.oldComputer}
+            className={PageStyles.helloImage}
           >
-            <p
-              className={`${PageStyles.helloWorld} ${PageStyles.animTyping}`}
+            <div
+              className={PageStyles.oldComputer}
             >
-              {props.t('hello-world')}
-            </p>
+              <p
+                className={`${PageStyles.helloWorld} ${PageStyles.animTyping}`}
+              >
+                {props.t('hello-world')}
+              </p>
+            </div>
           </div>
           <h1>
             {props.t('presentation')}

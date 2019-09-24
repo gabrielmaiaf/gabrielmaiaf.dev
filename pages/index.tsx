@@ -1,4 +1,6 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, ReactNode } from 'react';
+// @ts-ignore
+import Fade from 'react-reveal/Fade';
 
 // Components
 import HeadComponent from '../src/components/HeadComponent';
@@ -7,10 +9,10 @@ import { withTranslation } from '../src/helpers/i18n';
 
 // Assets
 // @ts-ignore
-import PageStyles from '../src/pageStyles.scss';
+import IndexStyles from '../src/indexStyles.scss';
 
 type Props = {
-  t: (arg0: string) => any;
+  t: (translationKey: string) => ReactNode;
 }
 
 function Index(props: Props) {
@@ -22,21 +24,29 @@ function Index(props: Props) {
       <LayoutWrapper>
         <div>
           <div
-            className={PageStyles.helloImage}
+            className={IndexStyles.helloImage}
           >
             <div
-              className={PageStyles.oldComputer}
+              className={IndexStyles.oldComputer}
             >
               <p
-                className={`${PageStyles.helloWorld} ${PageStyles.animTyping}`}
+                className={`${IndexStyles.helloWorld} ${IndexStyles.animTyping}`}
               >
                 {props.t('hello-world')}
               </p>
             </div>
           </div>
-          <h1>
-            {props.t('presentation')}
-          </h1>
+          <div
+            className={IndexStyles.presentationSection}
+          >
+            <Fade bottom>
+              <h1
+                className={IndexStyles.presentationTitle}
+              >
+                {props.t('presentation')}
+              </h1>
+            </Fade>
+          </div>
         </div>
       </LayoutWrapper>
     </Fragment>

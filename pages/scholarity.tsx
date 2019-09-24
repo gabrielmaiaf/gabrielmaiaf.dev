@@ -8,7 +8,7 @@ import { withTranslation } from '../src/helpers/i18n';
 
 // Assets
 // @ts-ignore
-import PageStyles from '../src/pageStyles.scss';
+import ScholarityStyles from '../src/scholarityStyles.scss';
 
 type Props = {
   t: (arg0: string) => any;
@@ -55,7 +55,7 @@ function Scholarity(props: Props) {
         <div>
           <p>{props.t('complementary-sololearn.title')}</p>
           <div
-            className={PageStyles.courseContainer}
+            className={ScholarityStyles.courseContainer}
           >
             {complementarySololearnCourses()}
           </div>
@@ -63,7 +63,7 @@ function Scholarity(props: Props) {
         <div>
           <p>{props.t('complementary-codecademy.title')}</p>
           <div
-            className={PageStyles.courseContainer}
+            className={ScholarityStyles.courseContainer}
           >
             {complementaryCodecademyCourses()}
           </div>

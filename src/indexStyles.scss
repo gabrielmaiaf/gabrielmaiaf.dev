@@ -1,14 +1,6 @@
 @import './helpers/sass/theme.scss';
 @import './helpers/sass/variables.scss';
 
-.courseContainer {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  align-items: flex-start;
-}
-
-// Index
 .helloWorld {
   background-color: $standard;
   color: $greenHarlequin;
@@ -25,17 +17,22 @@
 
 .helloImage {
   background-image: url('../static/images/computer-1209641_1280.jpg');
-  height: 82vh;
+  height: 91vh;
   display: flex;
   justify-content: flex-end;
+  // margin-bottom: -21px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .oldComputer {
   width: 55em;
-  padding: 15px 12px;
+  padding: 0 12px;
   display: flex;
   align-items: center;
-  background-image: linear-gradient(to right, rgba(255,0,0,0), $black 50%);
+  background-image: linear-gradient(to right, rgba(255,0,0,0), $black 70%);
 }
 
 .animTyping {
@@ -51,4 +48,14 @@
 @keyframes blinkTextCursor {
   from{border-right-color: $greenHarlequin;}
   to{border-right-color: transparent;}
+}
+
+.presentationSection {
+  background-color: $greenAmazon;
+  padding: 40px;
+  height: 200px;
+}
+
+.presentationTitle {
+  color: $primaryContrast;
 }

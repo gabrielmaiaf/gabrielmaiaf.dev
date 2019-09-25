@@ -18,6 +18,7 @@ class MyDocument extends Document {
               margin: 0;
             }
           `}} />
+          <script src="https://kit.fontawesome.com/11514f10c3.js" />
         </Head>
         <body>
           <Main />

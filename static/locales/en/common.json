@@ -1,6 +1,9 @@
 {
   "about": "About",
-  "change-locale": "Change to PT-BR",
+  "locale": {
+    "pt": "PT",
+    "en": "EN"
+  },
   "experience": "Experience",
   "home": "Home",
   "scholarity": "Scholarity",

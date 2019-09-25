@@ -9,6 +9,8 @@ import { withTranslation } from '../src/helpers/i18n';
 
 // Assets
 // @ts-ignore
+import ProfilePic from '../static/images/IMG_20190813_230827_552_2.jpg';
+// @ts-ignore
 import IndexStyles from '../src/indexStyles.scss';
 
 type Props = {
@@ -40,6 +42,7 @@ function Index(props: Props) {
             className={IndexStyles.presentationSection}
           >
             <Fade bottom>
+              <img src={ProfilePic} alt="My picture" />
               <h1
                 className={IndexStyles.presentationTitle}
               >

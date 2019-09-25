@@ -1,6 +1,9 @@
 {
   "about": "Sobre",
-  "change-locale": "Mudar para EN",
+  "locale": {
+    "pt": "PT",
+    "en": "EN"
+  },
   "experience": "Experiência",
   "home": "Início",
   "scholarity": "Escolaridade",

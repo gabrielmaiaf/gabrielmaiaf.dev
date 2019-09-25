@@ -1,5 +1,19 @@
 {
   "about-title": "Sobre mim",
-  "about-description-part1": "Description about me - part 1",
-  "about-description-part2": "Uso React e Node"
+  "knowledge-title": "Conhecimento",
+  "languages-title": "Línguas",
+  "description": {
+    "part1": "Desenvolvedor Front-end com 2 anos de experiência usando React e Redux; aventurando-se em React Native usando Expo e Redux há 1 ano.",
+    "part2": "Formado em Projetos Mecânicos, programador auto-didata usando Codecademy, Egghead, Rocketseat e Udemy. Proficiente em ajudar membros do time e aprendendo com eles."
+  },
+  "language": {
+    "name0": "Português",
+    "level0": "100",
+    "name1": "Inglês",
+    "level1": "98",
+    "name2": "Espanhol",
+    "level2": "30",
+    "name3": "Italiano",
+    "level3": "25"
+  }
 }

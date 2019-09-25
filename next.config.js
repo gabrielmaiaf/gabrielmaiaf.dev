@@ -1,5 +1,5 @@
 const withSass = require('@zeit/next-sass');
-const withPlugins = require('next-compose-plugins');
+const withImages = require('next-images');
 
 const nextConfig = {
   publicRuntimeConfig: {
@@ -26,12 +26,12 @@ const nextConfig = {
   }
 };
 
-module.exports = withSass({
-  cssModules: true,
-  cssLoaderOptions: {
-    importLoaders: 1,
-    localIdentName: "[local]__[hash:base64:5]"
-  },
-},
+module.exports = withImages(withSass({
+    cssModules: true,
+    cssLoaderOptions: {
+      importLoaders: 1,
+      localIdentName: "[local]__[hash:base64:5]"
+    },
+  }),
   nextConfig
 );

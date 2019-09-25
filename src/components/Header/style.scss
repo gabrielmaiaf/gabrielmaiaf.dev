@@ -15,3 +15,11 @@
   text-decoration: none;
   font-family: 'Open Sans', sans-serif;
 }
+
+.activeLink {
+  color: $primaryContrast;
+  font-weight: bolder;
+  margin-right: 15px;
+  text-decoration: none;
+  font-family: 'Open Sans', sans-serif;
+}

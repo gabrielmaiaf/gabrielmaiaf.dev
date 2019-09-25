@@ -9,7 +9,7 @@ module.exports = new NextI18Next({
     pt: 'pt'
   },
   fallbackLng: 'en',
-  preload: ['en'],
+  preload: ['en', 'pt'],
   initImmediate: false,
   lng: 'en'
 });

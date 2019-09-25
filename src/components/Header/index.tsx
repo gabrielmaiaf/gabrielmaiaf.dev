@@ -5,37 +5,55 @@ import { i18n, Link, withTranslation } from '../../helpers/i18n';
 // @ts-ignore
 import StyleHeader from './style.scss';
 
-const Header = (props: any) => (
-  <div
-    className={StyleHeader.headerContainer}
-  >
-    <div
-      className={StyleHeader.linkWrapper}
-    >
-      <Link href="/">
-        <a className={StyleHeader.link}>{props.t('home')}</a>
-      </Link>
-      <Link href="/about">
-        <a className={StyleHeader.link}>{props.t('about')}</a>
-      </Link>
-      <Link href="/scholarity">
-        <a className={StyleHeader.link}>{props.t('scholarity')}</a>
-      </Link>
-      <Link href="/experience">
-        <a className={StyleHeader.link}>{props.t('experience')}</a>
-      </Link>
-    </div>
-    <div
-      className={StyleHeader.changeLocaleContainer}
-    >
-      <button
-        type="button"
-        onClick={() => i18n.changeLanguage(i18n.language === 'en' ? 'pt' : 'en')}
-      >
-        {props.t('change-locale')}
-      </button>
-    </div>
-  </div>
-);
+function Header (props: any) {
+  const handleLanguageChange = (text: string, current: string) => {
+    if (text === 'en' && current === 'en')
+      return null;
+    
+    if (text === 'pt' && current === 'pt')
+      return null;
+    
+    return i18n.changeLanguage(text);
+  }
 
-export default withTranslation('header')(Header);
+  return (
+    <div
+      className={StyleHeader.headerContainer}
+    >
+      <div
+        className={StyleHeader.linkWrapper}
+      >
+        <Link href="/">
+          <a className={StyleHeader.link}>{props.t('home')}</a>
+        </Link>
+        <Link href="/about">
+          <a className={StyleHeader.link}>{props.t('about')}</a>
+        </Link>
+        <Link href="/scholarity">
+          <a className={StyleHeader.link}>{props.t('scholarity')}</a>
+        </Link>
+        <Link href="/experience">
+          <a className={StyleHeader.link}>{props.t('experience')}</a>
+        </Link>
+      </div>
+      <div
+        className={StyleHeader.changeLocaleContainer}
+      >
+        <a
+          className={i18n.language === 'en' ? StyleHeader.activeLink : StyleHeader.link}
+          onClick={() => handleLanguageChange('en', i18n.language)}
+        >
+          {props.t('locale.en')}
+        </a>
+        <a
+          className={i18n.language === 'pt' ? StyleHeader.activeLink : StyleHeader.link}
+          onClick={() => handleLanguageChange('pt', i18n.language)}
+        >
+          {props.t('locale.pt')}
+        </a>
+      </div>
+    </div>
+  )
+};
+
+export default withTranslation('common')(Header);

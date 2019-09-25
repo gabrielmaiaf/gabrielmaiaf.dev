@@ -1,26 +1,55 @@
 import React, { Fragment, ReactNode } from 'react';
+// @ts-ignore
+import Fade from 'react-reveal/Fade';
 
 // Components
 import HeadComponent from '../src/components/HeadComponent';
 import LayoutWrapper from '../src/components/LayoutWrapper';
 import { withTranslation } from '../src/helpers/i18n';
 
+// Assets
+// @ts-ignore
+import ProfilePic from '../static/images/IMG_20190813_230827_552_2.jpg';
+// @ts-ignore
+import IndexStyles from '../src/indexStyles.scss';
+
 type Props = {
-  t: (arg0: string) => ReactNode;
+  t: (translationKey: string) => ReactNode;
 }
 
 function Index(props: Props) {
   return (
     <Fragment>
       <HeadComponent
-        title="Gabriel Maia"
+        title={props.t('common:title.main')}
       />
       <LayoutWrapper>
         <div>
-          <p>{props.t('hello-world')}</p>
-          <h1>
-            {props.t('presentation')}
-          </h1>
+          <div
+            className={IndexStyles.helloImage}
+          >
+            <div
+              className={IndexStyles.oldComputer}
+            >
+              <p
+                className={`${IndexStyles.helloWorld} ${IndexStyles.animTyping}`}
+              >
+                {props.t('hello-world')}
+              </p>
+            </div>
+          </div>
+          <div
+            className={IndexStyles.presentationSection}
+          >
+            <Fade bottom>
+              <img src={ProfilePic} alt="My picture" />
+              <h1
+                className={IndexStyles.presentationTitle}
+              >
+                {props.t('presentation')}
+              </h1>
+            </Fade>
+          </div>
         </div>
       </LayoutWrapper>
     </Fragment>
@@ -28,7 +57,7 @@ function Index(props: Props) {
 };
 
 Index.getInitialProps = async() => ({
-  namespacesRequired: ['common', 'header'],
+  namespacesRequired: ['main', 'common'],
 })
 
-export default withTranslation('common')(Index);
+export default withTranslation(['main', 'common'])(Index);

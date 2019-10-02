@@ -1,6 +1,7 @@
 @import './helpers/sass/theme.scss';
 @import './helpers/sass/variables.scss';
 
+// Index
 .helloWorld {
   background-color: $standard;
   color: $greenHarlequin;
@@ -17,10 +18,9 @@
 
 .helloImage {
   background-image: url('../static/images/computer-1209641_1280.jpg');
-  height: 91vh;
+  height: calc(100vh - 62px);
   display: flex;
   justify-content: flex-end;
-  // margin-bottom: -21px;
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
@@ -62,7 +62,26 @@
   }
 }
 
+.presentationContact,
 .presentationTitle {
   color: $primaryGradient1;
   text-align: center;
+}
+
+.presentationContact {
+  padding: 40px 0;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin: 25px 40px;
+  border-top: 1px solid $primaryBorder;
+}
+
+.contactButton {
+  cursor: pointer;
+  background-color: $primaryGradient2;
+  border: 2px solid $primaryGradient2;
+  color: $standardBackground;
+  padding: 10px 20px;
+  border-radius: 4px;
 }

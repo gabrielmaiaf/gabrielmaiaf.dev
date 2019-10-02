@@ -26,7 +26,7 @@ function About(props: Props) {
           <p>{props.t('description.part2')}</p>
         </div>
         <div>
-          Knowledge
+          {props.t('knowledge-title')}
         </div>
       </LayoutWrapper>
     </Fragment>

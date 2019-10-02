@@ -29,11 +29,11 @@ function Header (props: any) {
         <Link href="/about">
           <a className={StyleHeader.link}>{props.t('about')}</a>
         </Link>
-        <Link href="/scholarity">
-          <a className={StyleHeader.link}>{props.t('scholarity')}</a>
+        <Link href="/portfolio">
+          <a className={StyleHeader.link}>{props.t('portfolio')}</a>
         </Link>
-        <Link href="/experience">
-          <a className={StyleHeader.link}>{props.t('experience')}</a>
+        <Link href="/contact">
+          <a className={StyleHeader.link}>{props.t('contact')}</a>
         </Link>
       </div>
       <div

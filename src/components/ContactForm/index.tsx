@@ -32,6 +32,7 @@ function ContactForm () {
 
   return (
     <form
+      data-netlify="true"
       netlify-honeypot="bot-field"
       onSubmit={handleSubmit}
     >

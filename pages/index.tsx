@@ -1,4 +1,5 @@
 import React, { Fragment, ReactNode } from 'react';
+import Link from 'next/link';
 // @ts-ignore
 import Fade from 'react-reveal/Fade';
 
@@ -11,7 +12,7 @@ import { withTranslation } from '../src/helpers/i18n';
 // @ts-ignore
 import ProfilePic from '../static/images/IMG_20190813_230827_552_2.jpg';
 // @ts-ignore
-import IndexStyles from '../src/indexStyles.scss';
+import PageStyles from '../src/pageStyles.scss';
 
 type Props = {
   t: (translationKey: string) => ReactNode;
@@ -26,28 +27,48 @@ function Index(props: Props) {
       <LayoutWrapper>
         <div>
           <div
-            className={IndexStyles.helloImage}
+            className={PageStyles.helloImage}
           >
             <div
-              className={IndexStyles.oldComputer}
+              className={PageStyles.oldComputer}
             >
               <p
-                className={`${IndexStyles.helloWorld} ${IndexStyles.animTyping}`}
+                className={`${PageStyles.helloWorld} ${PageStyles.animTyping}`}
               >
                 {props.t('hello-world')}
               </p>
             </div>
           </div>
           <div
-            className={IndexStyles.presentationSection}
+            className={PageStyles.presentationSection}
           >
             <Fade bottom>
               <img src={ProfilePic} alt="My picture" />
               <h1
-                className={IndexStyles.presentationTitle}
+                className={PageStyles.presentationTitle}
               >
                 {props.t('presentation')}
               </h1>
+            </Fade>
+          </div>
+          <div
+            className={PageStyles.presentationContact}
+          >
+            <Fade bottom>
+            <h2>
+              {props.t('contact-hook')}
+            </h2>
+            <p>
+              {props.t('contact-text')}
+            </p>
+            <Link href="/contact">
+              <button
+                type="button"
+                className={PageStyles.contactButton}
+              >
+                {props.t('contact-button')}
+              </button>
+            </Link>
             </Fade>
           </div>
         </div>

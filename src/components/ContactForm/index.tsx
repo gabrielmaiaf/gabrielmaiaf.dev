@@ -1,6 +1,15 @@
-import React, { useState } from 'react';
+import React, { ReactNode, useState } from 'react';
 
-function ContactForm () {
+import { withTranslation } from '../../helpers/i18n';
+
+// @ts-ignore
+import StyleContact from './style.scss';
+
+type Props = {
+  t: (translationKey: string) => ReactNode;
+}
+
+function ContactForm (props: Props) {
   const [name, setName] = useState('');
   const [email, setMail] = useState('');
   const [message, setMessage] = useState('');
@@ -32,35 +41,51 @@ function ContactForm () {
 
   return (
     <form
+      className={StyleContact.formContainer}
       data-netlify="true"
       netlify-honeypot="bot-field"
       onSubmit={handleSubmit}
     >
-      <p>
+      <p className={StyleContact.title}>
         <label>
-          Título: <input type="text" name="bot-field" value={botField} onChange={e => setBotField(e.target.value)} />
+          {props.t('fields.title')}: <input type="text" name="bot-field" value={botField} onChange={e => setBotField(e.target.value)} />
         </label>
       </p>
-      <p>
+      <div
+        className={StyleContact.fieldWrapper}
+      >
+        <p
+          className={StyleContact.field}
+        >
+          <label>
+            {props.t('fields.name')}: 
+          </label>
+          <input type="text" name="name" value={name} onChange={e => setName(e.target.value)} />
+        </p>
+        <p
+          className={StyleContact.field}
+        >
+          <label>
+            {props.t('fields.mail')}:
+          </label>
+          <input type="email" name="email" value={email} onChange={e => setMail(e.target.value)} />
+        </p>
+      </div>
+      <p
+        className={StyleContact.field}
+      >
         <label>
-          Name: <input type="text" name="name" value={name} onChange={e => setName(e.target.value)} />
+          {props.t('fields.message')}:
         </label>
+        <textarea
+          name="message" value={message} onChange={e => setMessage(e.target.value)} rows={5}
+        />
       </p>
       <p>
-        <label>
-          E-mail: <input type="email" name="email" value={email} onChange={e => setMail(e.target.value)} />
-        </label>
-      </p>
-      <p>
-        <label>
-          Message: <textarea name="message" value={message} onChange={e => setMessage(e.target.value)} />
-        </label>
-      </p>
-      <p>
-        <button type="submit">Send</button>
+        <button type="submit">{props.t('fields.button')}</button>
       </p>
     </form>
   );
 }
 
-export default ContactForm;
+export default withTranslation('contact')(ContactForm);

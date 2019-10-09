@@ -4,3 +4,8 @@
   min-height: 100vh;
   font-family: 'Open Sans', sans-serif;
 }
+
+.layoutPageContainer {
+  min-height: calc(100vh - 129px - 82px);
+  text-align: center;
+}

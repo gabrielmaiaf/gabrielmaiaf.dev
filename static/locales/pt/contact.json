@@ -1,0 +1,10 @@
+{
+  "contact-title": "Contato",
+  "fields": {
+    "button": "Enviar",
+    "mail": "E-mail",
+    "message": "Messagem",
+    "name": "Nome",
+    "title": "Título"
+  }
+}

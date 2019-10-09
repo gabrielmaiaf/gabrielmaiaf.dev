@@ -31,7 +31,7 @@ module.exports = withImages(withSass({
     cssLoaderOptions: {
       importLoaders: 1,
       localIdentName: "[local]__[hash:base64:5]"
-    },
+    }
   }),
   nextConfig
 );

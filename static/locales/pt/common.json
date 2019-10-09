@@ -4,10 +4,9 @@
     "pt": "PT",
     "en": "EN"
   },
-  "experience": "Experiência",
+  "contact": "Contato",
   "home": "Início",
-  "scholarity": "Escolaridade",
-  "knowledge": "Conhecimento",
+  "portfolio": "Portfólio",
   "error": {
     "with-status": "Aconteceu um erro",
     "without-status": "Aconteceu um erro"

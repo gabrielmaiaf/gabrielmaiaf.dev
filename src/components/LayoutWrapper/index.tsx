@@ -15,7 +15,11 @@ interface Props {
 const LayoutWrapper = (props: Props) => (
   <div className={Style.layoutWrapper}>
     <Header />
-    {props.children}
+    <div
+      className={Style.layoutPageContainer}
+    >
+      {props.children}
+    </div>
     <Footer />
   </div>
 );

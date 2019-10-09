@@ -22,16 +22,28 @@ class Footer extends PureComponent {
               Links
             </div>
             <div>
-              <a href="https://br.linkedin.com/in/gabrielmaiaf" target="_blank">
+              <a
+                href="https://br.linkedin.com/in/gabrielmaiaf"
+                target="_blank"
+                className={StylesFooter.linkedin}
+              >
                 <i className="fab fa-linkedin" />
               </a>
-              <a href="https://github.com/gabrielmaiaf/" target="_blank">
+              <a
+                href="https://github.com/gabrielmaiaf/"
+                target="_blank"
+                className={StylesFooter.github}
+              >
                 <i className="fab fa-github" />
               </a>
               {/* <a href="https://br.linkedin.com/in/gabrielmaiaf" target="_blank">
                 <i className="fab fa-twitter" />
               </a> */}
-              <a href="mailto:gabrielmaiaf@outlook.com" target="_blank">
+              <a
+                href="mailto:gabrielmaiaf@outlook.com"
+                target="_blank"
+                className={StylesFooter.mail}
+              >
                 <i className="fas fa-envelope" />
               </a>
             </div>

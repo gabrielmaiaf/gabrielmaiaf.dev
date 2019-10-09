@@ -1,4 +1,7 @@
 {
   "hello-world": "Hello, World!",
-  "presentation": "Eu sou Gabriel, desenvolvedor front-end e mobile híbrido, usando React para a web e React Native para Android e iOS."
+  "presentation": "Eu sou Gabriel, desenvolvedor front-end e mobile híbrido, usando React para a web e React Native para Android e iOS.",
+  "contact-hook": "Interested in hire me or build a project together?",
+  "contact-text": "If you have an application interested in developing or a problem that you need to be solved, let's talk!",
+  "contact-button": "Get in touch"
 }

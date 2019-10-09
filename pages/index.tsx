@@ -2,6 +2,7 @@ import React, { Fragment, ReactNode } from 'react';
 import Link from 'next/link';
 // @ts-ignore
 import Fade from 'react-reveal/Fade';
+import { Link as ScrollLink } from 'react-scroll';
 
 // Components
 import HeadComponent from '../src/components/HeadComponent';
@@ -38,11 +39,23 @@ function Index(props: Props) {
                 {props.t('hello-world')}
               </p>
             </div>
+            <ScrollLink 
+              to="content"
+              className={PageStyles.seeMoreContainer}
+              smooth
+              duration={1000}
+              delay={50}
+            >
+              <div className={PageStyles.arrow} />
+              <div className={PageStyles.arrow} />
+              <div className={PageStyles.arrow} />
+            </ScrollLink>
           </div>
           <div
             className={PageStyles.presentationSection}
           >
             <Fade bottom>
+              <div id="content" />
               <img src={ProfilePic} alt="My picture" />
               <h1
                 className={PageStyles.presentationTitle}

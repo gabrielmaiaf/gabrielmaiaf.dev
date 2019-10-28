@@ -5,8 +5,8 @@ import Fade from 'react-reveal/Fade';
 import { Link as ScrollLink } from 'react-scroll';
 
 // Components
-import HeadComponent from '../src/components/HeadComponent';
-import LayoutWrapper from '../src/components/LayoutWrapper';
+import HeadComponent from '../src/components/head-component';
+import LayoutWrapper from '../src/components/layout-wrapper';
 import { withTranslation } from '../src/helpers/i18n';
 
 // Assets

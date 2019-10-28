@@ -1,9 +1,9 @@
 import React, { Fragment, ReactNode } from 'react';
 
 // Components
-import HeadComponent from '../src/components/HeadComponent';
-import ContactForm from '../src/components/ContactForm';
-import LayoutWrapper from '../src/components/LayoutWrapper';
+import HeadComponent from '../src/components/head-component';
+import ContactForm from '../src/components/contact-form';
+import LayoutWrapper from '../src/components/layout-wrapper';
 import { withTranslation } from '../src/helpers/i18n';
 
 type Props = {

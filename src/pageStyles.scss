@@ -1,15 +1,19 @@
 @import './helpers/sass/theme.scss';
 @import './helpers/sass/variables.scss';
+@import './helpers/sass/mixins.scss';
 
 // Index
 .helloWorld {
+  @include mobile {
+    background-color: transparent;
+  }
   background-color: $standard;
-  color: $greenHarlequin;
+  color: $silverTree;
   font-family: 'Inconsolata', monospace;
   position: relative;
   width: 6.5em;
   margin: 0 4vw 0 auto;
-  border-right: 2px solid $greenHarlequin;
+  border-right: 2px solid $silverTree;
   font-size: 180%;
   text-align: left;
   white-space: nowrap;
@@ -28,6 +32,9 @@
 }
 
 .oldComputer {
+  @include mobile {
+    background-image: linear-gradient(to bottom right, rgba(255,0,0,0), $black 70%);    
+  }
   width: 55em;
   padding: 0 12px;
   display: flex;
@@ -46,7 +53,7 @@
 }
 
 @keyframes blinkTextCursor {
-  from{border-right-color: $greenHarlequin;}
+  from{border-right-color: $silverTree;}
   to{border-right-color: transparent;}
 }
 
@@ -99,11 +106,15 @@
 }
 
 .seeMoreContainer {
+  @include mobile {
+    top: 78%;
+    left: 38%;
+  }
   display: block;
   width: 100px;
   height: 100px;  
   position: absolute;
-  top: 85%;
+  top: 80%;
   left: 50%;
   @include arrow-transitions(0deg);
   
@@ -134,7 +145,7 @@
     display: block;
     position: absolute;
     transform-origin: bottom right;
-    background: $greenHarlequin;
+    background: $silverTree;
     width: 50px;
     height: 4px;
     border-radius: 10px;
@@ -154,4 +165,9 @@
       animation-delay: $i * 0.25s;
     }
   }
+}
+
+.tagCloud {
+  width: 40vw;
+  margin: 0 30vw;
 }

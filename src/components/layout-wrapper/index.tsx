@@ -1,8 +1,8 @@
 import React from 'react';
 
 // Components
-import Header from '../Header';
-import Footer from '../Footer';
+import Header from '../header-container';
+import Footer from '../footer-container';
 
 // Assets
 // @ts-ignore

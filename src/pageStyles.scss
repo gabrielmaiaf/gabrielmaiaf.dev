@@ -168,6 +168,14 @@
 }
 
 .tagCloud {
+  @include mobile {
+    width: 60vw;
+    margin: 0 20vw 10vh;
+  }
   width: 40vw;
   margin: 0 30vw;
+}
+
+.descriptionWrapper {
+  margin: 0 5vw;
 }

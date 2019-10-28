@@ -45,6 +45,7 @@ function ContactForm (props: Props) {
       data-netlify="true"
       netlify-honeypot="bot-field"
       onSubmit={handleSubmit}
+      name="contact"
     >
       <p className={StyleContact.title}>
         <label>

@@ -1,6 +1,5 @@
 import React, { Fragment, ReactNode } from 'react';
 import Link from 'next/link';
-// @ts-ignore
 import Fade from 'react-reveal/Fade';
 import { Link as ScrollLink } from 'react-scroll';
 
@@ -10,9 +9,7 @@ import LayoutWrapper from '../src/components/layout-wrapper';
 import { withTranslation } from '../src/helpers/i18n';
 
 // Assets
-// @ts-ignore
 import ProfilePic from '../static/images/IMG_20190813_230827_552_2.jpg';
-// @ts-ignore
 import PageStyles from '../src/pageStyles.scss';
 
 type Props = {

@@ -65,7 +65,8 @@
   },
   "include": [
     "src/**/*.*",
-    "pages/*.*"
+    "pages/*.*",
+    "types/declaration.d.ts"
   ],
   "exclude": [
     "./node_modules/*",

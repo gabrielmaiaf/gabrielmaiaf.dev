@@ -1,6 +1,6 @@
 import React from 'react';
 
-// @ts-ignore
+// Assets
 import StyleCard from './style.scss';
 
 type Props = {

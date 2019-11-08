@@ -1,8 +1,9 @@
 import React from 'react';
 
+// Helpers
 import { i18n, Link, withTranslation } from '../../helpers/i18n';
 
-// @ts-ignore
+// Assets
 import StyleHeader from './style.scss';
 
 function Header (props: any) {

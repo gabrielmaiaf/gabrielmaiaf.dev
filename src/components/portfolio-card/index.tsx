@@ -20,10 +20,10 @@ function PortfolioCard(props: Props) {
     >
       <img src={props.image} alt={props.imageAlt} />
       <div className={PortfolioCardStyle.cardTitleContainer}>
-        <p>{props.title}</p> <p>{props.year}</p>
+        <p className={PortfolioCardStyle.title}>{props.title}</p> <p className={PortfolioCardStyle.year}>{props.year}</p>
       </div>
-      <p>{props.description}</p>
-      <a href={props.link} target="_blank">
+      <p className={PortfolioCardStyle.description}>{props.description}</p>
+      <a href={props.link} target="_blank" className={PortfolioCardStyle.button}>
         {props.buttonTranslation}
       </a>
     </div>

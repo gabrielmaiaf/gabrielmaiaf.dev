@@ -8,10 +8,48 @@
     border: 1px solid $primaryBorder;
     border-radius: 4px;
   }
+
+  p {
+    margin: 0;
+  }
 }
 
 .cardTitleContainer {
   display: flex;
   flex-direction: row;
+  vertical-align: middle;
   justify-content: space-evenly;
+  margin: 5px 0;
+}
+
+.title {
+  padding: 3px 0;
+  font-weight: bold;
+}
+
+.year {
+  background: $primaryGradient1;
+  padding: 3px 9px;
+  border-radius: 14px;
+  color: $standardBackground;
+}
+
+.description {
+  font-size: 14px;
+}
+
+.button {
+  border-radius: 23px;
+  margin-top: 20px;
+  width: 90px;
+  display: block;
+  margin: {
+    top: 20px;
+    left: auto;
+    right: auto;
+  }
+  text-decoration: none;
+  color: $standardBackground;
+  background: $primaryGradient1;
+  padding: 10px 20px;
 }

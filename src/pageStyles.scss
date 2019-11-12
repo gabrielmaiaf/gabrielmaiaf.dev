@@ -179,3 +179,11 @@
 .descriptionWrapper {
   margin: 0 5vw;
 }
+
+.portfolioWrapper {
+  @include mobile {
+    flex-direction: column;
+  }
+  display: flex;
+  justify-content: space-evenly;
+}

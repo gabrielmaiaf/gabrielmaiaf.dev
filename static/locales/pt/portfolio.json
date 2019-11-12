@@ -1,4 +1,23 @@
 {
   "portfolio-title": "Portfólio",
-  "button-visit-site": "Ir ao site"
+  "button-visit-site": "Ir ao site",
+  "button-visit-store": "Ir a google play",
+  "wakecup": {
+    "title": "Wake Cup Digital Marketing",
+    "site": "https://wakecup.github.io/",
+    "description": "Site para companhia de marketing digital situada em São Paulo, Brasil",
+    "year": 2017
+  },
+  "tudus": {
+    "title": "Tudus",
+    "site": "https://www.tudus.com.br/",
+    "description": "Site de venda de ingressos de teatros, eventos e shows do Brasil",
+    "year": 2019
+  },
+  "tudus-app": {
+    "title": "Tudus",
+    "site": "https://play.google.com/store/apps/details?id=br.com.tudus&hl=pt_BR",
+    "description": "Aplicativo do site Tudus, feito em React Native (a partir da versão 3)",
+    "year": 2019
+  }
 }

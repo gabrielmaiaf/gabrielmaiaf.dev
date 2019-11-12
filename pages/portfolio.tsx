@@ -8,16 +8,24 @@ import { withTranslation } from '../src/helpers/i18n';
 
 // Images
 import WakeCupImg from '../static/images/wakecup_2019.jpg';
+import TudusImg from '../static/images/tudus_2019.jpg';
+import TudusAppImg from '../static/images/Tudus-app.jpg';
+
+// Assets
+import PageStyles from '../src/pageStyles.scss';
 
 type Props = {
   t: (arg0: string) => string;
 }
 
 function Contact(props: Props) {
-  const renderPortfolio = (title: string, link: string, description: string, year: string, image: string) => {
+  const renderPortfolio = (title: string, link: string, description: string, year: string, image: string, target = 'web') => {
+    let translation = props.t('portfolio:button-visit-site');
+    if (target === 'android')
+      translation = props.t('portfolio:button-visit-store');
     return (
       <PortfolioCard
-        buttonTranslation={props.t('portfolio:button-visit-site')}
+        buttonTranslation={translation}
         description={description}
         image={image}
         imageAlt={title}
@@ -37,7 +45,9 @@ function Contact(props: Props) {
         <h2>
           {props.t('portfolio')}
         </h2>
-        <div>
+        <div
+          className={PageStyles.portfolioWrapper}
+        >
           {renderPortfolio(
             props.t('portfolio:wakecup.title'),
             props.t('portfolio:wakecup.site'),
@@ -45,6 +55,30 @@ function Contact(props: Props) {
             props.t('portfolio:wakecup.year'),
             WakeCupImg,
           )}
+        </div>
+        <div>
+          <h3>
+            {props.t('portfolio:portfolio-worked-together')}
+          </h3>
+          <div
+            className={PageStyles.portfolioWrapper}
+          >
+            {renderPortfolio(
+              props.t('portfolio:tudus.title'),
+              props.t('portfolio:tudus.site'),
+              props.t('portfolio:tudus.description'),
+              props.t('portfolio:tudus.year'),
+              TudusImg,
+            )}
+            {renderPortfolio(
+              props.t('portfolio:tudus-app.title'),
+              props.t('portfolio:tudus-app.site'),
+              props.t('portfolio:tudus-app.description'),
+              props.t('portfolio:tudus-app.year'),
+              TudusAppImg,
+              'android'
+            )}
+          </div>
         </div>
       </LayoutWrapper>
     </Fragment>

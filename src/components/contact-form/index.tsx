@@ -1,8 +1,9 @@
 import React, { ReactNode, useState } from 'react';
 
+// Helpers
 import { withTranslation } from '../../helpers/i18n';
 
-// @ts-ignore
+// Assets
 import StyleContact from './style.scss';
 
 type Props = {

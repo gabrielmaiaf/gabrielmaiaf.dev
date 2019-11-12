@@ -1,7 +1,6 @@
 import React, { Fragment, ReactNode } from 'react';
 // @ts-ignore
 import { TagCloud } from 'react-tagcloud';
-// @ts-ignore
 import Fade from 'react-reveal/Fade';
 
 // Components
@@ -9,7 +8,6 @@ import HeadComponent from '../src/components/head-component';
 import LayoutWrapper from '../src/components/layout-wrapper';
 import { withTranslation } from '../src/helpers/i18n';
 
-// @ts-ignore
 import PageStyles from '../src/pageStyles.scss';
 
 type CloudData = {

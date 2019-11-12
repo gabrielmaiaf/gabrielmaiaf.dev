@@ -1,0 +1,24 @@
+{
+  "portfolio-title": "Portfolio",
+  "button-visit-site": "Visit site",
+  "button-visit-store": "Go to Google Play",
+  "portfolio-worked-together": "Some projects that I collaborated",
+  "wakecup": {
+    "title": "Wake Cup Digital Marketing",
+    "site": "https://wakecup.github.io/",
+    "description": "Website for a digital marketing company located in São Paulo, Brazil",
+    "year": 2017
+  },
+  "tudus": {
+    "title": "Tudus Website",
+    "site": "https://www.tudus.com.br/",
+    "description": "Ticket sales website for theaters, events and concerts in Brazil",
+    "year": 2019
+  },
+  "tudus-app": {
+    "title": "Tudus",
+    "site": "https://play.google.com/store/apps/details?id=br.com.tudus&hl=pt_BR",
+    "description": "Tudus app, made in React Native (since release 3.0)",
+    "year": 2019
+  }
+}

@@ -1,9 +1,7 @@
 import React, { PureComponent } from 'react';
-// @ts-ignore
 import Fade from 'react-reveal/Fade';
 
 // Assets
-// @ts-ignore
 import StylesFooter from './style.scss';
 
 class Footer extends PureComponent {

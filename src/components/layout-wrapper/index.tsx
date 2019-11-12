@@ -5,7 +5,6 @@ import Header from '../header-container';
 import Footer from '../footer-container';
 
 // Assets
-// @ts-ignore
 import Style from './style.scss';
 
 interface Props {

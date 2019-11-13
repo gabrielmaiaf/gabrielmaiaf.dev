@@ -18,7 +18,7 @@ function Contact(props: Props) {
       />
       <LayoutWrapper>
         <h2>
-          {props.t('contact:contact-title')}
+          {props.t('contact-title')}
         </h2>
         <ContactForm />
       </LayoutWrapper>
@@ -27,7 +27,7 @@ function Contact(props: Props) {
 }
 
 Contact.getInitialProps = async() => ({
-  namespacesRequired: ['common', 'contact'],
+  namespacesRequired: ['contact', 'common'],
 })
 
-export default withTranslation(['common'])(Contact);
+export default withTranslation(['contact', 'common'])(Contact);

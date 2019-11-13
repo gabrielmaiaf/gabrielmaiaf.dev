@@ -39,42 +39,42 @@ function Contact(props: Props) {
   return (
     <Fragment>
       <HeadComponent
-        title={`${props.t('common:title.main')} - ${props.t('portfolio:portfolio-title')}`}
+        title={`${props.t('common:title.main')} - ${props.t('portfolio-title')}`}
       />
       <LayoutWrapper>
         <h2>
-          {props.t('portfolio')}
+          {props.t('portfolio-title')}
         </h2>
         <div
           className={PageStyles.portfolioWrapper}
         >
           {renderPortfolio(
-            props.t('portfolio:wakecup.title'),
-            props.t('portfolio:wakecup.site'),
-            props.t('portfolio:wakecup.description'),
-            props.t('portfolio:wakecup.year'),
+            props.t('wakecup.title'),
+            props.t('wakecup.site'),
+            props.t('wakecup.description'),
+            props.t('wakecup.year'),
             WakeCupImg,
           )}
         </div>
         <div>
           <h3>
-            {props.t('portfolio:portfolio-worked-together')}
+            {props.t('portfolio-worked-together')}
           </h3>
           <div
             className={PageStyles.portfolioWrapper}
           >
             {renderPortfolio(
-              props.t('portfolio:tudus.title'),
-              props.t('portfolio:tudus.site'),
-              props.t('portfolio:tudus.description'),
-              props.t('portfolio:tudus.year'),
+              props.t('tudus.title'),
+              props.t('tudus.site'),
+              props.t('tudus.description'),
+              props.t('tudus.year'),
               TudusImg,
             )}
             {renderPortfolio(
-              props.t('portfolio:tudus-app.title'),
-              props.t('portfolio:tudus-app.site'),
-              props.t('portfolio:tudus-app.description'),
-              props.t('portfolio:tudus-app.year'),
+              props.t('tudus-app.title'),
+              props.t('tudus-app.site'),
+              props.t('tudus-app.description'),
+              props.t('tudus-app.year'),
               TudusAppImg,
               'android'
             )}
@@ -86,7 +86,7 @@ function Contact(props: Props) {
 }
 
 Contact.getInitialProps = async() => ({
-  namespacesRequired: ['common', 'portfolio'],
+  namespacesRequired: ['portfolio', 'common'],
 })
 
-export default withTranslation(['common', 'portfolio'])(Contact);
+export default withTranslation(['portfolio', 'common'])(Contact);

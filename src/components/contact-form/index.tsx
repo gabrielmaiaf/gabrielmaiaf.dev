@@ -50,7 +50,7 @@ function ContactForm (props: Props) {
     >
       <p className={StyleContact.title}>
         <label>
-          {props.t('fields.title')}: <input type="text" name="bot-field" value={botField} onChange={e => setBotField(e.target.value)} />
+          {props.t('contact:fields.title')}: <input type="text" name="bot-field" value={botField} onChange={e => setBotField(e.target.value)} />
         </label>
       </p>
       <div
@@ -60,7 +60,7 @@ function ContactForm (props: Props) {
           className={StyleContact.field}
         >
           <label>
-            {props.t('fields.name')}: 
+            {props.t('contact:fields.name')}: 
           </label>
           <input type="text" name="name" value={name} onChange={e => setName(e.target.value)} />
         </p>
@@ -68,7 +68,7 @@ function ContactForm (props: Props) {
           className={StyleContact.field}
         >
           <label>
-            {props.t('fields.mail')}:
+            {props.t('contact:fields.mail')}:
           </label>
           <input type="email" name="email" value={email} onChange={e => setMail(e.target.value)} />
         </p>
@@ -77,14 +77,14 @@ function ContactForm (props: Props) {
         className={StyleContact.field}
       >
         <label>
-          {props.t('fields.message')}:
+          {props.t('contact:fields.message')}:
         </label>
         <textarea
           name="message" value={message} onChange={e => setMessage(e.target.value)} rows={5}
         />
       </p>
       <p>
-        <button type="submit">{props.t('fields.button')}</button>
+        <button type="submit">{props.t('contact:fields.button')}</button>
       </p>
     </form>
   );

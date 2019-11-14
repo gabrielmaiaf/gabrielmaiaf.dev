@@ -1,5 +1,6 @@
 const withSass = require('@zeit/next-sass');
 const withImages = require('next-images');
+const languages = ['en', 'pt'];
 
 const nextConfig = {
   publicRuntimeConfig: {
@@ -26,12 +27,25 @@ const nextConfig = {
   }
 };
 
-module.exports = withImages(withSass({
+module.exports = (phase, { defaultConfig }) => withImages(withSass({
     cssModules: true,
     cssLoaderOptions: {
       importLoaders: 1,
       localIdentName: "[local]__[hash:base64:5]"
-    }
+    },
+    exportPathMap: (defaultConfig) => {
+      const pathMap = {};
+
+      Object.entries(defaultConfig).forEach(([key, value]) => {
+        pathMap[key] = value;
+
+        languages.forEach(lang => {
+          pathMap[`/${lang}${key}`] = { ...value, query: { lang }};
+        });
+      });
+
+      return pathMap;
+    },
   }),
   nextConfig
 );

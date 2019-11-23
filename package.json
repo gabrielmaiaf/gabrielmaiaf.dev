@@ -26,6 +26,8 @@
     "@types/node-sass": "^4.11.0",
     "@types/react": "^16.9.2",
     "@types/react-scroll": "^1.5.4",
+    "@typescript-eslint/eslint-plugin": "^2.2.0",
+    "@typescript-eslint/parser": "^2.2.0",
     "@zeit/next-sass": "^1.0.1",
     "@zeit/next-typescript": "^1.1.1",
     "babel-loader": "^8.0.6",
@@ -40,11 +42,7 @@
     "react-reveal": "^1.2.2",
     "react-scroll": "^1.7.14",
     "react-tagcloud": "^2.0.0",
-    "webpack": "^4.39.3"
-  },
-  "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^2.2.0",
-    "@typescript-eslint/parser": "^2.2.0",
+    "webpack": "^4.39.3",
     "typescript": "^3.7.2"
   }
 }

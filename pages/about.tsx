@@ -36,6 +36,7 @@ function About(props: Props) {
     { value: 'LESS', count: 15 },
     { value: 'JSS', count: 21 },
     { value: 'Linux', count: 23 },
+    { value: 'TypeScript', count: 20 },
   ];
 
   return (

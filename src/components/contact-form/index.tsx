@@ -51,13 +51,14 @@ const StyleContact = {
   
     
   
-  fieldWrapper: {
-  //   @include mobile {
-  //     flex-direction: column;
-  //   }
-    display: 'flex',
-    // flexDirection: "row",
-  },
+  // fieldWrapper: {
+  // //   @include mobile {
+  // //     flex-direction: column;
+  // //   }
+  //   display: 'flex',
+  //   flexWrap: 'wrap',
+  //   // flexDirection: "row",
+  // },
   
 };
 
@@ -110,7 +111,7 @@ function ContactForm (props: Props) {
         </label>
       </p>
       <div
-        style={StyleContact.fieldWrapper}
+        style={{ display: 'flex', flexWrap: 'wrap' }}
       >
         <p
           style={StyleContact.field}

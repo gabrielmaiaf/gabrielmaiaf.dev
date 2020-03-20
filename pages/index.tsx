@@ -9,7 +9,7 @@ import LayoutWrapper from '../src/components/layout-wrapper';
 import { withTranslation } from '../src/helpers/i18n';
 
 // Assets
-import ProfilePic from '../static/images/IMG_20190813_230827_552_2.jpg';
+import ProfilePic from '../public/images/IMG_20190813_230827_552_2.jpg';
 import PageStyles from '../src/pageStyles.scss';
 
 type Props = {

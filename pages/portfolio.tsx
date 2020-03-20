@@ -7,9 +7,9 @@ import PortfolioCard from '../src/components/portfolio-card';
 import { withTranslation } from '../src/helpers/i18n';
 
 // Images
-import WakeCupImg from '../static/images/wakecup_2019.jpg';
-import TudusImg from '../static/images/tudus_2019.jpg';
-import TudusAppImg from '../static/images/Tudus-app.jpg';
+import WakeCupImg from '../public/images/wakecup_2019.jpg';
+import TudusImg from '../public/images/tudus_2019.jpg';
+import TudusAppImg from '../public/images/Tudus-app.jpg';
 
 // Assets
 import PageStyles from '../src/pageStyles.scss';

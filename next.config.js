@@ -1,6 +1,7 @@
 const withSass = require('@zeit/next-sass');
 const withImages = require('next-images');
 const languages = ['en', 'pt'];
+const prod = process.env.NODE_ENV === 'production';
 
 const nextConfig = {
   publicRuntimeConfig: {
@@ -31,7 +32,7 @@ module.exports = (phase, { defaultConfig }) => withImages(withSass({
     cssModules: true,
     cssLoaderOptions: {
       importLoaders: 1,
-      localIdentName: "[local]__[hash:base64:5]"
+      localIdentName: !prod ? "[path]_[name]__[local]" : "[local]__[hash:base64:5]"
     },
     exportPathMap: (defaultConfig) => {
       const pathMap = {};

@@ -14,9 +14,11 @@
   margin-right: 15px;
   text-decoration: none;
   font-family: 'Open Sans', sans-serif;
+  cursor: pointer;
 }
 
 .activeLink {
+  cursor: pointer;
   color: $primaryContrast;
   font-weight: bolder;
   margin-right: 15px;

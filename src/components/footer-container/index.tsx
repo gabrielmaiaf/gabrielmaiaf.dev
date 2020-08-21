@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react';
 import Fade from 'react-reveal/Fade';
 
 // Assets
-import StylesFooter from './style.scss';
+import StylesFooter from './style.module.scss';
 
 class Footer extends PureComponent {
   public render() {

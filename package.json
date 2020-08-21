@@ -4,11 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "node server/server.js",
+    "dev": "next",
     "build": "next build",
-    "start": "node server/server.js",
-    "export": "next export",
-    "deploy": "npm run build && npm run export"
+    "start": "next start"
   },
   "repository": {
     "type": "git",
@@ -21,28 +19,27 @@
   },
   "homepage": "https://gabrielmaia.dev",
   "dependencies": {
-    "@babel/core": "^7.9.0",
-    "@babel/preset-typescript": "^7.9.0",
-    "@types/node-sass": "^4.11.0",
-    "@types/react": "^16.9.25",
-    "@types/react-scroll": "^1.5.4",
-    "@typescript-eslint/eslint-plugin": "^2.24.0",
-    "@typescript-eslint/parser": "^2.24.0",
-    "@zeit/next-sass": "^1.0.1",
-    "@zeit/next-typescript": "^1.1.1",
+    "@babel/core": "^7.11.4",
+    "@babel/preset-typescript": "^7.10.4",
     "babel-loader": "^8.1.0",
-    "express": "^4.17.1",
-    "next": "^9.3.1",
-    "next-compose-plugins": "^2.2.0",
-    "next-i18next": "^4.2.1",
-    "next-images": "^1.3.1",
-    "node-sass": "^4.13.1",
+    "next": "^9.5.2",
+    "next-i18next": "^6.0.2",
+    "next-images": "^1.4.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-reveal": "^1.2.2",
     "react-scroll": "^1.7.16",
     "react-tagcloud": "^2.0.0",
-    "webpack": "^4.42.0",
-    "typescript": "^3.8.3"
+    "sass": "^1.26.10",
+    "webpack": "^4.42.0"
+  },
+  "devDependencies": {
+    "@types/react": "^16.9.25",
+    "@types/react-scroll": "^1.5.4",
+    "@typescript-eslint/eslint-plugin": "^3.9.1",
+    "@typescript-eslint/parser": "^3.9.1",
+    "autoprefixer": "^9.8.6",
+    "gray-matter": "^4.0.2",
+    "typescript": "^4.0.2"
   }
 }

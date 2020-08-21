@@ -8,9 +8,6 @@ class MyDocument extends Document {
     return (
       <Html lang={i18n.language}>
         <Head>
-          <link rel="shortcut icon" href="../public/favicon.ico" />
-          <meta name="viewport" content="width=device-width, initial-scale=1" />
-          <meta charSet="utf-8" />
           <meta name="theme-color" content="#172237" />
           <meta name="apple-mobile-web-app-capable" content="yes" />
           <meta name="apple-mobile-web-app-status-bar-style" content="black-transparent" />
@@ -21,7 +18,6 @@ class MyDocument extends Document {
               margin: 0;
             }
           `}} />
-          <script src="https://kit.fontawesome.com/11514f10c3.js" />
         </Head>
         <body>
           <Main />

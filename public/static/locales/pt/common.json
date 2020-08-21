@@ -7,11 +7,10 @@
   "contact": "Contato",
   "home": "Início",
   "portfolio": "Portfólio",
-  "error": {
-    "with-status": "Aconteceu um erro",
-    "without-status": "Aconteceu um erro"
-  },
+  "error-with-status": "Um {{statusCode}} erro aconteceu no servidor",
+  "error-without-status": "Um erro aconteceu no servidor",
   "title": {
     "main": "Gabriel Maia"
-  }
+  },
+  "404page": "404 - Nenhum donut para você"
 }

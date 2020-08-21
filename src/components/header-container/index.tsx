@@ -4,7 +4,7 @@ import React from 'react';
 import { i18n, Link, withTranslation } from '../../helpers/i18n';
 
 // Assets
-import StyleHeader from './style.scss';
+import StyleHeader from './style.module.scss';
 
 function Header (props: any) {
   const handleLanguageChange = (text: string, current: string) => {

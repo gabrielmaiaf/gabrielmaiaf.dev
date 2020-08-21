@@ -8,7 +8,7 @@ import HeadComponent from '../src/components/head-component';
 import LayoutWrapper from '../src/components/layout-wrapper';
 import { withTranslation } from '../src/helpers/i18n';
 
-import PageStyles from '../src/pageStyles.scss';
+import PageStyles from '../src/pageStyles.module.scss';
 
 type CloudData = {
   value: string;

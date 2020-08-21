@@ -1,16 +1,15 @@
 import React, { Fragment, ReactNode } from 'react';
-import Link from 'next/link';
 import Fade from 'react-reveal/Fade';
 import { Link as ScrollLink } from 'react-scroll';
 
 // Components
 import HeadComponent from '../src/components/head-component';
 import LayoutWrapper from '../src/components/layout-wrapper';
-import { withTranslation } from '../src/helpers/i18n';
+import { Link, withTranslation } from '../src/helpers/i18n';
 
 // Assets
 import ProfilePic from '../public/images/IMG_20190813_230827_552_2.jpg';
-import PageStyles from '../src/pageStyles.scss';
+import PageStyles from '../src/pageStyles.module.scss';
 
 type Props = {
   t: (translationKey: string) => ReactNode;

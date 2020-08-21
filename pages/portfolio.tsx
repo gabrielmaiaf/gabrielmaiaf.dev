@@ -12,13 +12,13 @@ import TudusImg from '../public/images/tudus_2019.jpg';
 import TudusAppImg from '../public/images/Tudus-app.jpg';
 
 // Assets
-import PageStyles from '../src/pageStyles.scss';
+import PageStyles from '../src/pageStyles.module.scss';
 
 type Props = {
   t: (arg0: string) => string;
 }
 
-function Contact(props: Props) {
+function Portfolio(props: Props) {
   const renderPortfolio = (title: string, link: string, description: string, year: string, image: string, target = 'web') => {
     let translation = props.t('portfolio:button-visit-site');
     if (target === 'android')
@@ -85,8 +85,8 @@ function Contact(props: Props) {
   );
 }
 
-Contact.getInitialProps = async() => ({
+Portfolio.getInitialProps = async() => ({
   namespacesRequired: ['portfolio', 'common'],
 })
 
-export default withTranslation(['portfolio', 'common'])(Contact);
+export default withTranslation(['portfolio', 'common'])(Portfolio);

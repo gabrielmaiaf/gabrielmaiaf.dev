@@ -5,7 +5,7 @@ import Header from '../header-container';
 import Footer from '../footer-container';
 
 // Assets
-import Style from './style.scss';
+import Style from './style.module.scss';
 
 interface Props {
   children: any;

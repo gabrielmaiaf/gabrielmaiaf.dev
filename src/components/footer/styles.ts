@@ -51,6 +51,12 @@ const FooterWrapper = styled.footer`
       opacity: 0.7;
     }
   }
+
+  .linksContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 `;
 
 export default FooterWrapper;

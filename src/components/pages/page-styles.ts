@@ -44,8 +44,8 @@ export const HomeStyles = styled.div`
   }
 
   .animTyping {
-    animation: ${typewriter} 4s steps(13) 1s 1 normal both,
-      ${blinkTextCursor} 800ms steps(13) infinite normal;
+    animation: ${typewriter} 4s steps(14) 1s 1 normal both,
+      ${blinkTextCursor} 800ms steps(14) infinite normal;
   }
 
   .presentationSection {
@@ -88,7 +88,7 @@ export const HomeStyles = styled.div`
   .seeMoreContainer {
     @media (max-width: 960px) {
       top: 78%;
-      left: 38%;
+      left: 52%;
     }
     display: block;
     width: 100px;

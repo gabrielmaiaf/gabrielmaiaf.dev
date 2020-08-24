@@ -8,21 +8,42 @@ const HeaderWrapper = styled.div`
   justify-content: space-between;
   align-items: center;
 
+  .language,
   .link {
     color: ${props => props.theme.primaryContrast};
     margin-right: 15px;
     text-decoration: none;
     font-family: 'Open Sans', sans-serif;
-    cursor: pointer;    
+    cursor: pointer;
   }
 
   .activeLink {
-    cursor: pointer;
-    color: ${props => props.theme.primaryContrast};
     font-weight: bolder;
-    margin-right: 15px;
-    text-decoration: none;
-    font-family: 'Open Sans', sans-serif;
+  }
+
+  .language {
+    padding: 2px 4px;
+  }
+
+  .activeLanguage {
+    font-weight: bolder;
+    border: 1px solid;
+    border-radius: 3px;
+  }
+
+  .languageWrapper {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+    a:last-child {
+      margin-right: 0;
+    }
+
+    li {
+      text-transform: uppercase;
+    }
   }
 `;
 

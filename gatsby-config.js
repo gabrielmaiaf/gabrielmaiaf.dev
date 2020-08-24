@@ -1,3 +1,5 @@
+const languages = require('./src/data/languages');
+
 /**
  * Configure your Gatsby site with this file.
  *
@@ -11,24 +13,26 @@ module.exports = {
     titleTemplate: '%s · Gabriel Maia',
     description: 'Gabriel Maia Francisco, front-end developer',
     url: 'https://gabrielmaia.dev',
-    twitterUsername: '@_bielmaia'
+    twitterUsername: '@_bielmaia',
+    languages
   },
   plugins: [
     'gatsby-plugin-styled-components',
     'gatsby-plugin-typescript',
     'gatsby-plugin-fontawesome-css',
-    `gatsby-plugin-sharp`,
-    `gatsby-transformer-sharp`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/src/data/`,
+        name: 'images',
+        path: `${__dirname}/src/data/images`,
       },
     },
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
     {
       resolve: 'gatsby-plugin-i18n',
       options: {
-        langKeyDefault: 'en',
+        langKeyDefault: languages.defaultLangKey,
         useLangKeyLayout: true,
         prefixDefault: false
       }

@@ -54,9 +54,9 @@ const HomePage = ({ i18n }: Props) => {
           <div
             className="presentationSection"
           >
-            <div id="content" style={{ width: 300 }}>
+            <div id="content">
               <Img
-                fluid={file.childImageSharp.fixed}
+                fixed={file.childImageSharp.fixed}
                 alt="My picture"
               />
             </div>
@@ -89,9 +89,9 @@ export default HomePage;
 
 export const query = graphql`
   query ImageQuery {
-    file(relativePath: { eq: "images/gabrielmaia.jpg" }) {
+    file(relativePath: { eq: "gabrielmaia.jpg" }) {
       childImageSharp {
-        fixed(width: 270) {
+        fixed(width: 270, quality: 80) {
           ...GatsbyImageSharpFixed
         }
       }

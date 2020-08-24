@@ -11,6 +11,16 @@ const Layout = styled.div`
 `;
 
 export const GlobalStyle = createGlobalStyle`
+  /* @font-face {
+    font-family: 'Open Sans';
+    src: url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+  }
+
+  @font-face {
+    font-family: 'Inconsolata';
+    src: url('https://fonts.googleapis.com/css?family=Inconsolata&display=swap');
+  } */
+
   body {
     margin: 0;
   }

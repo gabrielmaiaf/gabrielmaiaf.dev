@@ -6,7 +6,7 @@ export const typewriter = keyframes`
   }
   
   to {
-    width: 6.5em;
+    width: 7.1em;
   }
 `;
 

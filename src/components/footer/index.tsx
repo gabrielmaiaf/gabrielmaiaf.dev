@@ -11,7 +11,7 @@ const Footer = () => (
       <div className="footerTitle">
         Links
       </div>
-      <div>
+      <div className="linksContainer">
         <a
           href="https://www.linkedin.com/in/gabrielmaiaf"
           target="_blank"

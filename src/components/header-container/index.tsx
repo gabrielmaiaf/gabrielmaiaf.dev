@@ -1,60 +1,33 @@
 import React from 'react';
+import { Link } from 'gatsby';
 
-// Helpers
-import { i18n, Link, withTranslation } from '../../helpers/i18n';
+import HeaderWrapper from './styles';
 
-// Assets
-import StyleHeader from './style.module.scss';
-
-function Header (props: any) {
-  const handleLanguageChange = (text: string, current: string) => {
-    if (text === 'en' && current === 'en')
-      return null;
-    
-    if (text === 'pt' && current === 'pt')
-      return null;
-    
-    return i18n.changeLanguage(text);
-  }
-
+function Header() {
   return (
-    <div
-      className={StyleHeader.headerContainer}
-    >
-      <div
-        className={StyleHeader.linkWrapper}
-      >
-        <Link href="/">
-          <a className={StyleHeader.link}>{props.t('home')}</a>
+    <HeaderWrapper>
+      <div>
+        <Link
+          to="/"
+          className="link"
+          activeClassName="activeLink"
+        >
+          Home
         </Link>
-        <Link href="/about">
-          <a className={StyleHeader.link}>{props.t('about')}</a>
-        </Link>
-        <Link href="/portfolio">
-          <a className={StyleHeader.link}>{props.t('portfolio')}</a>
-        </Link>
-        <Link href="/contact">
-          <a className={StyleHeader.link}>{props.t('contact')}</a>
+        <Link
+          to="/contact"
+          className="link"
+          activeClassName="activeLink"
+        >
+          Contact
         </Link>
       </div>
-      <div
-        className={StyleHeader.changeLocaleContainer}
-      >
-        <a
-          className={i18n.language === 'en' ? StyleHeader.activeLink : StyleHeader.link}
-          onClick={() => handleLanguageChange('en', i18n.language)}
-        >
-          {props.t('locale.en')}
-        </a>
-        <a
-          className={i18n.language === 'pt' ? StyleHeader.activeLink : StyleHeader.link}
-          onClick={() => handleLanguageChange('pt', i18n.language)}
-        >
-          {props.t('locale.pt')}
-        </a>
+      <div>
+        <span>EN</span>
+        <span>PT</span>
       </div>
-    </div>
-  )
-};
+    </HeaderWrapper>
+  );
+}
 
-export default withTranslation('common')(Header);
+export default Header;

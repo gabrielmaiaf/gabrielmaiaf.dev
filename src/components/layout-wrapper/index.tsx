@@ -1,26 +1,23 @@
-import React from 'react';
+import React, { FC } from 'react'
+import { ThemeProvider } from 'styled-components';
 
-// Components
 import Header from '../header-container';
-import Footer from '../footer-container';
+import Footer from '../footer';
 
-// Assets
-import Style from './style.module.scss';
+import Layout, { GlobalStyle } from './styles';
+import Theme from '../../constants/theme';
 
-interface Props {
-  children: any;
-}
-
-const LayoutWrapper = (props: Props) => (
-  <div className={Style.layoutWrapper}>
-    <Header />
-    <div
-      className={Style.layoutPageContainer}
-    >
-      {props.children}
-    </div>
-    <Footer />
-  </div>
-);
+const LayoutWrapper: FC = ({ children }) => (
+  <ThemeProvider theme={Theme}>
+    <GlobalStyle />
+    <Layout>
+      <Header />
+      <div className="layoutPageContainer">
+        {children}
+      </div>
+      <Footer />
+    </Layout>
+  </ThemeProvider>
+)
 
 export default LayoutWrapper;

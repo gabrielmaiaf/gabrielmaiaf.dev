@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 import { Link } from 'gatsby';
 
 // Assets
@@ -16,7 +16,7 @@ interface Props {
   currentLang: 'en' | 'pt';
 }
 
-function Header({ langs, currentLang }: Props) {
+function Header({ langs, currentLang }: Props): ReactElement {
   const selectLanguage = () => {
     const links = langs.map(lang => (
       <Link
@@ -43,9 +43,9 @@ function Header({ langs, currentLang }: Props) {
         <Link to="/" className="link" activeClassName="activeLink">
           {text(currentLang, 'home')}
         </Link>
-        <Link to="/blog" className="link" activeClassName="activeLink">
+        {/* <Link to="/blog" className="link" activeClassName="activeLink">
           {text(currentLang, 'blog')}
-        </Link>
+        </Link> */}
         <Link to="/contact" className="link" activeClassName="activeLink">
           {text(currentLang, 'contact')}
         </Link>

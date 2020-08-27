@@ -11,7 +11,7 @@ const i18n = {
       <h2>Interested in hire me or build a project together?</h2>
       <p>
         If you have an application interested in developing or a problem that
-        you need to be solved, let`&rsquo;`s talk!
+        you need to be solved, let&rsquo;s talk!
       </p>
     </>
   ),

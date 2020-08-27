@@ -10,8 +10,8 @@ const Theme = {
   footer: '#3E485F',
   brands: {
     linkedin: '#0077B5',
-    gitlab: '#FC6D27'
+    gitlab: '#FC6D27',
   },
-}
+};
 
 export default Theme;

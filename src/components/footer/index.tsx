@@ -1,6 +1,10 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faLinkedin, faGithub, faGitlab } from '@fortawesome/free-brands-svg-icons';
+import {
+  faLinkedin,
+  faGithub,
+  faGitlab,
+} from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 
 import FooterWrapper from './styles';
@@ -8,9 +12,7 @@ import FooterWrapper from './styles';
 const Footer = () => (
   <FooterWrapper>
     <div className="footerWrapper">
-      <div className="footerTitle">
-        Links
-      </div>
+      <div className="footerTitle">Links</div>
       <div className="linksContainer">
         <a
           href="https://www.linkedin.com/in/gabrielmaiaf"
@@ -36,16 +38,11 @@ const Footer = () => (
         >
           <FontAwesomeIcon icon={faGitlab} />
         </a>
-        <a
-          href="mailto:gabrielmaiaf@outlook.com"
-          className="mail"
-        >
+        <a href="mailto:gabrielmaiaf@outlook.com" className="mail">
           <FontAwesomeIcon icon={faEnvelope} />
         </a>
       </div>
-      <div>
-        Copyright © 2020 Gabriel Maia
-      </div>
+      <div>Copyright © 2020 Gabriel Maia</div>
     </div>
   </FooterWrapper>
 );

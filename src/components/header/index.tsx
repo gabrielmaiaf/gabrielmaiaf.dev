@@ -9,7 +9,7 @@ type GetLangItem = {
   langKey: string;
   selected: boolean;
   link: string;
-}
+};
 
 interface Props {
   langs: Array<GetLangItem>;
@@ -26,38 +26,27 @@ function Header({ langs, currentLang }: Props) {
         className="language"
         activeClassName="activeLanguage"
       >
-        <li>
-          {lang.langKey}
-        </li>
+        <li>{lang.langKey}</li>
       </Link>
     ));
 
-    return (
-      <ul className="languageWrapper">
-        {links}
-      </ul>
-    );
-  }
+    return <ul className="languageWrapper">{links}</ul>;
+  };
 
   const text = (lang: 'pt' | 'en', key: 'home' | 'contact' | 'blog') => {
     return HeaderText[lang][key];
-  }
+  };
 
   return (
     <HeaderWrapper>
       <div>
-        <Link
-          to="/"
-          className="link"
-          activeClassName="activeLink"
-        >
+        <Link to="/" className="link" activeClassName="activeLink">
           {text(currentLang, 'home')}
         </Link>
-        <Link
-          to="/contact"
-          className="link"
-          activeClassName="activeLink"
-        >
+        <Link to="/blog" className="link" activeClassName="activeLink">
+          {text(currentLang, 'blog')}
+        </Link>
+        <Link to="/contact" className="link" activeClassName="activeLink">
           {text(currentLang, 'contact')}
         </Link>
       </div>

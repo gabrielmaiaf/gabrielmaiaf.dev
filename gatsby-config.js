@@ -14,7 +14,8 @@ module.exports = {
     description: 'Gabriel Maia Francisco, front-end developer',
     url: 'https://gabrielmaia.dev',
     twitterUsername: '@_bielmaia',
-    languages
+    image: '/images/gabrielmaiaf.jpeg',
+    languages,
   },
   plugins: [
     'gatsby-plugin-styled-components',
@@ -27,18 +28,50 @@ module.exports = {
         path: `${__dirname}/src/data/images`,
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: 'markdown-pages',
+        path: `${__dirname}/src/pages`,
+      },
+    },
+    `gatsby-transformer-remark`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
+      resolve: 'gatsby-plugin-google-analytics',
+      options: {
+        trackingId: 'UA-152430923-1',
+      },
+    },
+    {
       resolve: 'gatsby-plugin-i18n',
       options: {
+        langKeyForNull: 'any',
         langKeyDefault: languages.defaultLangKey,
         useLangKeyLayout: true,
-        prefixDefault: false
-      }
+        prefixDefault: false,
+        markdownRemark: {
+          postPage: 'src/templates/blog-template.tsx',
+          query: `
+            {
+              allMarkdownRemark {
+                edges {
+                  node {
+                    fields {
+                      slug,
+                      langKey
+                    }
+                  }
+                }
+              }
+            }
+          `,
+        },
+      },
     },
     // Must be placed at the end
     'gatsby-plugin-offline',
     'gatsby-plugin-netlify',
   ],
-}
+};

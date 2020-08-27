@@ -2,13 +2,13 @@ const HeaderText = {
   en: {
     home: 'Home',
     blog: 'Blog',
-    contact: 'Contact'
+    contact: 'Contact',
   },
   pt: {
     home: 'Início',
     blog: 'Blog',
-    contact: 'Contato'
-  }
-}
+    contact: 'Contato',
+  },
+};
 
 export default HeaderText;

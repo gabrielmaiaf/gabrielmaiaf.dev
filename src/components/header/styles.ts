@@ -36,6 +36,7 @@ const HeaderWrapper = styled.div`
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+    margin: 0;
 
     a:last-child {
       margin-right: 0;

@@ -20,12 +20,12 @@ export const HomeStyles = styled.div`
       background-color: transparent;
     }
     background-color: ${props => props.theme.standard};
-    color: #66B58F;
+    color: #66b58f;
     font-family: 'Inconsolata', monospace;
     position: relative;
     width: 6.5em;
     margin: 0 4vw 0 auto;
-    border-right: 2px solid #66B58F;
+    border-right: 2px solid #66b58f;
     font-size: 180%;
     text-align: left;
     white-space: nowrap;
@@ -34,13 +34,17 @@ export const HomeStyles = styled.div`
 
   .oldComputer {
     @media (max-width: 860px) {
-      background-image: linear-gradient(to bottom right, rgba(255,0,0,0), #000 70%);    
+      background-image: linear-gradient(
+        to bottom right,
+        rgba(255, 0, 0, 0),
+        #000 70%
+      );
     }
     width: 55em;
     padding: 0 12px;
     display: flex;
     align-items: center;
-    background-image: linear-gradient(to right, rgba(255,0,0,0), #000 70%);
+    background-image: linear-gradient(to right, rgba(255, 0, 0, 0), #000 70%);
   }
 
   .animTyping {
@@ -92,7 +96,7 @@ export const HomeStyles = styled.div`
     }
     display: block;
     width: 100px;
-    height: 100px;  
+    height: 100px;
     position: absolute;
     top: 80%;
     left: 50%;
@@ -105,27 +109,27 @@ export const HomeStyles = styled.div`
         &::before {
           transform: translate(-18%, -50%) rotateZ(-30deg);
         }
-        
+
         &::after {
           transform: translate(-92%, -50%) rotateZ(30deg);
         }
-      } 
+      }
     }
   }
 
   .arrow {
     position: absolute;
     left: 50%;
-    transition: all .4s ease;
+    transition: all 0.4s ease;
 
     &::before,
     &::after {
-      transition: all .4s ease;
+      transition: all 0.4s ease;
       content: '';
       display: block;
       position: absolute;
       transform-origin: bottom right;
-      background: #66B58F;
+      background: #66b58f;
       width: 50px;
       height: 4px;
       border-radius: 10px;
@@ -139,23 +143,58 @@ export const HomeStyles = styled.div`
 
     &:nth-child(1) {
       opacity: calc(0.3 * 1);
-      top: calc(15px + (100% * 1/5));
-      animation: ${hello} .75s linear infinite;
+      top: calc(15px + (100% * 1 / 5));
+      animation: ${hello} 0.75s linear infinite;
       animation-delay: calc(1 * 0.25s);
     }
 
     &:nth-child(2) {
       opacity: calc(0.3 * 2);
-      top: calc(15px + (100% * 2/5));
-      animation: ${hello} .75s linear infinite;
+      top: calc(15px + (100% * 2 / 5));
+      animation: ${hello} 0.75s linear infinite;
       animation-delay: calc(2 * 0.25s);
     }
 
     &:nth-child(3) {
       opacity: calc(0.3 * 3);
-      top: calc(15px + (100% * 3/5));
-      animation: ${hello} .75s linear infinite;
+      top: calc(15px + (100% * 3 / 5));
+      animation: ${hello} 0.75s linear infinite;
       animation-delay: calc(3 * 0.25s);
     }
+  }
+`;
+
+export const BlogStyles = styled.div`
+  padding: 20px 25px 0;
+  background-color: ${props => props.theme.footer};
+  min-height: 71vh;
+
+  h1 {
+    margin-top: 0;
+  }
+
+  ul {
+    padding-left: 0;
+  }
+
+  li {
+    list-style: none;
+    text-align: start;
+  }
+
+  a {
+    color: ${props => props.theme.primaryContrast};
+    text-decoration: none;
+  }
+
+  header {
+    display: flex;
+    flex-direction: column;
+    font-size: 20px;
+  }
+
+  .time {
+    margin-top: 5px;
+    font-size: 14px;
   }
 `;

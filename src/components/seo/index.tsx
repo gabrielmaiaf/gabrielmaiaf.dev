@@ -1,18 +1,46 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 import { Helmet } from 'react-helmet';
 import { useStaticQuery, graphql } from 'gatsby';
 import { useLocation } from '@reach/router';
+import { getCurrentLangKey } from 'ptz-i18n';
 
 interface Props {
-  title?: string | null;
+  title?: string;
   description?: string | null;
   image?: string | null;
   article?: boolean;
 }
 
-const SEO = ({ title = null, description = null, image = null, article = false }: Props) => {
+const query = graphql`
+  query SEO {
+    site {
+      siteMetadata {
+        defaultTitle: title
+        titleTemplate
+        defaultDescription: description
+        siteUrl: url
+        defaultImage: image
+        twitterUsername
+        languages {
+          defaultLangKey
+          langs
+        }
+      }
+    }
+  }
+`;
+
+const SEO = ({
+  title,
+  description = null,
+  image = null,
+  article = false,
+}: Props): ReactElement => {
   const { pathname } = useLocation();
   const { site } = useStaticQuery(query);
+  const { langs, defaultLangKey } = site.siteMetadata.languages;
+
+  const langKey = getCurrentLangKey(langs, defaultLangKey, pathname);
 
   const {
     defaultTitle,
@@ -24,14 +52,19 @@ const SEO = ({ title = null, description = null, image = null, article = false }
   } = site.siteMetadata;
 
   const seo = {
-    title: title || defaultTitle,
+    title,
     description: description || defaultDescription,
     image: `${siteUrl}${image || defaultImage}`,
     url: `${siteUrl}${pathname}`,
-  }
+  };
 
   return (
-    <Helmet title={seo.title} titleTemplate={titleTemplate}>
+    <Helmet
+      defaultTitle={defaultTitle}
+      title={seo.title}
+      titleTemplate={titleTemplate}
+    >
+      <html lang={langKey} />
       <meta name="description" content={seo.description} />
       <meta name="image" content={seo.image} />
 
@@ -62,21 +95,6 @@ const SEO = ({ title = null, description = null, image = null, article = false }
       {seo.image && <meta name="twitter:image" content={seo.image} />}
     </Helmet>
   );
-}
+};
 
 export default SEO;
-
-const query = graphql`
-  query SEO {
-    site {
-      siteMetadata {
-        defaultTitle: title
-        titleTemplate
-        defaultDescription: description
-        siteUrl: url
-        # defaultImage: image
-        twitterUsername
-      }
-    }
-  }
-`;

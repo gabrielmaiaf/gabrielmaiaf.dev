@@ -40,13 +40,25 @@ function Header({ langs, currentLang }: Props): ReactElement {
   return (
     <HeaderWrapper>
       <div>
-        <Link to="/" className="link" activeClassName="activeLink">
+        <Link
+          to={currentLang === 'en' ? '/' : `/${currentLang}/`}
+          className="link"
+          activeClassName="activeLink"
+        >
           {text(currentLang, 'home')}
         </Link>
-        {/* <Link to="/blog" className="link" activeClassName="activeLink">
+        <Link
+          to={currentLang === 'en' ? '/blog' : `/${currentLang}/blog`}
+          className="link"
+          activeClassName="activeLink"
+        >
           {text(currentLang, 'blog')}
-        </Link> */}
-        <Link to="/contact" className="link" activeClassName="activeLink">
+        </Link>
+        <Link
+          to={currentLang === 'en' ? '/contact' : `/${currentLang}/contact`}
+          className="link"
+          activeClassName="activeLink"
+        >
           {text(currentLang, 'contact')}
         </Link>
       </div>

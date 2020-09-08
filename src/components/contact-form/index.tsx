@@ -2,7 +2,17 @@ import React, { useState, ReactElement } from 'react';
 
 import ContactWrapper from './styles';
 
-function ContactForm(): ReactElement {
+interface Props {
+  fields: {
+    title: string;
+    name: string;
+    email: string;
+    message: string;
+    button: string;
+  };
+}
+
+function ContactForm({ fields }: Props): ReactElement {
   const [name, setName] = useState('');
   const [email, setMail] = useState('');
   const [message, setMessage] = useState('');
@@ -42,7 +52,7 @@ function ContactForm(): ReactElement {
     >
       <p className="title">
         <label htmlFor="title-field">
-          Title:{' '}
+          {`${fields.title}: `}
           <input
             id="title-field"
             type="text"
@@ -55,7 +65,7 @@ function ContactForm(): ReactElement {
       <div style={{ display: 'flex', flexWrap: 'wrap' }}>
         <p className="field">
           <label htmlFor="name-field">
-            Name:
+            {`${fields.name}: `}
             <input
               id="name-field"
               type="text"
@@ -67,7 +77,7 @@ function ContactForm(): ReactElement {
         </p>
         <p className="field">
           <label htmlFor="email">
-            E-mail:
+            {`${fields.email}: `}
             <input
               id="email"
               type="email"
@@ -80,7 +90,7 @@ function ContactForm(): ReactElement {
       </div>
       <p className="field">
         <label htmlFor="talktome">
-          Message:
+          {`${fields.message}: `}
           <textarea
             id="talktome"
             name="message"
@@ -93,7 +103,7 @@ function ContactForm(): ReactElement {
       <div data-netlify-recaptcha="true" />
       <p>
         <button className="button" type="submit">
-          Send
+          {fields.button}
         </button>
       </p>
     </ContactWrapper>

@@ -2,15 +2,15 @@ import styled from 'styled-components';
 
 const ContactWrapper = styled.form`
   margin: 0 7vw 4vh;
-  border: 1px solid #c6caca;
+  border: 1px solid ${props => props.theme.postPhotoCaption};
   padding: 5vh 10px 5vh 20px;
   border-radius: 10px;
 
   .button {
     cursor: pointer;
-    background-color: #007c8a;
-    border: 2px solid #007c8a;
-    color: #fff;
+    background-color: ${props => props.theme.primaryGradient2};
+    border: 2px solid ${props => props.theme.primaryGradient2};
+    color: ${props => props.theme.primaryContrast};
     padding: 10px 40px;
     border-radius: 4px;
     margin-top: 20px;
@@ -26,17 +26,20 @@ const ContactWrapper = styled.form`
   }
 
   label {
-    flex-grow: 0;
-    margin-right: 10px;
+    color: ${props => props.theme.postPhotoCaption};
+    display: flex;
+    flex: 1;
   }
 
   textarea,
   input {
     flex-grow: 1;
+    margin-left: 10px;
     margin-right: 10px;
-    border: 2px solid #000;
+    border: 2px solid ${props => props.theme.primaryBorder};
     border-radius: 4px;
     padding: 5px;
+    background-color: ${props => props.theme.background};
   }
 `;
 

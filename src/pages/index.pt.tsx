@@ -18,4 +18,4 @@ const i18n = {
   contactButton: 'Entre em contato',
 };
 
-export default () => <HomePage i18n={i18n} />;
+export default (): JSX.Element => <HomePage i18n={i18n} />;

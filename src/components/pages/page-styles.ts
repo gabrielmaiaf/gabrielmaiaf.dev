@@ -4,6 +4,8 @@ import { blinkTextCursor, hello, typewriter } from '../../helpers/keyframes';
 import img from '../../data/images/computer-1209641_1280.jpg';
 
 export const HomeStyles = styled.div`
+  background-color: ${props => props.theme.background};
+
   .helloImage {
     background-image: url(${img});
     height: calc(100vh - 62px);
@@ -23,10 +25,9 @@ export const HomeStyles = styled.div`
     color: #66b58f;
     font-family: 'Inconsolata', monospace;
     position: relative;
-    width: 6.5em;
     margin: 0 4vw 0 auto;
     border-right: 2px solid #66b58f;
-    font-size: 180%;
+    font-size: 32px;
     text-align: left;
     white-space: nowrap;
     overflow: hidden;
@@ -66,7 +67,7 @@ export const HomeStyles = styled.div`
 
   .presentationContact,
   .presentationTitle {
-    color: ${props => props.theme.primaryGradient1};
+    color: ${props => props.theme.primaryContrast};
     text-align: center;
   }
 
@@ -75,7 +76,7 @@ export const HomeStyles = styled.div`
     display: flex;
     align-items: center;
     flex-direction: column;
-    margin: 25px 40px;
+    margin: 25px 40px 0;
     border-top: 1px solid ${props => props.theme.primaryBorder};
   }
 

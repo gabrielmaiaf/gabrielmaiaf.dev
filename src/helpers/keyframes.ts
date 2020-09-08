@@ -4,9 +4,9 @@ export const typewriter = keyframes`
   from {
     width: 0;
   }
-  
+
   to {
-    width: 7.1em;
+    width: 6.5em;
   }
 `;
 

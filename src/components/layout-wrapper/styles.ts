@@ -8,21 +8,17 @@ const Layout = styled.div`
     min-height: calc(100vh - 129px - 61px);
     text-align: center;
   }
+
+  .contactPageContainer {
+    margin-top: 0;
+    padding-top: 5px;
+  }
 `;
 
 export const GlobalStyle = createGlobalStyle`
-  /* @font-face {
-    font-family: 'Open Sans';
-    src: url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
-  }
-
-  @font-face {
-    font-family: 'Inconsolata';
-    src: url('https://fonts.googleapis.com/css?family=Inconsolata&display=swap');
-  } */
-
   body {
     margin: 0;
+    background-color: #3E485F;
   }
 `;
 

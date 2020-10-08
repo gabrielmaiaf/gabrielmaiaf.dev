@@ -20,7 +20,15 @@ module.exports = {
   plugins: [
     'gatsby-plugin-styled-components',
     'gatsby-plugin-typescript',
-    'gatsby-plugin-fontawesome-css',
+    {
+      resolve: 'gatsby-plugin-typegen',
+      options: {
+        outputPath: `src/@types/gatsby-types.ts`,
+        emitSchema: {
+          'src/@types/gatsby-introspection.json': true,
+        },
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {

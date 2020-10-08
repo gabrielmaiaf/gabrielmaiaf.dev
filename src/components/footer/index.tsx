@@ -1,15 +1,9 @@
 import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-  faLinkedin,
-  faGithub,
-  faGitlab,
-} from '@fortawesome/free-brands-svg-icons';
-import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import { FaEnvelope, FaLinkedin, FaGithub, FaGitlab } from 'react-icons/fa';
 
 import FooterWrapper from './styles';
 
-const Footer = () => (
+const Footer: React.FC = () => (
   <FooterWrapper>
     <div className="footerWrapper">
       <div className="footerTitle">Links</div>
@@ -20,7 +14,7 @@ const Footer = () => (
           rel="noopener noreferrer"
           className="linkedin"
         >
-          <FontAwesomeIcon icon={faLinkedin} />
+          <FaLinkedin size={20} />
         </a>
         <a
           href="https://github.com/gabrielmaiaf"
@@ -28,7 +22,7 @@ const Footer = () => (
           rel="noopener noreferrer"
           className="github"
         >
-          <FontAwesomeIcon icon={faGithub} />
+          <FaGithub size={20} />
         </a>
         <a
           href="https://gitlab.com/gabrielmaiaf"
@@ -36,10 +30,10 @@ const Footer = () => (
           rel="noopener noreferrer"
           className="gitlab"
         >
-          <FontAwesomeIcon icon={faGitlab} />
+          <FaGitlab size={20} />
         </a>
         <a href="mailto:gabrielmaiaf@outlook.com" className="mail">
-          <FontAwesomeIcon icon={faEnvelope} />
+          <FaEnvelope size={20} />
         </a>
       </div>
       <div>Copyright © 2020 Gabriel Maia</div>

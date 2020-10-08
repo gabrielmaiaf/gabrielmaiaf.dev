@@ -33,10 +33,6 @@ function Header({ langs, currentLang }: Props): ReactElement {
     return <ul className="languageWrapper">{links}</ul>;
   };
 
-  const text = (lang: 'pt' | 'en', key: 'home' | 'contact' | 'blog') => {
-    return HeaderText[lang][key];
-  };
-
   return (
     <HeaderWrapper>
       <div>
@@ -45,21 +41,21 @@ function Header({ langs, currentLang }: Props): ReactElement {
           className="link"
           activeClassName="activeLink"
         >
-          {text(currentLang, 'home')}
+          {HeaderText[currentLang].home}
         </Link>
         <Link
           to={currentLang === 'en' ? '/blog' : `/${currentLang}/blog`}
           className="link"
           activeClassName="activeLink"
         >
-          {text(currentLang, 'blog')}
+          {HeaderText[currentLang].blog}
         </Link>
         <Link
           to={currentLang === 'en' ? '/contact' : `/${currentLang}/contact`}
           className="link"
           activeClassName="activeLink"
         >
-          {text(currentLang, 'contact')}
+          {HeaderText[currentLang].contact}
         </Link>
       </div>
       {selectLanguage()}

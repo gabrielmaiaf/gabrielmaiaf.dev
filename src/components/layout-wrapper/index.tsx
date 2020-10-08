@@ -17,6 +17,17 @@ interface GetLangItem {
   link: string;
 }
 
+interface LayoutQueryProps {
+  site: {
+    siteMetadata: {
+      languages: {
+        defaultLangKey: string;
+        langs: string[];
+      };
+    };
+  };
+}
+
 export const LayoutQuery = graphql`
   query LayoutQuery {
     site {
@@ -31,7 +42,7 @@ export const LayoutQuery = graphql`
 `;
 
 const LayoutWrapper: FC = ({ children }) => {
-  const { site } = useStaticQuery(LayoutQuery);
+  const { site } = useStaticQuery<LayoutQueryProps>(LayoutQuery);
   const { pathname } = useLocation();
   const { langs, defaultLangKey } = site.siteMetadata.languages;
 

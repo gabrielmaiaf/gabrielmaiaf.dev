@@ -11,6 +11,23 @@ interface Props {
   article?: boolean;
 }
 
+interface QueryProps {
+  site: {
+    siteMetadata: {
+      defaultTitle: string;
+      titleTemplate: string;
+      defaultDescription: string;
+      siteUrl: string;
+      defaultImage: string;
+      twitterUsername: string;
+      languages: {
+        defaultLangKey: string;
+        langs: string[];
+      };
+    };
+  };
+}
+
 const query = graphql`
   query SEO {
     site {
@@ -37,7 +54,7 @@ const SEO = ({
   article = false,
 }: Props): ReactElement => {
   const { pathname } = useLocation();
-  const { site } = useStaticQuery(query);
+  const { site } = useStaticQuery<QueryProps>(query);
   const { langs, defaultLangKey } = site.siteMetadata.languages;
 
   const langKey = getCurrentLangKey(langs, defaultLangKey, pathname);

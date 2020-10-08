@@ -18,6 +18,12 @@ const FooterWrapper = styled.footer`
       color: ${props => props.theme.primaryContrast};
       font-size: 23px;
       margin: 5px 10px;
+      transition: all 0.3s;
+      opacity: 1;
+
+      &:hover {
+        opacity: 0.7;
+      }
     }
   }
 
@@ -37,18 +43,9 @@ const FooterWrapper = styled.footer`
     }
   }
 
-  .gitlab:hover {
-    svg {
-      color: ${props => props.theme.standard};
-    }
-  }
-
-  .gitlab:hover,
-  .linkedin:hover,
-  .mail:hover,
   .github:hover {
     svg {
-      opacity: 0.7;
+      color: ${props => props.theme.standard};
     }
   }
 

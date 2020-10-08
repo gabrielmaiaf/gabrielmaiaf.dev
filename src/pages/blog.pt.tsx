@@ -1,9 +1,9 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 
-import Blog from '../components/pages/blog';
+import Blog, { BlogProps } from '../components/pages/blog';
 
-export default (props: any) => <Blog {...props} />;
+export default (props: BlogProps): React.ReactElement => <Blog {...props} />;
 
 export const pageQuery = graphql`
   query BlogPtQuery {

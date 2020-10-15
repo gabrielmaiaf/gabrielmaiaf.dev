@@ -1,4 +1,5 @@
 import React, { ReactNode } from 'react';
+import { Helmet } from 'react-helmet';
 
 import HomePage from '../components/pages/home-page';
 
@@ -18,4 +19,14 @@ const i18n = {
   contactButton: 'Get in touch',
 };
 
-export default (): ReactNode => <HomePage i18n={i18n} />;
+export default (): ReactNode => (
+  <>
+    <Helmet>
+      <meta
+        name="google-site-verification"
+        content="_zeElUamOQ7NpSQgkhSh6FTbfwl9nSM5E14EfxCfb2A"
+      />
+    </Helmet>
+    <HomePage i18n={i18n} />
+  </>
+);

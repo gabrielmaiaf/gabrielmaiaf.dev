@@ -30,7 +30,7 @@ module.exports = {
     'graphql/template-strings': ['error', {
       env: 'relay',
       tagName: 'graphql',
-      schemaJsonFilepath: path.resolve(__dirname, 'src/types/gatsby-introspection.json'),
+      schemaJsonFilepath: path.resolve(__dirname, 'src/@types/gatsby-introspection.json'),
     }],
     "import/extensions": "off",
     "import/prefer-default-export": "off",

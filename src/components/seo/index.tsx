@@ -84,6 +84,10 @@ const SEO = ({
       <html lang={langKey} />
       <meta name="description" content={seo.description} />
       <meta name="image" content={seo.image} />
+      <meta
+        name="google-site-verification"
+        content="_zeElUamOQ7NpSQgkhSh6FTbfwl9nSM5E14EfxCfb2A"
+      />
 
       {seo.url && <meta property="og:url" content={seo.url} />}
 

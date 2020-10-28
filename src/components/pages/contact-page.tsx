@@ -24,7 +24,7 @@ function ContactPage({ i18n }: Props): ReactElement {
       <SEO title={i18n.title} />
       <LayoutWrapper>
         <div className="contactPageContainer">
-          <h2>{i18n.title}</h2>
+          <h1>{i18n.title}</h1>
           <ContactForm fields={i18n.fields} />
         </div>
       </LayoutWrapper>

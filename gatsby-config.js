@@ -1,4 +1,7 @@
-const languages = require('./src/data/languages');
+const languages = require('./config/languages');
+const website = require('./config/website');
+
+const pathPrefix = website.pathPrefix === `/` ? `` : website.pathPrefix;
 
 /**
  * Configure your Gatsby site with this file.
@@ -7,14 +10,17 @@ const languages = require('./src/data/languages');
  */
 
 module.exports = {
+  pathPrefix: website.pathPrefix,
   /* Your site config here */
   siteMetadata: {
-    title: 'Gabriel Maia',
-    titleTemplate: '%s · Gabriel Maia',
-    description: 'Gabriel Maia Francisco, front-end developer',
-    url: 'https://gabrielmaia.dev',
-    twitterUsername: '@_bielmaia',
-    image: '/images/gabrielmaiaf.jpeg',
+    title: website.title,
+    titleTemplate: website.titleTemplate,
+    description: website.description,
+    url: website.url,
+    twitterUsername: website.twitter,
+    image: website.image,
+    headline: website.headline,
+    author: website.author,
     languages,
   },
   plugins: [
@@ -69,7 +75,21 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-google-analytics',
       options: {
-        trackingId: 'UA-152430923-1',
+        trackingId: website.googleAnalyticsId,
+        head: true,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: website.title,
+        short_name: website.shortName,
+        description: website.description,
+        start_url: `${pathPrefix}/?utm_source=a2hs`,
+        background_color: website.backgroundColor,
+        theme_color: website.themeColor,
+        display: `standalone`,
+        icon: website.favicon,
       },
     },
     {
@@ -102,7 +122,7 @@ module.exports = {
       resolve: 'gatsby-plugin-web-font-loader',
       options: {
         google: {
-          families: ['Inconsolata', 'Open Sans']
+          families: ['Inconsolata', 'Open Sans', 'Fira Code']
         }
       }
     },

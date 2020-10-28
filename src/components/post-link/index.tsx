@@ -1,11 +1,11 @@
 import React from 'react';
-import { Link } from 'gatsby';
+import { InternalLink } from '../link';
 
-const PostLink = ({ post }: any) => (
+const PostLink: React.FC = ({ post }: any) => (
   <div>
-    <Link to={post.frontmatter.slug}>
+    <InternalLink to={post.frontmatter.slug} from="blogpage">
       {post.frontmatter.title} ({post.frontmatter.date})
-    </Link>
+    </InternalLink>
   </div>
 );
 

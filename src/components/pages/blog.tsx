@@ -1,11 +1,10 @@
-import React, { ReactElement } from 'react';
-import { Link, PageProps } from 'gatsby';
+import React from 'react';
+import { PageProps } from 'gatsby';
 
 import SEO from '../seo';
 import LayoutWrapper from '../layout-wrapper';
 import Time from '../time';
-
-// import { Query } from '../../@types/gatsby-types';
+import { InternalLink } from '../link';
 
 import { BlogStyles } from './page-styles';
 
@@ -32,19 +31,19 @@ export interface BlogProps extends PageProps {
   };
 }
 
-const Blog = (props: BlogProps): ReactElement => {
+const Blog: React.FC<BlogProps> = props => {
   const { data } = props;
   const posts = data.allMarkdownRemark.edges.map(p => p.node);
 
   const postItem = (post: NodeProp) => (
     <li key={post.fields.slug}>
-      <Link to={post.fields.slug}>
+      <InternalLink to={post.fields.slug} from="blogpage">
         <header>
           {post.frontmatter.title}
           <Time className="time" date={post.frontmatter.date} />
         </header>
         <p>{post.excerpt}</p>
-      </Link>
+      </InternalLink>
     </li>
   );
 

@@ -1,11 +1,12 @@
 import React, { ReactNode, ReactElement } from 'react';
 import { Link as ScrollLink } from 'react-scroll';
-import { useStaticQuery, graphql, Link } from 'gatsby';
+import { useStaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
 
 // Components
 import LayoutWrapper from '../layout-wrapper';
 import SEO from '../seo';
+import { InternalLink } from '../link';
 
 // Assets
 import { HomeStyles } from './page-styles';
@@ -63,11 +64,11 @@ const HomePage = ({ i18n }: Props): ReactElement => {
           </div>
           <div className="presentationContact">
             {i18n.contactMe}
-            <Link to="/contact">
+            <InternalLink to="/contact" from="homepage">
               <button type="button" className="contactButton">
                 {i18n.contactButton}
               </button>
-            </Link>
+            </InternalLink>
           </div>
         </HomeStyles>
       </LayoutWrapper>

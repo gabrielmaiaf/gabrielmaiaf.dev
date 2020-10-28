@@ -8,9 +8,10 @@ const ContactWrapper = styled.form`
 
   .button {
     cursor: pointer;
-    background-color: ${props => props.theme.primaryGradient2};
-    border: 2px solid ${props => props.theme.primaryGradient2};
-    color: ${props => props.theme.primaryContrast};
+    background-color: ${props => props.theme.buttonColor};
+    border: 2px solid ${props => props.theme.buttonColor};
+    color: ${props => props.theme.primary};
+    font-weight: bold;
     padding: 10px 40px;
     border-radius: 4px;
     margin-top: 20px;
@@ -33,10 +34,11 @@ const ContactWrapper = styled.form`
 
   textarea,
   input {
+    color: ${props => props.theme.postPhotoCaption};
     flex-grow: 1;
     margin-left: 10px;
     margin-right: 10px;
-    border: 2px solid ${props => props.theme.primaryBorder};
+    border: 2px solid ${props => props.theme.postPhotoCaption};
     border-radius: 4px;
     padding: 5px;
     background-color: ${props => props.theme.background};

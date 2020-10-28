@@ -13,12 +13,16 @@ const Layout = styled.div`
     margin-top: 0;
     padding-top: 5px;
   }
+
+  h1 {
+    color: #f3f9ff;
+  }
 `;
 
 export const GlobalStyle = createGlobalStyle`
   body {
     margin: 0;
-    background-color: #3E485F;
+    background-color: #272822;
   }
 `;
 

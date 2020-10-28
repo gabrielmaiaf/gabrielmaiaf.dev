@@ -1,14 +1,39 @@
-import React, { ReactNode } from 'react';
+import React from 'react';
 import { graphql } from 'gatsby';
-import Img from 'gatsby-image';
+import Img, { FluidObject } from 'gatsby-image';
 
 // Components
 import LayoutWrapper from '../components/layout-wrapper';
 import SEO from '../components/seo';
+import { OutboundLink } from '../components/link';
 
-import { BlogPostContainer } from './styles';
+import { BlogPostContainer, ImagePostContainer } from './styles';
 
-export default function Template({ data }: any): ReactNode {
+interface BlogPost {
+  data: {
+    markdownRemark: {
+      html: string;
+      frontmatter: {
+        title: string;
+        date: string;
+        alt: string;
+        link: string;
+        description: string;
+        featuredImage: {
+          childImageSharp: {
+            fluid: FluidObject;
+          };
+        };
+      };
+      fields: {
+        slug: string;
+        langKey: string;
+      };
+    };
+  };
+}
+
+const Template: React.FC<BlogPost> = ({ data }) => {
   const { markdownRemark } = data; // data.markdownRemark holds your post data
   const { frontmatter, html } = markdownRemark;
   const featuredImgFluid = frontmatter.featuredImage.childImageSharp.fluid;
@@ -24,21 +49,26 @@ export default function Template({ data }: any): ReactNode {
       <LayoutWrapper>
         <BlogPostContainer>
           <div className="blog-post">
-            <h1>{frontmatter.title}</h1>
-            <h2>{frontmatter.date}</h2>
-            <Img
-              fluid={featuredImgFluid}
-              alt={frontmatter.alt}
-              className="feature-image"
-            />
-            <a
-              href={frontmatter.link}
+            <ImagePostContainer>
+              <Img
+                fluid={featuredImgFluid}
+                alt={frontmatter.alt}
+                className="feature-image"
+              />
+              <div>
+                <h1>{frontmatter.title}</h1>
+                <h2>{frontmatter.date}</h2>
+              </div>
+            </ImagePostContainer>
+            <OutboundLink
+              to={frontmatter.link}
+              from="blogpost"
               target="_blank"
               className="caption"
               rel="noopener noreferrer"
             >
               {frontmatter.alt}
-            </a>
+            </OutboundLink>
             <div
               className="blog-post-content"
               dangerouslySetInnerHTML={{ __html: html }}
@@ -48,7 +78,7 @@ export default function Template({ data }: any): ReactNode {
       </LayoutWrapper>
     </>
   );
-}
+};
 
 export const pageQuery = graphql`
   query BlogPostByPath($slug: String!) {
@@ -75,3 +105,5 @@ export const pageQuery = graphql`
     }
   }
 `;
+
+export default Template;

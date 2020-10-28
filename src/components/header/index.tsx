@@ -1,5 +1,6 @@
 import React, { ReactElement } from 'react';
-import { Link } from 'gatsby';
+
+import { InternalLink } from '../link';
 
 // Assets
 import HeaderWrapper from './styles';
@@ -19,15 +20,16 @@ interface Props {
 function Header({ langs, currentLang }: Props): ReactElement {
   const selectLanguage = () => {
     const links = langs.map(lang => (
-      <Link
+      <InternalLink
         key={lang.langKey}
         partiallyActive={lang.selected}
         to={lang.link}
+        from="header"
         className="language"
         activeClassName="activeLanguage"
       >
         <li>{lang.langKey}</li>
-      </Link>
+      </InternalLink>
     ));
 
     return <ul className="languageWrapper">{links}</ul>;
@@ -36,27 +38,30 @@ function Header({ langs, currentLang }: Props): ReactElement {
   return (
     <HeaderWrapper>
       <div>
-        <Link
+        <InternalLink
           to={currentLang === 'en' ? '/' : `/${currentLang}/`}
+          from="header"
           className="link"
           activeClassName="activeLink"
         >
           {HeaderText[currentLang].home}
-        </Link>
-        <Link
+        </InternalLink>
+        <InternalLink
           to={currentLang === 'en' ? '/blog' : `/${currentLang}/blog`}
+          from="header"
           className="link"
           activeClassName="activeLink"
         >
           {HeaderText[currentLang].blog}
-        </Link>
-        <Link
+        </InternalLink>
+        <InternalLink
           to={currentLang === 'en' ? '/contact' : `/${currentLang}/contact`}
+          from="header"
           className="link"
           activeClassName="activeLink"
         >
           {HeaderText[currentLang].contact}
-        </Link>
+        </InternalLink>
       </div>
       {selectLanguage()}
     </HeaderWrapper>

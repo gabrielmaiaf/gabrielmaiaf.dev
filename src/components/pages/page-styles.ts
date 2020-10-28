@@ -23,7 +23,7 @@ export const HomeStyles = styled.div`
     }
     background-color: ${props => props.theme.standard};
     color: #66b58f;
-    font-family: 'Inconsolata', monospace;
+    font-family: 'Fira Code', monospace;
     position: relative;
     margin: 0 4vw 0 auto;
     border-right: 2px solid #66b58f;
@@ -82,9 +82,10 @@ export const HomeStyles = styled.div`
 
   .contactButton {
     cursor: pointer;
-    background-color: ${props => props.theme.primaryGradient2};
-    border: 2px solid ${props => props.theme.primaryGradient2};
-    color: ${props => props.theme.standardBackground};
+    background-color: ${props => props.theme.buttonColor};
+    border: 2px solid ${props => props.theme.buttonColor};
+    color: ${props => props.theme.primary};
+    font-weight: bold;
     padding: 10px 20px;
     border-radius: 4px;
   }
@@ -167,11 +168,12 @@ export const HomeStyles = styled.div`
 
 export const BlogStyles = styled.div`
   padding: 20px 25px 0;
-  background-color: ${props => props.theme.footer};
+  background-color: ${props => props.theme.background};
   min-height: 71vh;
 
   h1 {
     margin-top: 0;
+    color: ${props => props.theme.primaryContrast};
   }
 
   ul {

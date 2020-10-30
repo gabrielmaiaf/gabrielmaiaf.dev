@@ -16,7 +16,7 @@ module.exports = {
     title: website.title,
     titleTemplate: website.titleTemplate,
     description: website.description,
-    url: website.url,
+    siteUrl: website.url,
     twitterUsername: website.twitter,
     image: website.image,
     headline: website.headline,

@@ -2288,7 +2288,7 @@ enum SiteFieldsEnum {
   siteMetadata___title = 'siteMetadata.title',
   siteMetadata___description = 'siteMetadata.description',
   siteMetadata___titleTemplate = 'siteMetadata.titleTemplate',
-  siteMetadata___url = 'siteMetadata.url',
+  siteMetadata___siteUrl = 'siteMetadata.siteUrl',
   siteMetadata___twitterUsername = 'siteMetadata.twitterUsername',
   siteMetadata___image = 'siteMetadata.image',
   siteMetadata___headline = 'siteMetadata.headline',
@@ -2619,14 +2619,6 @@ enum SitePageFieldsEnum {
   pluginCreator___pluginOptions___showLineNumbers = 'pluginCreator.pluginOptions.showLineNumbers',
   pluginCreator___pluginOptions___trackingId = 'pluginCreator.pluginOptions.trackingId',
   pluginCreator___pluginOptions___head = 'pluginCreator.pluginOptions.head',
-  pluginCreator___pluginOptions___langKeyForNull = 'pluginCreator.pluginOptions.langKeyForNull',
-  pluginCreator___pluginOptions___langKeyDefault = 'pluginCreator.pluginOptions.langKeyDefault',
-  pluginCreator___pluginOptions___useLangKeyLayout = 'pluginCreator.pluginOptions.useLangKeyLayout',
-  pluginCreator___pluginOptions___prefixDefault = 'pluginCreator.pluginOptions.prefixDefault',
-  pluginCreator___pluginOptions___markdownRemark___postPage = 'pluginCreator.pluginOptions.markdownRemark.postPage',
-  pluginCreator___pluginOptions___markdownRemark___query = 'pluginCreator.pluginOptions.markdownRemark.query',
-  pluginCreator___pluginOptions___google___families = 'pluginCreator.pluginOptions.google.families',
-  pluginCreator___pluginOptions___pathCheck = 'pluginCreator.pluginOptions.pathCheck',
   pluginCreator___pluginOptions___short_name = 'pluginCreator.pluginOptions.short_name',
   pluginCreator___pluginOptions___description = 'pluginCreator.pluginOptions.description',
   pluginCreator___pluginOptions___start_url = 'pluginCreator.pluginOptions.start_url',
@@ -2639,6 +2631,14 @@ enum SitePageFieldsEnum {
   pluginCreator___pluginOptions___legacy = 'pluginCreator.pluginOptions.legacy',
   pluginCreator___pluginOptions___theme_color_in_head = 'pluginCreator.pluginOptions.theme_color_in_head',
   pluginCreator___pluginOptions___cacheDigest = 'pluginCreator.pluginOptions.cacheDigest',
+  pluginCreator___pluginOptions___langKeyForNull = 'pluginCreator.pluginOptions.langKeyForNull',
+  pluginCreator___pluginOptions___langKeyDefault = 'pluginCreator.pluginOptions.langKeyDefault',
+  pluginCreator___pluginOptions___useLangKeyLayout = 'pluginCreator.pluginOptions.useLangKeyLayout',
+  pluginCreator___pluginOptions___prefixDefault = 'pluginCreator.pluginOptions.prefixDefault',
+  pluginCreator___pluginOptions___markdownRemark___postPage = 'pluginCreator.pluginOptions.markdownRemark.postPage',
+  pluginCreator___pluginOptions___markdownRemark___query = 'pluginCreator.pluginOptions.markdownRemark.query',
+  pluginCreator___pluginOptions___google___families = 'pluginCreator.pluginOptions.google.families',
+  pluginCreator___pluginOptions___pathCheck = 'pluginCreator.pluginOptions.pathCheck',
   pluginCreator___nodeAPIs = 'pluginCreator.nodeAPIs',
   pluginCreator___browserAPIs = 'pluginCreator.browserAPIs',
   pluginCreator___ssrAPIs = 'pluginCreator.ssrAPIs',
@@ -2847,14 +2847,6 @@ enum SitePluginFieldsEnum {
   pluginOptions___showLineNumbers = 'pluginOptions.showLineNumbers',
   pluginOptions___trackingId = 'pluginOptions.trackingId',
   pluginOptions___head = 'pluginOptions.head',
-  pluginOptions___langKeyForNull = 'pluginOptions.langKeyForNull',
-  pluginOptions___langKeyDefault = 'pluginOptions.langKeyDefault',
-  pluginOptions___useLangKeyLayout = 'pluginOptions.useLangKeyLayout',
-  pluginOptions___prefixDefault = 'pluginOptions.prefixDefault',
-  pluginOptions___markdownRemark___postPage = 'pluginOptions.markdownRemark.postPage',
-  pluginOptions___markdownRemark___query = 'pluginOptions.markdownRemark.query',
-  pluginOptions___google___families = 'pluginOptions.google.families',
-  pluginOptions___pathCheck = 'pluginOptions.pathCheck',
   pluginOptions___short_name = 'pluginOptions.short_name',
   pluginOptions___description = 'pluginOptions.description',
   pluginOptions___start_url = 'pluginOptions.start_url',
@@ -2867,6 +2859,14 @@ enum SitePluginFieldsEnum {
   pluginOptions___legacy = 'pluginOptions.legacy',
   pluginOptions___theme_color_in_head = 'pluginOptions.theme_color_in_head',
   pluginOptions___cacheDigest = 'pluginOptions.cacheDigest',
+  pluginOptions___langKeyForNull = 'pluginOptions.langKeyForNull',
+  pluginOptions___langKeyDefault = 'pluginOptions.langKeyDefault',
+  pluginOptions___useLangKeyLayout = 'pluginOptions.useLangKeyLayout',
+  pluginOptions___prefixDefault = 'pluginOptions.prefixDefault',
+  pluginOptions___markdownRemark___postPage = 'pluginOptions.markdownRemark.postPage',
+  pluginOptions___markdownRemark___query = 'pluginOptions.markdownRemark.query',
+  pluginOptions___google___families = 'pluginOptions.google.families',
+  pluginOptions___pathCheck = 'pluginOptions.pathCheck',
   nodeAPIs = 'nodeAPIs',
   browserAPIs = 'browserAPIs',
   ssrAPIs = 'ssrAPIs',
@@ -2991,13 +2991,6 @@ type SitePluginPluginOptions = {
   readonly showLineNumbers: Maybe<Scalars['Boolean']>;
   readonly trackingId: Maybe<Scalars['String']>;
   readonly head: Maybe<Scalars['Boolean']>;
-  readonly langKeyForNull: Maybe<Scalars['String']>;
-  readonly langKeyDefault: Maybe<Scalars['String']>;
-  readonly useLangKeyLayout: Maybe<Scalars['Boolean']>;
-  readonly prefixDefault: Maybe<Scalars['Boolean']>;
-  readonly markdownRemark: Maybe<SitePluginPluginOptionsMarkdownRemark>;
-  readonly google: Maybe<SitePluginPluginOptionsGoogle>;
-  readonly pathCheck: Maybe<Scalars['Boolean']>;
   readonly short_name: Maybe<Scalars['String']>;
   readonly description: Maybe<Scalars['String']>;
   readonly start_url: Maybe<Scalars['String']>;
@@ -3010,6 +3003,13 @@ type SitePluginPluginOptions = {
   readonly legacy: Maybe<Scalars['Boolean']>;
   readonly theme_color_in_head: Maybe<Scalars['Boolean']>;
   readonly cacheDigest: Maybe<Scalars['String']>;
+  readonly langKeyForNull: Maybe<Scalars['String']>;
+  readonly langKeyDefault: Maybe<Scalars['String']>;
+  readonly useLangKeyLayout: Maybe<Scalars['Boolean']>;
+  readonly prefixDefault: Maybe<Scalars['Boolean']>;
+  readonly markdownRemark: Maybe<SitePluginPluginOptionsMarkdownRemark>;
+  readonly google: Maybe<SitePluginPluginOptionsGoogle>;
+  readonly pathCheck: Maybe<Scalars['Boolean']>;
 };
 
 type SitePluginPluginOptionsEmitSchema = {
@@ -3032,13 +3032,6 @@ type SitePluginPluginOptionsFilterInput = {
   readonly showLineNumbers: Maybe<BooleanQueryOperatorInput>;
   readonly trackingId: Maybe<StringQueryOperatorInput>;
   readonly head: Maybe<BooleanQueryOperatorInput>;
-  readonly langKeyForNull: Maybe<StringQueryOperatorInput>;
-  readonly langKeyDefault: Maybe<StringQueryOperatorInput>;
-  readonly useLangKeyLayout: Maybe<BooleanQueryOperatorInput>;
-  readonly prefixDefault: Maybe<BooleanQueryOperatorInput>;
-  readonly markdownRemark: Maybe<SitePluginPluginOptionsMarkdownRemarkFilterInput>;
-  readonly google: Maybe<SitePluginPluginOptionsGoogleFilterInput>;
-  readonly pathCheck: Maybe<BooleanQueryOperatorInput>;
   readonly short_name: Maybe<StringQueryOperatorInput>;
   readonly description: Maybe<StringQueryOperatorInput>;
   readonly start_url: Maybe<StringQueryOperatorInput>;
@@ -3051,6 +3044,13 @@ type SitePluginPluginOptionsFilterInput = {
   readonly legacy: Maybe<BooleanQueryOperatorInput>;
   readonly theme_color_in_head: Maybe<BooleanQueryOperatorInput>;
   readonly cacheDigest: Maybe<StringQueryOperatorInput>;
+  readonly langKeyForNull: Maybe<StringQueryOperatorInput>;
+  readonly langKeyDefault: Maybe<StringQueryOperatorInput>;
+  readonly useLangKeyLayout: Maybe<BooleanQueryOperatorInput>;
+  readonly prefixDefault: Maybe<BooleanQueryOperatorInput>;
+  readonly markdownRemark: Maybe<SitePluginPluginOptionsMarkdownRemarkFilterInput>;
+  readonly google: Maybe<SitePluginPluginOptionsGoogleFilterInput>;
+  readonly pathCheck: Maybe<BooleanQueryOperatorInput>;
 };
 
 type SitePluginPluginOptionsGoogle = {
@@ -3118,7 +3118,7 @@ type SiteSiteMetadata = {
   readonly title: Maybe<Scalars['String']>;
   readonly description: Maybe<Scalars['String']>;
   readonly titleTemplate: Maybe<Scalars['String']>;
-  readonly url: Maybe<Scalars['String']>;
+  readonly siteUrl: Maybe<Scalars['String']>;
   readonly twitterUsername: Maybe<Scalars['String']>;
   readonly image: Maybe<Scalars['String']>;
   readonly headline: Maybe<Scalars['String']>;
@@ -3130,7 +3130,7 @@ type SiteSiteMetadataFilterInput = {
   readonly title: Maybe<StringQueryOperatorInput>;
   readonly description: Maybe<StringQueryOperatorInput>;
   readonly titleTemplate: Maybe<StringQueryOperatorInput>;
-  readonly url: Maybe<StringQueryOperatorInput>;
+  readonly siteUrl: Maybe<StringQueryOperatorInput>;
   readonly twitterUsername: Maybe<StringQueryOperatorInput>;
   readonly image: Maybe<StringQueryOperatorInput>;
   readonly headline: Maybe<StringQueryOperatorInput>;
@@ -3182,11 +3182,6 @@ type BlogPostByPathQuery = { readonly markdownRemark: Maybe<(
     )>, readonly fields: Maybe<Pick<MarkdownRemarkFields, 'slug' | 'langKey'>> }
   )> };
 
-type PagesQueryQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-type PagesQueryQuery = { readonly allSitePage: { readonly nodes: ReadonlyArray<Pick<SitePage, 'path'>> } };
-
 type BlogEnQueryQueryVariables = Exact<{ [key: string]: never; }>;
 
 
@@ -3202,5 +3197,10 @@ type BlogPtQueryQuery = { readonly allMarkdownRemark: { readonly edges: Readonly
         Pick<MarkdownRemark, 'id' | 'excerpt'>
         & { readonly frontmatter: Maybe<Pick<MarkdownRemarkFrontmatter, 'title' | 'date'>>, readonly fields: Maybe<Pick<MarkdownRemarkFields, 'slug' | 'langKey'>> }
       ) }> } };
+
+type PagesQueryQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type PagesQueryQuery = { readonly allSitePage: { readonly nodes: ReadonlyArray<Pick<SitePage, 'path'>> } };
 
 }

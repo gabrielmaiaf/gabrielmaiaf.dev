@@ -92,6 +92,7 @@ module.exports = {
         icon: website.favicon,
       },
     },
+    `gatsby-plugin-sitemap`,
     {
       resolve: 'gatsby-plugin-i18n',
       options: {

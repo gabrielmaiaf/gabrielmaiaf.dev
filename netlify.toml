@@ -14,4 +14,4 @@
   buildDir = "public"
 
 [context.production]
-  environment = { NODE_VERSION = "12.18.3", NETLIFY_USE_YARN = true }
+  environment = { NODE_VERSION = "12.18.3", NETLIFY_USE_YARN = "true" }

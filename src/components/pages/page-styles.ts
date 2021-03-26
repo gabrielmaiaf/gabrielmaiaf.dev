@@ -178,11 +178,16 @@ export const BlogStyles = styled.div`
 
   ul {
     padding-left: 0;
+    padding-bottom: 10px;
   }
 
   li {
     list-style: none;
     text-align: start;
+
+    & + li {
+      padding-top: 20px;
+    }
   }
 
   a {
@@ -199,5 +204,12 @@ export const BlogStyles = styled.div`
   .time {
     margin-top: 5px;
     font-size: 14px;
+  }
+
+  .post-image {
+    height: 180px;
+    margin-bottom: 10px;
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
   }
 `;

@@ -1,7 +1,6 @@
-import React, { ReactNode, ReactElement } from 'react';
+import React, { ReactNode } from 'react';
 import { Link as ScrollLink } from 'react-scroll';
-import { useStaticQuery, graphql } from 'gatsby';
-import Img from 'gatsby-image';
+import { StaticImage } from 'gatsby-plugin-image';
 
 // Components
 import LayoutWrapper from '../layout-wrapper';
@@ -20,21 +19,7 @@ interface Props {
   };
 }
 
-export const query = graphql`
-  query ImageQuery {
-    file(relativePath: { eq: "gabrielmaia.jpg" }) {
-      childImageSharp {
-        fixed(width: 270, quality: 80) {
-          ...GatsbyImageSharpFixed
-        }
-      }
-    }
-  }
-`;
-
-const HomePage = ({ i18n }: Props): ReactElement => {
-  const { file } = useStaticQuery(query);
-
+const HomePage: React.FC<Props> = ({ i18n }) => {
   return (
     <>
       <SEO />
@@ -58,7 +43,12 @@ const HomePage = ({ i18n }: Props): ReactElement => {
           </div>
           <div className="presentationSection">
             <div id="content">
-              <Img fixed={file.childImageSharp.fixed} alt="My picture" />
+              <StaticImage
+                src="../../data/images/gabrielmaia.jpg"
+                alt="Gabriel Maia Francisco"
+                height={300}
+                objectFit="fill"
+              />
             </div>
             <h1 className="presentationTitle">{i18n.presentation}</h1>
           </div>

@@ -1,5 +1,6 @@
 import React from 'react';
 import { PageProps } from 'gatsby';
+import { GatsbyImage, IGatsbyImageData } from 'gatsby-plugin-image';
 
 import SEO from '../seo';
 import LayoutWrapper from '../layout-wrapper';
@@ -14,6 +15,12 @@ interface NodeProp {
   frontmatter: {
     title: string;
     date: string;
+    alt: string;
+    featuredImage: {
+      childImageSharp: {
+        gatsbyImageData: IGatsbyImageData;
+      };
+    };
   };
   fields: {
     slug: string;
@@ -23,21 +30,23 @@ interface NodeProp {
 interface EdgeProp {
   node: NodeProp;
 }
-export interface BlogProps extends PageProps {
-  data: {
-    allMarkdownRemark: {
-      edges: EdgeProp[];
-    };
+export interface BlogProps {
+  allMarkdownRemark: {
+    edges: EdgeProp[];
   };
 }
 
-const Blog: React.FC<BlogProps> = props => {
-  const { data } = props;
+const Blog: React.FC<PageProps<BlogProps>> = ({ data }) => {
   const posts = data.allMarkdownRemark.edges.map(p => p.node);
 
   const postItem = (post: NodeProp) => (
     <li key={post.fields.slug}>
       <InternalLink to={post.fields.slug} from="blogpage">
+        <GatsbyImage
+          image={post.frontmatter.featuredImage.childImageSharp.gatsbyImageData}
+          alt={post.frontmatter.alt}
+          className="post-image"
+        />
         <header>
           {post.frontmatter.title}
           <Time className="time" date={post.frontmatter.date} />
@@ -53,7 +62,7 @@ const Blog: React.FC<BlogProps> = props => {
       <LayoutWrapper>
         <BlogStyles>
           <h1>Posts</h1>
-          <ul>{posts.map(po => postItem(po))}</ul>
+          <ul>{posts.map(post => postItem(post))}</ul>
         </BlogStyles>
       </LayoutWrapper>
     </>

@@ -1,4 +1,4 @@
-import React, { ReactElement } from 'react';
+import React from 'react';
 
 import { InternalLink } from '../link';
 
@@ -17,7 +17,7 @@ interface Props {
   currentLang: 'en' | 'pt';
 }
 
-function Header({ langs, currentLang }: Props): ReactElement {
+const Header: React.FC<Props> = ({ langs, currentLang }) => {
   const selectLanguage = () => {
     const links = langs.map(lang => (
       <InternalLink
@@ -66,6 +66,6 @@ function Header({ langs, currentLang }: Props): ReactElement {
       {selectLanguage()}
     </HeaderWrapper>
   );
-}
+};
 
 export default Header;

@@ -1,4 +1,4 @@
-import React, { ReactElement } from 'react';
+import React from 'react';
 
 // Components
 import ContactForm from '../contact-form';
@@ -18,7 +18,7 @@ interface Props {
   };
 }
 
-function ContactPage({ i18n }: Props): ReactElement {
+const ContactPage: React.FC<Props> = ({ i18n }) => {
   return (
     <>
       <SEO title={i18n.title} />
@@ -30,6 +30,6 @@ function ContactPage({ i18n }: Props): ReactElement {
       </LayoutWrapper>
     </>
   );
-}
+};
 
 export default ContactPage;

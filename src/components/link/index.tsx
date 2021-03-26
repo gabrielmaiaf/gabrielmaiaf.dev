@@ -1,7 +1,6 @@
 import React, { AnchorHTMLAttributes } from 'react';
 import GoogleAnalytics from 'react-ga';
 import { Link as GatsbyLink, GatsbyLinkProps } from 'gatsby';
-// import { LinkWrapper } from './styles'; /* eslint-disable-line import/no-unresolved */
 
 interface IntProps
   extends Omit<GatsbyLinkProps<Record<string, unknown>>, 'ref'> {

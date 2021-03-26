@@ -1,9 +1,7 @@
 import React from 'react';
-import { graphql } from 'gatsby';
+import { graphql, PageProps } from 'gatsby';
 
 import Blog, { BlogProps } from '../components/pages/blog';
-
-export default (props: BlogProps): React.ReactElement => <Blog {...props} />;
 
 export const pageQuery = graphql`
   query BlogPtQuery {
@@ -18,6 +16,12 @@ export const pageQuery = graphql`
           frontmatter {
             title
             date(formatString: "DD MMMM, YYYY")
+            alt
+            featuredImage {
+              childImageSharp {
+                gatsbyImageData(layout: FULL_WIDTH, placeholder: BLURRED)
+              }
+            }
           }
           fields {
             slug
@@ -28,3 +32,7 @@ export const pageQuery = graphql`
     }
   }
 `;
+
+const BlogPt: React.FC<PageProps<BlogProps>> = props => <Blog {...props} />;
+
+export default BlogPt;

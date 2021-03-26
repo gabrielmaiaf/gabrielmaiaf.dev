@@ -1,6 +1,7 @@
 import React from 'react';
-import { graphql } from 'gatsby';
-import Img, { FluidObject } from 'gatsby-image';
+import { graphql, PageProps } from 'gatsby';
+import { GatsbyImage, IGatsbyImageData } from 'gatsby-plugin-image';
+import { Disqus } from 'gatsby-plugin-disqus';
 
 // Components
 import LayoutWrapper from '../components/layout-wrapper';
@@ -10,48 +11,57 @@ import { OutboundLink } from '../components/link';
 import { BlogPostContainer, ImagePostContainer } from './styles';
 
 interface BlogPost {
-  data: {
-    markdownRemark: {
-      html: string;
-      frontmatter: {
-        title: string;
-        date: string;
-        alt: string;
-        link: string;
-        description: string;
-        featuredImage: {
-          childImageSharp: {
-            fluid: FluidObject;
-          };
+  markdownRemark: {
+    html: string;
+    frontmatter: {
+      title: string;
+      date: string;
+      alt: string;
+      link: string;
+      description: string;
+      featuredImage: {
+        childImageSharp: {
+          gatsbyImageData: IGatsbyImageData;
         };
       };
-      fields: {
-        slug: string;
-        langKey: string;
-      };
+    };
+    fields: {
+      slug: string;
+      langKey: string;
+    };
+  };
+  site: {
+    siteMetadata: {
+      siteUrl: string;
     };
   };
 }
 
-const Template: React.FC<BlogPost> = ({ data }) => {
-  const { markdownRemark } = data; // data.markdownRemark holds your post data
+const Template: React.FC<PageProps<BlogPost>> = ({ data }) => {
+  const { markdownRemark, site } = data;
   const { frontmatter, html } = markdownRemark;
-  const featuredImgFluid = frontmatter.featuredImage.childImageSharp.fluid;
+  const { gatsbyImageData } = frontmatter.featuredImage.childImageSharp;
+  const featuredImg = gatsbyImageData.images.fallback?.src;
+  const disqusConfig = {
+    url: `${site.siteMetadata.siteUrl + '/' + markdownRemark.fields.slug}`,
+    identifier: markdownRemark.fields.slug,
+    title: frontmatter.title,
+  };
 
   return (
     <>
       <SEO
         description={frontmatter.description}
         title={frontmatter.title}
-        image={featuredImgFluid.src}
+        image={featuredImg}
         article
       />
       <LayoutWrapper>
         <BlogPostContainer>
           <div className="blog-post">
             <ImagePostContainer>
-              <Img
-                fluid={featuredImgFluid}
+              <GatsbyImage
+                image={gatsbyImageData}
                 alt={frontmatter.alt}
                 className="feature-image"
               />
@@ -74,6 +84,7 @@ const Template: React.FC<BlogPost> = ({ data }) => {
               dangerouslySetInnerHTML={{ __html: html }}
             />
           </div>
+          <Disqus config={disqusConfig} />
         </BlogPostContainer>
       </LayoutWrapper>
     </>
@@ -89,9 +100,7 @@ export const pageQuery = graphql`
         date(formatString: "DD MMMM, YYYY")
         featuredImage {
           childImageSharp {
-            fluid(maxWidth: 800) {
-              ...GatsbyImageSharpFluid
-            }
+            gatsbyImageData(layout: FULL_WIDTH, placeholder: BLURRED)
           }
         }
         alt
@@ -101,6 +110,11 @@ export const pageQuery = graphql`
       fields {
         slug
         langKey
+      }
+    }
+    site {
+      siteMetadata {
+        siteUrl
       }
     }
   }

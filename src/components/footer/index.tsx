@@ -38,7 +38,7 @@ const Footer: React.FC = () => (
           <FaGitlab size={20} />
         </OutboundLink>
         <OutboundLink
-          to="mailto:gabrielmaiaf@outlook.com"
+          to="mailto:mail@gabrielmaia.dev"
           className="mail"
           from="footer"
         >

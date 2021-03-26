@@ -1,4 +1,4 @@
-import React, { ReactElement } from 'react';
+import React from 'react';
 import { Helmet } from 'react-helmet';
 import { useStaticQuery, graphql } from 'gatsby';
 import { useLocation } from '@reach/router';
@@ -47,12 +47,12 @@ const query = graphql`
   }
 `;
 
-const SEO = ({
+const SEO: React.FC<Props> = ({
   title,
   description = null,
   image = null,
   article = false,
-}: Props): ReactElement => {
+}) => {
   const { pathname } = useLocation();
   const { site } = useStaticQuery<QueryProps>(query);
   const { langs, defaultLangKey } = site.siteMetadata.languages;

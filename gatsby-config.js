@@ -27,15 +27,6 @@ module.exports = {
     'gatsby-plugin-styled-components',
     'gatsby-plugin-typescript',
     {
-      resolve: 'gatsby-plugin-typegen',
-      options: {
-        outputPath: `src/@types/gatsby-types.ts`,
-        emitSchema: {
-          'src/@types/gatsby-introspection.json': true,
-        },
-      },
-    },
-    {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: 'images',
@@ -57,26 +48,33 @@ module.exports = {
             resolve: 'gatsby-remark-images',
             options: {
               maxWidth: 800,
-              showCaptions: true
-            }
+              showCaptions: true,
+            },
           },
           {
             resolve: 'gatsby-remark-prismjs',
             options: {
               classPrefix: 'language-',
               showLineNumbers: false,
-            }
-          }
-        ]
-      }
+            },
+          },
+        ],
+      },
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    'gatsby-plugin-image',
     {
       resolve: 'gatsby-plugin-google-analytics',
       options: {
         trackingId: website.googleAnalyticsId,
         head: true,
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-disqus',
+      options: {
+        shortname: 'gabrielmaia',
       },
     },
     {
@@ -123,9 +121,9 @@ module.exports = {
       resolve: 'gatsby-plugin-web-font-loader',
       options: {
         google: {
-          families: ['Inconsolata', 'Open Sans', 'Fira Code']
-        }
-      }
+          families: ['Inconsolata', 'Open Sans', 'Fira Code'],
+        },
+      },
     },
     // Must be placed at the end
     'gatsby-plugin-offline',

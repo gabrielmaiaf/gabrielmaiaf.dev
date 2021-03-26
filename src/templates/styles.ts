@@ -30,7 +30,6 @@ export const BlogPostContainer = styled.div`
   }
 
   .feature-image {
-    max-width: 800px;
     margin: 25px auto 0;
     height: 500px;
   }
@@ -48,11 +47,11 @@ export const BlogPostContainer = styled.div`
 `;
 
 export const ImagePostContainer = styled.div`
-  max-width: 800px;
   position: relative;
   text-align: center;
   height: 500px;
-  margin: 0 auto;
+  width: 100vw;
+  margin: -10px -45px 0;
 
   div {
     position: absolute;

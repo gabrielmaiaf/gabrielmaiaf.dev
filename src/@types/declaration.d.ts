@@ -5,5 +5,6 @@ declare module '*.scss' {
 
 declare module 'react-reveal/Fade';
 declare module 'ptz-i18n';
+declare module 'gatsby-plugin-disqus';
 
 declare module '*.jpg';

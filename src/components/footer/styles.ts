@@ -34,13 +34,13 @@ const FooterWrapper = styled.footer`
 
   .linkedin:hover {
     svg {
-      color: ${props => props.theme.brands.linkedin};
+      color: #0077b5;
     }
   }
 
   .gitlab:hover {
     svg {
-      color: ${props => props.theme.brands.gitlab};
+      color: #fc6d27;
     }
   }
 

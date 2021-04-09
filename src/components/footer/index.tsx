@@ -7,7 +7,7 @@ import FooterWrapper from './styles';
 
 const Footer: React.FC = () => (
   <FooterWrapper>
-    <div className="footerWrapper">
+    <div className="footerWrapper" data-testid="footer">
       <div className="footerTitle">Links</div>
       <div className="linksContainer">
         <OutboundLink

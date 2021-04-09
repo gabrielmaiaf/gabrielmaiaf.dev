@@ -17,8 +17,8 @@
     "type": "git",
     "url": "git+https://github.com/gabrielmaiaf/gabrielmaiaf.github.io.git"
   },
-  "author": "Gabriel Maia",
-  "license": "ISC",
+  "author": "Gabriel Maia <mail@gabrielmaia.dev>",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/gabrielmaiaf/gabrielmaiaf.github.io/issues"
   },

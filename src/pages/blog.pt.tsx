@@ -12,11 +12,11 @@ export const pageQuery = graphql`
       edges {
         node {
           id
-          excerpt(pruneLength: 200)
           frontmatter {
             title
             date(formatString: "DD MMMM, YYYY")
             alt
+            description
             featuredImage {
               childImageSharp {
                 gatsbyImageData(layout: FULL_WIDTH, placeholder: BLURRED)

@@ -184,6 +184,7 @@ export const BlogStyles = styled.div`
   li {
     list-style: none;
     text-align: start;
+    padding: 10px;
 
     & + li {
       padding-top: 20px;
@@ -209,7 +210,7 @@ export const BlogStyles = styled.div`
   .post-image {
     height: 180px;
     margin-bottom: 10px;
-    border-top-right-radius: 8px;
-    border-top-left-radius: 8px;
+    border-top-right-radius: 2rem;
+    border-top-left-radius: 2rem;
   }
 `;

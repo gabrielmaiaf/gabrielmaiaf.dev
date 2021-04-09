@@ -11,11 +11,11 @@ import { BlogStyles } from './page-styles';
 
 interface NodeProp {
   id: string;
-  excerpt: string;
   frontmatter: {
     title: string;
     date: string;
     alt: string;
+    description: string;
     featuredImage: {
       childImageSharp: {
         gatsbyImageData: IGatsbyImageData;
@@ -51,7 +51,7 @@ const Blog: React.FC<PageProps<BlogProps>> = ({ data }) => {
           {post.frontmatter.title}
           <Time className="time" date={post.frontmatter.date} />
         </header>
-        <p>{post.excerpt}</p>
+        <p>{post.frontmatter.description}</p>
       </InternalLink>
     </li>
   );

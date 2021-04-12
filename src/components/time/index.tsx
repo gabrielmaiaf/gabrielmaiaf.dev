@@ -2,7 +2,7 @@ import React, { ReactElement } from 'react';
 import { FormattedDate } from 'react-intl';
 
 interface Props {
-  className: string;
+  className?: string;
   date: string;
 }
 
@@ -10,7 +10,7 @@ const Time = (props: Props): ReactElement => {
   const { date } = props;
 
   return (
-    <time {...props} dateTime={date}>
+    <time {...props} dateTime={date} data-testid="date-display">
       <FormattedDate
         value={new Date(date)}
         month="long"

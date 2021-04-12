@@ -1,8 +1,10 @@
-import React, { useState, ReactElement } from 'react';
+import React, { useState, ReactElement, FormEvent } from 'react';
+
+import { encodeDataNetlify } from '../../helpers/string-helper';
 
 import ContactWrapper from './styles';
 
-interface Props {
+interface ContactFormProps {
   fields: {
     title: string;
     name: string;
@@ -12,23 +14,17 @@ interface Props {
   };
 }
 
-function ContactForm({ fields }: Props): ReactElement {
+function ContactForm({ fields }: ContactFormProps): ReactElement {
   const [name, setName] = useState('');
   const [email, setMail] = useState('');
   const [message, setMessage] = useState('');
   const [botField, setBotField] = useState('');
 
-  const encode = (data: any) => {
-    return Object.keys(data)
-      .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`)
-      .join('&');
-  };
-
-  const handleSubmit = (e: any) => {
+  const handleSubmit = (e: FormEvent) => {
     fetch('/', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: encode({
+      body: encodeDataNetlify({
         'form-name': 'contact',
         name,
         email,
@@ -57,6 +53,7 @@ function ContactForm({ fields }: Props): ReactElement {
             id="title-field"
             type="text"
             name="bot-field"
+            placeholder={fields.title}
             value={botField}
             onChange={e => setBotField(e.target.value)}
           />
@@ -70,6 +67,7 @@ function ContactForm({ fields }: Props): ReactElement {
               id="name-field"
               type="text"
               name="name"
+              placeholder={fields.name}
               value={name}
               onChange={e => setName(e.target.value)}
             />
@@ -82,6 +80,7 @@ function ContactForm({ fields }: Props): ReactElement {
               id="email"
               type="email"
               name="email"
+              placeholder={fields.email}
               value={email}
               onChange={e => setMail(e.target.value)}
             />
@@ -94,6 +93,7 @@ function ContactForm({ fields }: Props): ReactElement {
           <textarea
             id="talktome"
             name="message"
+            placeholder={fields.message}
             value={message}
             onChange={e => setMessage(e.target.value)}
             rows={5}

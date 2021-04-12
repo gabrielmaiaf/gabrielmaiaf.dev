@@ -43,6 +43,7 @@ const Header: React.FC<Props> = ({ langs, currentLang }) => {
           from="header"
           className="link"
           activeClassName="activeLink"
+          data-testid="home-link"
         >
           {HeaderText[currentLang].home}
         </InternalLink>

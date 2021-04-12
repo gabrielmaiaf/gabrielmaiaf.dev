@@ -43,7 +43,7 @@ const Template: React.FC<PageProps<BlogPost>> = ({ data }) => {
   const { gatsbyImageData } = frontmatter.featuredImage.childImageSharp;
   const featuredImg = gatsbyImageData.images.fallback?.src;
   const disqusConfig = {
-    url: `${site.siteMetadata.siteUrl + '/' + markdownRemark.fields.slug}`,
+    url: `${site.siteMetadata.siteUrl}/${markdownRemark.fields.slug}`,
     identifier: markdownRemark.fields.slug,
     title: frontmatter.title,
   };

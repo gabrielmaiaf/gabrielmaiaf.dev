@@ -2,5 +2,5 @@
   "arrowParens": "avoid",
   "singleQuote": true,
   "trailingComma": "all",
-  "endOfLine": "crlf"
+  "endOfLine": "auto"
 }

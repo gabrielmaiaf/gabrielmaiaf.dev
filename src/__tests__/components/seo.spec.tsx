@@ -4,6 +4,12 @@ import Helmet from 'react-helmet';
 
 import SEO from '../../components/seo';
 
+interface MetaTag {
+  name?: string;
+  content: string;
+  property?: string;
+}
+
 jest.mock('@reach/router', () => {
   return {
     useLocation: () => ({
@@ -42,5 +48,19 @@ describe('SEO component', () => {
     const { title } = Helmet.peek();
 
     expect(title).toBe(mockTitle);
+  });
+
+  it('should render article type when pass article argument', () => {
+    const mockTitle = 'Mock page blog · Gabriel Maia';
+    render(<SEO title="Mock page blog" article />);
+
+    const { title, metaTags } = Helmet.peek();
+
+    const articleTag = metaTags.filter(
+      (tag: MetaTag) => tag.property === 'og:type',
+    );
+
+    expect(title).toBe(mockTitle);
+    expect(articleTag).toBeTruthy();
   });
 });

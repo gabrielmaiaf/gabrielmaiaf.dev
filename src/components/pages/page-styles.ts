@@ -1,6 +1,10 @@
 import styled from 'styled-components';
 
-import { blinkTextCursor, hello, typewriter } from '../../helpers/keyframes';
+import {
+  blinkTextCursor,
+  hello,
+  typewriter,
+} from '../../helpers/styles/keyframes';
 import img from '../../data/images/computer-1209641_1280.jpg';
 
 export const HomeStyles = styled.div`

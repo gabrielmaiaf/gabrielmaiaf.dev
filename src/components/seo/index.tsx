@@ -21,6 +21,7 @@ interface QueryProps {
       siteUrl: string;
       defaultImage: string;
       twitterUsername: string;
+      author: string;
       languages: {
         defaultLangKey: string;
         langs: string[];
@@ -39,6 +40,7 @@ const query = graphql`
         siteUrl
         defaultImage: image
         twitterUsername
+        author
         languages {
           defaultLangKey
           langs
@@ -68,6 +70,7 @@ const SEO: React.FC<Props> = ({
     siteUrl,
     defaultImage,
     twitterUsername,
+    author,
   } = site.siteMetadata;
 
   const seo = {
@@ -93,11 +96,10 @@ const SEO: React.FC<Props> = ({
       titleTemplate={titleTemplate}
     >
       <html lang={langKey} />
-      <meta name="description" content={seo.description} />
-      <meta name="image" content={seo.image} />
 
       <meta property="og:type" content={article ? 'article' : 'website'} />
-      {article ? (
+      {article && <meta name="author" content={author} />}
+      {article && (
         <script type="application/ld+json">
           {`{
             "@context": "https://schema.org",
@@ -111,18 +113,27 @@ const SEO: React.FC<Props> = ({
             "headline": "${articleSeo.title}",
             "description": "${articleSeo.description}",
             "inLanguage": "${articleSeo.language}",
+            "datePublished": "${articleSeo.datePublished}",
             "isFamilyFriendly": "true",
             "url": "${articleSeo.url}"
           }`}
         </script>
-      ) : null}
+      )}
 
       {seo.url && <meta property="og:url" content={seo.url} />}
-      {seo.title && <meta property="og:title" content={seo.title} />}
-      {seo.description && (
-        <meta property="og:description" content={seo.description} />
+      {seo.title && (
+        <meta name="title" property="og:title" content={seo.title} />
       )}
-      {seo.image && <meta property="og:image" content={seo.image} />}
+      {seo.description && (
+        <meta
+          name="description"
+          property="og:description"
+          content={seo.description}
+        />
+      )}
+      {seo.image && (
+        <meta name="image" property="og:image" content={seo.image} />
+      )}
 
       <meta name="twitter:card" content="summary_large_image" />
 

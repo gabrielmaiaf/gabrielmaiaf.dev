@@ -99,22 +99,21 @@ const SEO: React.FC<Props> = ({
       <meta property="og:type" content={article ? 'article' : 'website'} />
       {article ? (
         <script type="application/ld+json">
-          {`
-            '@context': 'https://schema.org',
-            '@type': 'BlogPosting',
-            image: ${articleSeo.image},
-            url: ${articleSeo.url},
-            headline: ${articleSeo.title},
-            description: ${articleSeo.description},
-            inLanguage: ${articleSeo.language},
-            isFamilyFriendly: 'true',
-            datePublished: dateModified,
-            author: {
-              '@type': 'Person',
-              name: 'Gabriel Maia',
-              url: 'https://gabrielmaia.dev',
+          {`{
+            "@context": "https://schema.org",
+            "@type": "BlogPosting",
+            "author": {
+              "@type": "Person",
+              "name": "Gabriel Maia",
+              "url": "https://gabrielmaia.dev"
             },
-          `}
+            "image": "${articleSeo.image}",
+            "headline": "${articleSeo.title}",
+            "description": "${articleSeo.description}",
+            "inLanguage": "${articleSeo.language}",
+            "isFamilyFriendly": "true",
+            "url": "${articleSeo.url}"
+          }`}
         </script>
       ) : null}
 

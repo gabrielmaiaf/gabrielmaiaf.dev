@@ -54,6 +54,7 @@ const Template: React.FC<PageProps<BlogPost>> = ({ data }) => {
         description={frontmatter.description}
         title={frontmatter.title}
         image={featuredImg}
+        datePublished={frontmatter.date}
         article
       />
       <LayoutWrapper>

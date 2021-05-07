@@ -1,8 +1,6 @@
 const languages = require('./config/languages');
 const website = require('./config/website');
 
-const pathPrefix = website.pathPrefix === `/` ? `` : website.pathPrefix;
-
 /**
  * Configure your Gatsby site with this file.
  *
@@ -83,11 +81,20 @@ module.exports = {
         name: website.title,
         short_name: website.shortName,
         description: website.description,
-        start_url: `${pathPrefix}/?utm_source=a2hs`,
+        start_url: '/',
         background_color: website.backgroundColor,
         theme_color: website.themeColor,
         display: `standalone`,
         icon: website.favicon,
+        localize: [
+          {
+            start_url: '/pt/',
+            lang: 'pt',
+            name: website.title,
+            short_name: website.shortName,
+            description: website.descriptionPT,
+          },
+        ],
       },
     },
     `gatsby-plugin-sitemap`,

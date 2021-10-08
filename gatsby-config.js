@@ -84,6 +84,7 @@ module.exports = {
         start_url: '/',
         background_color: website.backgroundColor,
         theme_color: website.themeColor,
+        lang: 'en',
         display: `standalone`,
         icon: website.favicon,
         localize: [

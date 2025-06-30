@@ -10,6 +10,53 @@ import img from '../../data/images/computer-1209641_1280.jpg';
 export const HomeStyles = styled.div`
   background-color: ${props => props.theme.background};
 
+  .hero-wrapper {
+    max-width: 72rem;
+    margin: 4rem auto 0;
+
+    h1 {
+      font-size: 4.5rem;
+      margin: 0.25rem 0;
+      color: ${props => props.theme.primaryText};
+    }
+  }
+
+  .hero-description {
+    max-width: 56rem;
+    margin: 0 auto 3rem auto;
+
+    .presentation {
+      font-size: 1.5rem;
+      line-height: 2rem;
+      color: ${props => props.theme.primaryText};
+    }
+  }
+
+  .hero-icon-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-botton: 2rem;
+  }
+
+  .hero-icon-container {
+    padding: 0.75rem;
+    border-radius: 100%;
+    border-width: 1px;
+    border-style: solid;
+  }
+
+  .programming-icon {
+    background-color: ${props => props.theme.icon.progBg};
+    border-color: ${props => props.theme.icon.prog};
+
+    svg {
+      width: 2rem;
+      height: 2rem;
+      color: ${props => props.theme.icon.prog};
+    }
+  }
+
   .helloImage {
     background-image: url(${img});
     height: calc(100vh - 62px);

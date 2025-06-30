@@ -6,7 +6,7 @@ import HomePage from '../components/pages/home-page';
 const i18n = {
   helloWorld: 'Hello, World!',
   presentation:
-    "I'm Gabriel, front-end and mobile hybrid developer, using React to web and React Native to Android and iOS.",
+    "I'm Gabriel - a follower of Christ, devoted husband and proud father. I'm a self-taught software engineer, a mechanical designer by education and a guitarrist by heart (though I can't always promise perfect tuning!)",
   contactMe: (
     <>
       <h2>Interested in hire me or build a project together?</h2>

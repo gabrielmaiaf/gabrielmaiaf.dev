@@ -20,7 +20,7 @@ export function Head() {
   return (
     <meta
       name="google-site-verification"
-      content="_zeElUamOQ7NpSQgkhSh6FTbfwl9nSM5E14EfxCfb2A"
+      content="EZwGVFBKUmGbZHdNCO-5aU-tCQGFu_0amgmP0tvr2eQ"
     />
   )
 }

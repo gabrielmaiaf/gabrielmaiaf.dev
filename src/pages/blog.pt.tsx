@@ -6,7 +6,7 @@ import Blog, { BlogProps } from '../components/pages/blog';
 export const pageQuery = graphql`
   query BlogPtQuery {
     allMarkdownRemark(
-      sort: { order: DESC, fields: [frontmatter___date] }
+      sort: { frontmatter: { date: DESC } }
       filter: { fields: { langKey: { regex: "/(pt)/" } } }
     ) {
       edges {

@@ -37,15 +37,15 @@ const Footer: React.FC = () => (
         >
           <FaGitlab size={20} />
         </OutboundLink>
-        <OutboundLink
+        {/* <OutboundLink
           to="mailto:mail@gabrielmaia.dev"
           className="mail"
           from="footer"
         >
           <FaEnvelope size={20} />
-        </OutboundLink>
+        </OutboundLink> */}
       </div>
-      <div>Copyright © 2020 Gabriel Maia</div>
+      <div>Copyright © 2025 Gabriel Maia</div>
     </div>
   </FooterWrapper>
 );

@@ -1,23 +1,23 @@
 import styled from 'styled-components';
 
-import {
-  blinkTextCursor,
-  hello,
-  typewriter,
-} from '../../helpers/styles/keyframes';
-import img from '../../data/images/computer-1209641_1280.jpg';
-
 export const HomeStyles = styled.div`
-  background-color: ${props => props.theme.background};
+  background-color: ${props => props.theme.primaryBg};
 
   .hero-wrapper {
     max-width: 72rem;
-    margin: 4rem auto 0;
+    padding: 12rem 0 7rem;
+    margin: 0 auto;
 
     h1 {
       font-size: 4.5rem;
-      margin: 0.25rem 0;
+      margin: 3rem 0;
       color: ${props => props.theme.primaryText};
+    }
+
+    svg {
+      width: 2rem;
+      height: 2rem;
+      vertical-align: middle;
     }
   }
 
@@ -25,10 +25,15 @@ export const HomeStyles = styled.div`
     max-width: 56rem;
     margin: 0 auto 3rem auto;
 
+    p {
+      color: ${props => props.theme.primarySubText};
+    }
+
     .presentation {
       font-size: 1.5rem;
       line-height: 2rem;
       color: ${props => props.theme.primaryText};
+      margin: 2rem 0 4rem;
     }
   }
 
@@ -37,6 +42,7 @@ export const HomeStyles = styled.div`
     align-items: center;
     justify-content: center;
     margin-botton: 2rem;
+    gap: 1rem;
   }
 
   .hero-icon-container {
@@ -51,75 +57,122 @@ export const HomeStyles = styled.div`
     border-color: ${props => props.theme.icon.prog};
 
     svg {
-      width: 2rem;
-      height: 2rem;
       color: ${props => props.theme.icon.prog};
     }
   }
 
-  .helloImage {
-    background-image: url(${img});
-    height: calc(100vh - 62px);
-    display: flex;
-    justify-content: flex-end;
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
+  .music-icon {
+    background-color: ${props => props.theme.icon.musicBg};
+    border-color: ${props => props.theme.icon.music};
 
-  .helloWorld {
-    @media (max-width: 960px) {
-      background-color: transparent;
-    }
-    background-color: ${props => props.theme.standard};
-    color: #66b58f;
-    font-family: 'Fira Code', monospace;
-    position: relative;
-    margin: 0 4vw 0 auto;
-    border-right: 2px solid #66b58f;
-    font-size: 32px;
-    text-align: left;
-    white-space: nowrap;
-    overflow: hidden;
-  }
-
-  .oldComputer {
-    @media (max-width: 860px) {
-      background-image: linear-gradient(
-        to bottom right,
-        rgba(255, 0, 0, 0),
-        #000 70%
-      );
-    }
-    width: 55em;
-    padding: 0 12px;
-    display: flex;
-    align-items: center;
-    background-image: linear-gradient(to right, rgba(255, 0, 0, 0), #000 70%);
-  }
-
-  .animTyping {
-    animation: ${typewriter} 4s steps(14) 1s 1 normal both,
-      ${blinkTextCursor} 800ms steps(14) infinite normal;
-  }
-
-  .presentationSection {
-    padding: 40px;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    margin: 25px 0;
-
-    img {
-      border-radius: 20%;
+    svg {
+      color: ${props => props.theme.icon.music};
     }
   }
 
-  .presentationContact,
-  .presentationTitle {
-    color: ${props => props.theme.primaryContrast};
-    text-align: center;
+  .headphones-icon {
+    background-color: ${props => props.theme.icon.headphBg};
+    border-color: ${props => props.theme.icon.headph};
+
+    svg {
+      color: ${props => props.theme.icon.headph};
+    }
+  }
+
+  .guitar-icon {
+    background-color: ${props => props.theme.icon.guitarBg};
+    border-color: ${props => props.theme.icon.guitar};
+
+    svg {
+      color: ${props => props.theme.icon.guitar};
+    }
+  }
+
+  .cross-icon {
+    background-color: ${props => props.theme.icon.faithBg};
+    border-color: ${props => props.theme.icon.faith};
+
+    svg {
+      color: ${props => props.theme.icon.faith};
+    }
+  }
+
+  .hero-widget-container {
+    @media (min-width: 768px) {
+      grid-template-columns: repeat(2, minmax(0, 1fr))
+    }
+    display: grid;
+    gap: 2rem;
+    color: ${props => props.theme.primaryText};
+
+    h3 {
+      font-weight: 600;
+      margin: 0;
+    }
+
+    .programmer-widget, .music-widget {
+      display: flex;
+      align-items: center;
+
+      svg {
+        margin: 0 1rem;
+      }
+      
+      h3 {
+        width: 120px;
+        margin-right: .25rem;
+      }
+
+      svg, h3 {
+        flex-shrink: 0;
+      }
+    }
+
+    .hero-widget-left-container {
+      gap: 2rem;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .programmer-widget {
+      background-color: ${props => props.theme.icon.progBg};
+      border: 1px solid ${props => props.theme.icon.prog};
+      border-radius: .5rem;
+
+      svg {
+        color: ${props => props.theme.icon.prog};
+      }
+    }
+
+    .music-widget {
+      background-color: ${props => props.theme.icon.guitarBg};
+      border: 1px solid ${props => props.theme.icon.guitar};
+      border-radius: .5rem;
+
+      svg {
+        color: ${props => props.theme.icon.guitar};
+      }
+    }
+
+    .hero-widget-right {
+      background-color: ${props => props.theme.icon.headphBg};
+      border: 1px solid ${props => props.theme.icon.headph};
+      border-radius: 1rem;
+
+      .listening-title {
+        display: inline-flex;
+        align-items: center;
+        margin: 0.75rem auto;
+      }
+
+      span {
+        margin-left: .5rem;
+      }
+
+      svg {
+        color: ${props => props.theme.icon.headph};
+      }
+    }
   }
 
   .presentationContact {
@@ -129,6 +182,7 @@ export const HomeStyles = styled.div`
     flex-direction: column;
     margin: 25px 40px 0;
     border-top: 1px solid ${props => props.theme.primaryBorder};
+    color: ${props => props.theme.primaryText};
   }
 
   .contactButton {
@@ -141,80 +195,6 @@ export const HomeStyles = styled.div`
     border-radius: 4px;
   }
 
-  /* Central idea from https://freefrontend.com/css-arrows/#arrows-down - John Urbank */
-  .seeMoreContainer {
-    @media (max-width: 960px) {
-      top: 78%;
-      left: 52%;
-    }
-    display: block;
-    width: 100px;
-    height: 100px;
-    position: absolute;
-    top: 80%;
-    left: 50%;
-    transform: translate(-50%, -50%) rotateZ(0deg);
-
-    &:hover {
-      cursor: pointer;
-      .arrow {
-        top: 50%;
-        &::before {
-          transform: translate(-18%, -50%) rotateZ(-30deg);
-        }
-
-        &::after {
-          transform: translate(-92%, -50%) rotateZ(30deg);
-        }
-      }
-    }
-  }
-
-  .arrow {
-    position: absolute;
-    left: 50%;
-    transition: all 0.4s ease;
-
-    &::before,
-    &::after {
-      transition: all 0.4s ease;
-      content: '';
-      display: block;
-      position: absolute;
-      transform-origin: bottom right;
-      background: #66b58f;
-      width: 50px;
-      height: 4px;
-      border-radius: 10px;
-      transform: translate(-33%, -50%) rotateZ(-45deg);
-    }
-
-    &:after {
-      transform-origin: bottom left;
-      transform: translate(-77%, -50%) rotateZ(45deg);
-    }
-
-    &:nth-child(1) {
-      opacity: calc(0.3 * 1);
-      top: calc(15px + (100% * 1 / 5));
-      animation: ${hello} 0.75s linear infinite;
-      animation-delay: calc(1 * 0.25s);
-    }
-
-    &:nth-child(2) {
-      opacity: calc(0.3 * 2);
-      top: calc(15px + (100% * 2 / 5));
-      animation: ${hello} 0.75s linear infinite;
-      animation-delay: calc(2 * 0.25s);
-    }
-
-    &:nth-child(3) {
-      opacity: calc(0.3 * 3);
-      top: calc(15px + (100% * 3 / 5));
-      animation: ${hello} 0.75s linear infinite;
-      animation-delay: calc(3 * 0.25s);
-    }
-  }
 `;
 
 export const BlogStyles = styled.div`

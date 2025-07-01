@@ -5,6 +5,7 @@ const Theme = {
   primaryBg: '#0d1222',
   secondaryBg: '#18212E',
   primaryText: '#FFF',
+  primarySubText: '#989fac',
   primaryContrast: '#F3F9FF',
   buttonColor: '#cabf7f',
   primaryGradient2: '#007C8A',

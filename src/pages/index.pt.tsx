@@ -3,9 +3,12 @@ import React from 'react';
 import HomePage from '../components/pages/home-page';
 
 const i18n = {
-  helloWorld: 'Hello, World!',
+  programmingTitle: "Programação",
+  programmingText: "Engenheiro de software auto didata construindo experiências digitais",
+  musicTitle: "Música",
+  musicText: "Guitarista de coração, buscando o ritmo no código",
   presentation:
-    'Eu sou Gabriel, desenvolvedor front-end e mobile híbrido, usando React para a web e React Native para Android e iOS.',
+    "Sou Gabriel - seguidor de Cristo, marido dedicado e um pai orgulhoso. Sou um engenheiro de software auto didata, um projetista mecânico de formação e guitarrista de coração (mas não garanto que esteja sempre afinado!)",
   contactMe: (
     <>
       <h2>Interessado em contratar-me ou construir um projeto juntos?</h2>

@@ -27,6 +27,7 @@ export const HomeStyles = styled.div`
 
     p {
       color: ${props => props.theme.primarySubText};
+      font-weight: 400;
     }
 
     .presentation {
@@ -126,6 +127,10 @@ export const HomeStyles = styled.div`
       svg, h3 {
         flex-shrink: 0;
       }
+
+      p {
+        padding: 0 .25rem;
+      }
     }
 
     .hero-widget-left-container {
@@ -158,19 +163,57 @@ export const HomeStyles = styled.div`
       background-color: ${props => props.theme.icon.headphBg};
       border: 1px solid ${props => props.theme.icon.headph};
       border-radius: 1rem;
+      padding: 1rem 2rem;
 
       .listening-title {
         display: inline-flex;
         align-items: center;
-        margin: 0.75rem auto;
+        margin-bottom: 0.5rem;
       }
 
       span {
         margin-left: .5rem;
+        font-weight: 600;
+      }
+
+      p {
+        margin-bottom: 0;
+        margin-top: .5rem;
       }
 
       svg {
         color: ${props => props.theme.icon.headph};
+      }
+
+      .mini-player {
+        background-color: ${props => props.theme.listeningBg};
+        padding: 0.5rem 1rem 1.25rem;
+
+        a, svg {
+          color: ${props => props.theme.primaryText};
+        }
+
+        svg {
+          width: 1rem;
+          height: 1rem;
+        }
+
+        .spotify-progress-bar {
+          width: 335px;
+          height: 4px;
+          background-color: ${props => props.theme.progressBarBg};
+          border-radius: 8px;
+          overflow: hidden;
+          position: absolute;
+          margin: .5rem 0 .25rem;
+        }
+
+        .spotify-progress {
+          height: 100%;
+          background: ${props => props.theme.progressBar};
+          width: 60%;
+          transition: width 0.2s ease;
+        }
       }
     }
   }
@@ -180,9 +223,20 @@ export const HomeStyles = styled.div`
     display: flex;
     align-items: center;
     flex-direction: column;
-    margin: 25px 40px 0;
+    margin: 25px 0 0;
     border-top: 1px solid ${props => props.theme.primaryBorder};
     color: ${props => props.theme.primaryText};
+
+    h3 {
+      font-weight: 700;
+      font-size: 1.5rem;
+      line-height: 2rem;
+    }
+
+    p {
+      color: ${props => props.theme.primarySubText};
+      margin-bottom: 3rem;
+    }
   }
 
   .contactButton {
@@ -199,7 +253,7 @@ export const HomeStyles = styled.div`
 
 export const BlogStyles = styled.div`
   padding: 20px 25px 0;
-  background-color: ${props => props.theme.background};
+  background-color: ${props => props.theme.primaryBg};
   min-height: 71vh;
 
   h1 {

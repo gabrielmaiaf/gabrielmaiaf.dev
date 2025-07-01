@@ -1,10 +1,10 @@
-import React, { ReactNode } from 'react';
-import { Code, Guitar, Music, Headphones } from 'lucide-react';
+import React from 'react';
+import { Code, Guitar, Music, Headphones, ExternalLink } from 'lucide-react';
 
 // Components
 import LayoutWrapper from '../layout-wrapper';
 import SEO from '../seo';
-import { InternalLink } from '../link';
+import { OutboundLink } from '../link';
 
 // Assets
 import { HomeStyles } from './page-styles';
@@ -12,7 +12,8 @@ import { HomeStyles } from './page-styles';
 interface Props {
   i18n: {
     presentation: string;
-    contactMe: ReactNode;
+    contactTitle: string;
+    contactCallToAction: string;
     contactButton: string;
     programmingTitle: string;
     programmingText: string;
@@ -71,18 +72,24 @@ const HomePage: React.FC<Props> = ({ i18n }) => {
 
               <div className="hero-widget-right">
                 <div className="listening-title">
-                  <Headphones className="w-6 h-6 text-cyan-400" />
+                  <Headphones />
                   <span className="text-white font-semibold">Currently Listening</span>
                 </div>
-                <div className="bg-slate-800/50 p-4 rounded-lg">
-                  <div className="text-white font-medium">Deep Praise</div>
-                  {/* <div className="text-gray-400 text-sm">Perfect for coding sessions</div> */}
-                  <div className="w-full bg-slate-700 rounded-full h-2 mt-3">
-                    <div className="bg-gradient-to-r from-cyan-400 to-blue-500 h-2 rounded-full w-3/4 animate-pulse"></div>
+                <div className="mini-player">
+                  <div className="text-white font-medium">
+                    <OutboundLink
+                      to="https://open.spotify.com/playlist/4vmdqA3RoN5vWeHZZAKb3c?si=e54bea5d1cf04c96"
+                      from='homepage'
+                    >
+                      Deep Praise <ExternalLink />
+                    </OutboundLink>
+                    </div>
+                  <div className="spotify-progress-bar">
+                    <div className="spotify-progress"></div>
                   </div>
                 </div>
                 
-                <p className="text-gray-400 text-sm pt-4">
+                <p>
                   Where faith meets technology, and melodies inspire elegant code solutions.
                 </p>
               </div>
@@ -90,12 +97,17 @@ const HomePage: React.FC<Props> = ({ i18n }) => {
             </div>
           </div>
           <div className="presentationContact">
-            {i18n.contactMe}
-            <InternalLink to="/contact" from="homepage">
+            <h3>
+              {i18n.contactTitle}
+            </h3>
+            <p>
+              {i18n.contactCallToAction}
+            </p>
+            <OutboundLink to="https://www.linkedin.com/in/gabrielmaiaf" from="homepage">
               <button type="button" className="contactButton">
                 {i18n.contactButton}
               </button>
-            </InternalLink>
+            </OutboundLink>
           </div>
         </HomeStyles>
       </LayoutWrapper>

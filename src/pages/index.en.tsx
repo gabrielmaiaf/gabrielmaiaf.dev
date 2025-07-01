@@ -9,15 +9,8 @@ const i18n = {
   musicText: "Guitarist by heart, finding rhythm in code",
   presentation:
     "I'm Gabriel - a follower of Christ, devoted husband and proud father. I'm a self-taught software engineer, a mechanical designer by education and a guitarrist by heart (though I can't always promise perfect tuning!)",
-  contactMe: (
-    <>
-      <h2>Interested in hire me or build a project together?</h2>
-      <p>
-        If you have an application interested in developing or a problem that
-        you need to be solved, let&rsquo;s talk!
-      </p>
-    </>
-  ),
+  contactTitle: "Let's create something amazing together",
+  contactCallToAction: 'Whether you want to discuss a project, share great songs or talk about Christ',
   contactButton: 'Get in touch',
 };
 

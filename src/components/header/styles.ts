@@ -13,7 +13,7 @@ const HeaderWrapper = styled.div`
     color: ${props => props.theme.primaryContrast};
     margin-right: 15px;
     text-decoration: none;
-    font-family: 'Open Sans', sans-serif;
+    font-family: ui-sans-serif,system-ui,sans-serif,"Apple Color Emoji","Segoe UI Emoji",Segoe UI Symbol,"Noto Color Emoji";
     cursor: pointer;
   }
 

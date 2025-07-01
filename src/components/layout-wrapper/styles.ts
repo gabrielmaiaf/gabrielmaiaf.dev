@@ -2,7 +2,7 @@ import styled, { createGlobalStyle } from 'styled-components';
 
 const Layout = styled.div`
   min-height: 100vh;
-  font-family: 'Open Sans', sans-serif;
+  font-family: ui-sans-serif,system-ui,sans-serif,"Apple Color Emoji","Segoe UI Emoji",Segoe UI Symbol,"Noto Color Emoji";
 
   .layoutPageContainer {
     min-height: calc(100vh - 129px - 61px);
@@ -22,7 +22,7 @@ const Layout = styled.div`
 export const GlobalStyle = createGlobalStyle`
   body {
     margin: 0;
-    background-color: #272822;
+    background-color: #0d1222;
   }
 `;
 

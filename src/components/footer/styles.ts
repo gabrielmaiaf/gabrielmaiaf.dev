@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { shade } from 'polished';
 
 const FooterWrapper = styled.footer`
-  background-color: ${props => shade(0.3, props.theme.primary)};
+  background-color: ${props => shade('0.3', props.theme.primary)};
   padding: 0 30px;
 
   .footerWrapper {

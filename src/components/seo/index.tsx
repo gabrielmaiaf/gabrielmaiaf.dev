@@ -107,7 +107,7 @@ const SEO: React.FC<Props> = ({
             "author": {
               "@type": "Person",
               "name": "Gabriel Maia",
-              "url": "https://gabrielmaia.dev"
+              "url": "https://gabrielmaiaf.dev"
             },
             "image": "${articleSeo.image}",
             "headline": "${articleSeo.title}",

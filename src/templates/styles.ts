@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
 export const BlogPostContainer = styled.div`
-  background-color: ${props => props.theme.background};
-  color: ${props => props.theme.primaryContrast};
+  background-color: ${props => props.theme.primaryBg};
+  color: ${props => props.theme.primaryText};
   padding: 10px 30px 20px;
 
   .caption {

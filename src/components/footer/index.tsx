@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaEnvelope, FaLinkedin, FaGithub, FaGitlab } from 'react-icons/fa';
+import { FaLinkedin, FaGithub, FaGitlab } from 'react-icons/fa';
 
 import { OutboundLink } from '../link';
 
@@ -37,15 +37,15 @@ const Footer: React.FC = () => (
         >
           <FaGitlab size={20} />
         </OutboundLink>
-        <OutboundLink
+        {/* <OutboundLink
           to="mailto:mail@gabrielmaia.dev"
           className="mail"
           from="footer"
         >
           <FaEnvelope size={20} />
-        </OutboundLink>
+        </OutboundLink> */}
       </div>
-      <div>Copyright © 2020 Gabriel Maia</div>
+      <div>© 2025 Gabriel Maia. Crafted with Gatsby and fueled by music</div>
     </div>
   </FooterWrapper>
 );

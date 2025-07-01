@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaEnvelope, FaLinkedin, FaGithub, FaGitlab } from 'react-icons/fa';
+import { FaLinkedin, FaGithub, FaGitlab } from 'react-icons/fa';
 
 import { OutboundLink } from '../link';
 
@@ -45,7 +45,7 @@ const Footer: React.FC = () => (
           <FaEnvelope size={20} />
         </OutboundLink> */}
       </div>
-      <div>Copyright © 2025 Gabriel Maia</div>
+      <div>© 2025 Gabriel Maia. Crafted with Gatsby and fueled by music</div>
     </div>
   </FooterWrapper>
 );

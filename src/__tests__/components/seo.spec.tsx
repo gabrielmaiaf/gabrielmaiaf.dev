@@ -26,7 +26,7 @@ jest.mock('gatsby', () => {
           defaultTitle: 'Gabriel Maia',
           titleTemplate: '%s · Gabriel Maia',
           defaultDescription: 'Gabriel Maia Francisco, front-end developer',
-          siteUrl: 'gabrielmaia.dev',
+          siteUrl: 'gabrielmaiaf.dev',
           defaultImage: 'image.jpg',
           twitterUsername: 'bielmaia',
           languages: {

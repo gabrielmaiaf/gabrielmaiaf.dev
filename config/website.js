@@ -1,6 +1,6 @@
 module.exports = {
   pathPrefix: `/`,
-  url: `https://gabrielmaia.dev`,
+  url: `https://gabrielmaiaf.dev`,
   title: `Gabriel Maia`,
   titleTemplate: `%s · Gabriel Maia`,
   description: 'My personal blog, to help anyone with doubts in development',

@@ -3,9 +3,8 @@ module.exports = {
   url: `https://gabrielmaiaf.dev`,
   title: `Gabriel Maia`,
   titleTemplate: `%s · Gabriel Maia`,
-  description: 'My personal blog, to help anyone with doubts in development',
-  descriptionPT:
-    'Meu blog pessoal, para ajudar qualquer um que tenha dúvidas em desenvolvimento',
+  description: 'My personal website and blog, a place to share my thoughts',
+  descriptionPT: 'Meu site e blog pessoal, um lugar para compartilhar meus pensamentos',
   image: `/images/gabrielmaiaf.jpeg`, // Path to the default meta image in `static` folder
   siteLanguage: `en`, // Language tag on <html> element
 

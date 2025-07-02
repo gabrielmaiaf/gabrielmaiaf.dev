@@ -6,6 +6,7 @@ import { Disqus } from 'gatsby-plugin-disqus';
 // Components
 import LayoutWrapper from '../components/layout-wrapper';
 import SEO from '../components/seo';
+import RichJson from '../components/seo/rich-json';
 import { OutboundLink } from '../components/link';
 
 import { BlogPostContainer, ImagePostContainer } from './styles';
@@ -56,6 +57,12 @@ const Template: React.FC<PageProps<BlogPost>> = ({ data }) => {
         image={featuredImg}
         datePublished={frontmatter.date}
         article
+      />
+      <RichJson
+        description={frontmatter.description}
+        title={frontmatter.title}
+        image={featuredImg}
+        datePublished={frontmatter.date}
       />
       <LayoutWrapper>
         <BlogPostContainer>

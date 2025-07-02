@@ -1,6 +1,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import { useStaticQuery, graphql } from 'gatsby';
+import { useStaticQuery, graphql, Script } from 'gatsby';
 import { useLocation } from '@reach/router';
 import { getCurrentLangKey } from 'ptz-i18n';
 
@@ -99,26 +99,6 @@ const SEO: React.FC<Props> = ({
 
       <meta property="og:type" content={article ? 'article' : 'website'} />
       {article && <meta name="author" content={author} />}
-      {article && (
-        <script type="application/ld+json">
-          {`{
-            "@context": "https://schema.org",
-            "@type": "BlogPosting",
-            "author": {
-              "@type": "Person",
-              "name": "Gabriel Maia",
-              "url": "https://gabrielmaiaf.dev"
-            },
-            "image": "${articleSeo.image}",
-            "headline": "${articleSeo.title}",
-            "description": "${articleSeo.description}",
-            "inLanguage": "${articleSeo.language}",
-            "datePublished": "${articleSeo.datePublished}",
-            "isFamilyFriendly": "true",
-            "url": "${articleSeo.url}"
-          }`}
-        </script>
-      )}
 
       {seo.url && <meta property="og:url" content={seo.url} />}
       {seo.title && (

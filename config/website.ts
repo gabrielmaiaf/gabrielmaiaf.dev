@@ -1,4 +1,4 @@
-module.exports = {
+const website = {
   pathPrefix: `/`,
   url: `https://gabrielmaiaf.dev`,
   title: `Gabriel Maia`,
@@ -22,3 +22,5 @@ module.exports = {
   googleAnalyticsId: `UA-152430923-1`, // Google Analytics ID
   twitter: `@_bielmaia`, // Twitter username
 };
+
+export default website;

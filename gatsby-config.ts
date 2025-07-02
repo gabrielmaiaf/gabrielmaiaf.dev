@@ -1,5 +1,7 @@
-const languages = require('./config/languages');
-const website = require('./config/website');
+import type { GatsbyConfig } from "gatsby";
+
+import languages from './config/languages';
+import website from './config/website';
 
 /**
  * Configure your Gatsby site with this file.
@@ -7,7 +9,7 @@ const website = require('./config/website');
  * See: https://www.gatsbyjs.org/docs/gatsby-config/
  */
 
-module.exports = {
+const config: GatsbyConfig = {
   pathPrefix: website.pathPrefix,
   /* Your site config here */
   siteMetadata: {
@@ -138,3 +140,5 @@ module.exports = {
     'gatsby-plugin-netlify',
   ],
 };
+
+export default config;

@@ -1,6 +1,5 @@
-import { useStaticQuery, graphql, Script } from 'gatsby';
-import { useLocation } from '@reach/router';
-import { getCurrentLangKey } from 'ptz-i18n';
+import React from 'react';
+import { Script } from 'gatsby';
 
 interface Props {
   title?: string;
@@ -8,48 +7,21 @@ interface Props {
   image?: string | null;
   article?: boolean;
   datePublished?: string;
-}
-
-const query = graphql`
-  query SEO {
-    site {
-      siteMetadata {
-        defaultTitle: title
-        defaultDescription: description
-        siteUrl
-        defaultImage: image
-        languages {
-          defaultLangKey
-          langs
-        }
-      }
-    }
-  }
-`;
-
-interface QueryProps {
-  site: {
-    siteMetadata: {
-      defaultTitle: string;
-      defaultDescription: string;
-      siteUrl: string;
-      defaultImage: string;
-      languages: {
-        defaultLangKey: string;
-        langs: string[];
-      };
-    };
+  pathname: string;
+  siteMetadata: {
+    defaultTitle: string;
+    titleTemplate: string;
+    defaultDescription: string;
+    siteUrl: string;
+    defaultImage: string;
+    twitterUsername: string;
+    author: string;
   };
+  langKey: string;
 }
 
-const RichJson: React.FC<Props> = ({ title, description = null, image = null, datePublished }) => {
-  const { pathname } = useLocation();
-  const { site } = useStaticQuery<QueryProps>(query);
-  const { langs, defaultLangKey } = site.siteMetadata.languages;
-
-  const langKey = getCurrentLangKey(langs, defaultLangKey, pathname);
-
-  const { defaultTitle, defaultDescription, siteUrl, defaultImage } = site.siteMetadata;
+const RichJson: React.FC<Props> = ({ title, description = null, image = null, datePublished, pathname, siteMetadata, langKey }) => {
+  const { defaultTitle, defaultDescription, siteUrl, defaultImage } = siteMetadata;
 
   const articleSeo = {
     url: `${siteUrl}${pathname}`,

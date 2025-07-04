@@ -1,4 +1,8 @@
+import React from 'react';
+import { graphql, HeadProps, useStaticQuery } from 'gatsby';
+import { getCurrentLangKey } from 'ptz-i18n';
 import HomePage from '../components/pages/home-page';
+import SEO from '../components/seo';
 
 const i18n = {
   programmingTitle: "Programação",
@@ -13,3 +17,37 @@ const i18n = {
 };
 
 export default (): JSX.Element => <HomePage i18n={i18n} />;
+
+export function Head({ location }: HeadProps) {
+  const { pathname } = location;
+  const { site } = useStaticQuery(graphql`
+    query SEO {
+      site {
+        siteMetadata {
+          defaultTitle: title
+          titleTemplate
+          defaultDescription: description
+          siteUrl
+          defaultImage: image
+          twitterUsername
+          author
+          languages {
+            defaultLangKey
+            langs
+          }
+        }
+      }
+    }
+  `);
+
+  const { langs, defaultLangKey } = site.siteMetadata.languages;
+  const langKey = getCurrentLangKey(langs, defaultLangKey, pathname);
+
+  return (
+    <SEO
+      langKey={langKey}
+      siteMetadata={site.siteMetadata}
+      pathname={pathname}
+    />
+  )
+}

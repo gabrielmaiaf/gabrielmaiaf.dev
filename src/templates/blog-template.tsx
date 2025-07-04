@@ -1,5 +1,6 @@
 import React from 'react';
-import { graphql, PageProps } from 'gatsby';
+import { getCurrentLangKey } from 'ptz-i18n';
+import { graphql, PageProps, HeadProps } from 'gatsby';
 import { GatsbyImage, IGatsbyImageData } from 'gatsby-plugin-image';
 import { Disqus } from 'gatsby-plugin-disqus';
 
@@ -33,7 +34,17 @@ interface BlogPost {
   };
   site: {
     siteMetadata: {
+      defaultTitle: string;
+      titleTemplate: string;
+      defaultDescription: string;
       siteUrl: string;
+      defaultImage: string;
+      twitterUsername: string;
+      author: string;
+      languages: {
+        defaultLangKey: string;
+        langs: string[];
+      }
     };
   };
 }
@@ -42,7 +53,6 @@ const Template: React.FC<PageProps<BlogPost>> = ({ data }) => {
   const { markdownRemark, site } = data;
   const { frontmatter, html } = markdownRemark;
   const { gatsbyImageData } = frontmatter.featuredImage.childImageSharp;
-  const featuredImg = gatsbyImageData.images.fallback?.src;
   const disqusConfig = {
     url: `${site.siteMetadata.siteUrl}/${markdownRemark.fields.slug}`,
     identifier: markdownRemark.fields.slug,
@@ -51,19 +61,6 @@ const Template: React.FC<PageProps<BlogPost>> = ({ data }) => {
 
   return (
     <>
-      <SEO
-        description={frontmatter.description}
-        title={frontmatter.title}
-        image={featuredImg}
-        datePublished={frontmatter.date}
-        article
-      />
-      <RichJson
-        description={frontmatter.description}
-        title={frontmatter.title}
-        image={featuredImg}
-        datePublished={frontmatter.date}
-      />
       <LayoutWrapper>
         <BlogPostContainer>
           <div className="blog-post">
@@ -122,10 +119,54 @@ export const pageQuery = graphql`
     }
     site {
       siteMetadata {
+        defaultTitle: title
+        titleTemplate
+        defaultDescription: description
         siteUrl
+        defaultImage: image
+        twitterUsername
+        author
+        languages {
+          defaultLangKey
+          langs
+        }
       }
     }
   }
 `;
 
 export default Template;
+
+export const Head: React.FC<HeadProps<BlogPost>> = ({ location, data }) => {
+  const { pathname } = location;
+  const { markdownRemark, site } = data;
+  const { frontmatter } = markdownRemark;
+  const { gatsbyImageData } = frontmatter.featuredImage.childImageSharp;
+  const featuredImg = gatsbyImageData.images.fallback?.src;
+
+  const { langs, defaultLangKey } = site.siteMetadata.languages;
+  const langKey = getCurrentLangKey(langs, defaultLangKey, pathname);
+  const patternTitle = site.siteMetadata.titleTemplate.replace(/%s/, frontmatter.title)
+
+  return (
+    <>
+      <RichJson
+        description={frontmatter.description}
+        title={patternTitle}
+        image={featuredImg}
+        datePublished={frontmatter.date}
+        siteMetadata={site.siteMetadata}
+        pathname={pathname}
+        langKey={langKey}
+      />
+      <SEO
+        title={patternTitle}
+        langKey={langKey}
+        image={featuredImg}
+        article={true}
+        siteMetadata={site.siteMetadata}
+        pathname={pathname}
+      />
+    </>
+  )
+}

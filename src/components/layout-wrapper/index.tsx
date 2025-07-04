@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { PropsWithChildren } from 'react';
 import { ThemeProvider } from 'styled-components';
 import { useStaticQuery, graphql } from 'gatsby';
 import { useLocation } from '@reach/router';
@@ -41,7 +41,7 @@ export const LayoutQuery = graphql`
   }
 `;
 
-const LayoutWrapper: FC = ({ children }) => {
+const LayoutWrapper = ({ children }: PropsWithChildren) => {
   const { site } = useStaticQuery<LayoutQueryProps>(LayoutQuery);
   const { pathname } = useLocation();
   const { langs, defaultLangKey } = site.siteMetadata.languages;

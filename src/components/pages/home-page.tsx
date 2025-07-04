@@ -3,7 +3,6 @@ import { Code, Guitar, Music, Headphones, ExternalLink } from 'lucide-react';
 
 // Components
 import LayoutWrapper from '../layout-wrapper';
-import SEO from '../seo';
 import { OutboundLink } from '../link';
 
 // Assets
@@ -25,7 +24,6 @@ interface Props {
 const HomePage: React.FC<Props> = ({ i18n }) => {
   return (
     <>
-      <SEO />
       <LayoutWrapper>
         <HomeStyles>
           <div className='hero-wrapper'>

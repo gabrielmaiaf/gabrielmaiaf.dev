@@ -2,7 +2,6 @@ import React from 'react';
 import { PageProps } from 'gatsby';
 import { GatsbyImage, IGatsbyImageData } from 'gatsby-plugin-image';
 
-import SEO from '../seo';
 import LayoutWrapper from '../layout-wrapper';
 import Time from '../time';
 import { InternalLink } from '../link';
@@ -27,7 +26,7 @@ interface NodeProp {
     langKey: string;
   };
 }
-interface EdgeProp {
+export interface EdgeProp {
   node: NodeProp;
 }
 export interface BlogProps {
@@ -58,7 +57,6 @@ const Blog: React.FC<PageProps<BlogProps>> = ({ data }) => {
 
   return (
     <>
-      <SEO title="Blog" />
       <LayoutWrapper>
         <BlogStyles>
           <h1>Posts</h1>

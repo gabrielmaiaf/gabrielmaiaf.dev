@@ -1,11 +1,10 @@
-module.exports = {
+const website = {
   pathPrefix: `/`,
   url: `https://gabrielmaiaf.dev`,
   title: `Gabriel Maia`,
   titleTemplate: `%s · Gabriel Maia`,
-  description: 'My personal blog, to help anyone with doubts in development',
-  descriptionPT:
-    'Meu blog pessoal, para ajudar qualquer um que tenha dúvidas em desenvolvimento',
+  description: 'My personal website and blog, a place to share my thoughts',
+  descriptionPT: 'Meu site e blog pessoal, um lugar para compartilhar meus pensamentos',
   image: `/images/gabrielmaiaf.jpeg`, // Path to the default meta image in `static` folder
   siteLanguage: `en`, // Language tag on <html> element
 
@@ -23,3 +22,5 @@ module.exports = {
   googleAnalyticsId: `UA-152430923-1`, // Google Analytics ID
   twitter: `@_bielmaia`, // Twitter username
 };
+
+export default website;

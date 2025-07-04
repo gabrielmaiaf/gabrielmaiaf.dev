@@ -1,6 +1,8 @@
 import React, { ReactNode } from 'react';
-
+import { graphql, HeadProps, useStaticQuery } from 'gatsby';
+import { getCurrentLangKey } from 'ptz-i18n';
 import HomePage from '../components/pages/home-page';
+import SEO from '../components/seo';
 
 const i18n = {
   programmingTitle: "Programming",
@@ -16,11 +18,36 @@ const i18n = {
 
 export default (): ReactNode => <HomePage i18n={i18n} />;
 
-export function Head() {
+export function Head({ location }: HeadProps) {
+  const { pathname } = location;
+  const { site } = useStaticQuery(graphql`
+    query SEO {
+      site {
+        siteMetadata {
+          defaultTitle: title
+          titleTemplate
+          defaultDescription: description
+          siteUrl
+          defaultImage: image
+          twitterUsername
+          author
+          languages {
+            defaultLangKey
+            langs
+          }
+        }
+      }
+    }
+  `);
+
+  const { langs, defaultLangKey } = site.siteMetadata.languages;
+  const langKey = getCurrentLangKey(langs, defaultLangKey, pathname);
+
   return (
-    <meta
-      name="google-site-verification"
-      content="EZwGVFBKUmGbZHdNCO-5aU-tCQGFu_0amgmP0tvr2eQ"
+    <SEO
+      langKey={langKey}
+      siteMetadata={site.siteMetadata}
+      pathname={pathname}
     />
   )
 }

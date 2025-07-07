@@ -1,5 +1,4 @@
 import React from 'react';
-import { Script } from 'gatsby';
 
 interface Props {
   title?: string;
@@ -33,7 +32,7 @@ const RichJson: React.FC<Props> = ({ title, description = null, image = null, da
   };
 
   return (
-    <Script type="application/ld+json">
+    <script type="application/ld+json">
       {`{
         "@context": "https://schema.org",
         "@type": "BlogPosting",
@@ -50,7 +49,7 @@ const RichJson: React.FC<Props> = ({ title, description = null, image = null, da
         "isFamilyFriendly": "true",
         "url": "${articleSeo.url}"
       }`}
-    </Script>
+    </script>
   );
 };
 

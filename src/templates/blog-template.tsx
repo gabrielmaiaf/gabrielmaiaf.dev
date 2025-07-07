@@ -18,6 +18,7 @@ interface BlogPost {
     frontmatter: {
       title: string;
       date: string;
+      dateISO: string;
       alt: string;
       link: string;
       description: string;
@@ -103,6 +104,7 @@ export const pageQuery = graphql`
       frontmatter {
         title
         date(formatString: "DD MMMM, YYYY")
+        dateISO: date
         featuredImage {
           childImageSharp {
             gatsbyImageData(layout: FULL_WIDTH, placeholder: BLURRED)
@@ -154,7 +156,7 @@ export const Head: React.FC<HeadProps<BlogPost>> = ({ location, data }) => {
         description={frontmatter.description}
         title={patternTitle}
         image={featuredImg}
-        datePublished={frontmatter.date}
+        datePublished={frontmatter.dateISO}
         siteMetadata={site.siteMetadata}
         pathname={pathname}
         langKey={langKey}
